@@ -79,7 +79,7 @@
   
   :root {
     --text-color: #FFFFFF;
-    --background-color: #024586;
+    --base-color: #024586;
     --button-color: #00B8A6;
     --fill-color: #FFFFFF;
     --bar-grey: #C8C8C8;
@@ -166,7 +166,7 @@
   }
   
   header #header {
-    background: #024586;
+    background: var(--base-color);
     position: relative;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -305,7 +305,7 @@
   
   /* Dropdown Button */
   .dropbtn {
-    background-color: #024586;
+    background-color: var(--base-color);
     color: var(--fill-color);
     padding: 16px;
     font-weight: 600;
@@ -332,7 +332,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #024586;
+    background-color: var(--base-color);
     min-width:max-content;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
     z-index: 1;
@@ -360,7 +360,7 @@
   .dropdown:hover .dropdown-content {display: block; transition: all 0.3s; z-index: inherit;}
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #024586; color: #00B8A6; transition: all 0.3s;}
+  .dropdown:hover .dropbtn {background-color: var(--base-color); color: #00B8A6; transition: all 0.3s;}
   
   a.button,
   a.button:visited {
@@ -386,7 +386,7 @@
     padding-top: 50px;
     padding-bottom: 70px;
     border-bottom: 1px solid #D1D1D1;
-    background-color: #024586;
+    background-color: var(--base-color);
   }
   
   #main-body p {
@@ -427,7 +427,7 @@
   }
   
   #main-body #donate .form {
-      background: #024586;
+      background: var(--base-color);
       border-radius: 40px;
       box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.1);
       position: relative;
@@ -477,7 +477,7 @@
   }
   
   #features h2 {
-    color: #024586;
+    color: var(--base-color);
     font-family: var(--form-font);
     font-weight: 700;
     font-size: 48px;
@@ -515,7 +515,7 @@
     font-family: var(--form-font);
     font-weight: 400;
     font-size: 20px;
-    color: #024586;
+    color: var(--base-color);
     margin-bottom: 8px;
   }
 
@@ -523,7 +523,7 @@
     font-family: var(--form-font);
     font-weight: 400;
     font-size: 20px;
-    color: #024586;
+    color: var(--base-color);
     margin-bottom: 8px;
   }
   
@@ -544,7 +544,7 @@
 
   #features .statistics .impact-description {
     width: 499px;
-    color: #024586;
+    color: var(--base-color);
     font-family: var(--form-font);
     font-size: 20px;
     font-weight: 400;
@@ -598,12 +598,12 @@
     font-weight: 700;
     font-size: 48px;
     align-content: center;
-    color: #024586;
+    color: var(--base-color);
   }
 
   #features .column  .description {
     font-family: var(--form-font);
-    color: #024586;
+    color: var(--base-color);
   }
 
   .piechart {
@@ -615,7 +615,7 @@
   /* Footer block */
   footer {
     position: relative;
-    background: #024586;
+    background: var(--base-color);
     padding-top: 80px;
     padding-bottom: 30px;
   }
@@ -1153,7 +1153,7 @@
   
   /* Contact details block */
   #demo-wrapper #your-details {
-    background: var(--background-color);
+    background: var(--base-color);
     text-align: left !important;
   }
   
@@ -1318,7 +1318,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 18.96px;
-    border: var(--background-color);
+    border: var(--base-color);
     outline: 0;
     height: auto !important;
     color: var(--text-color) !important;
@@ -1393,7 +1393,7 @@
   
   /*  Test payment details block
   #demo-wrapper #payment-details {
-    background: var(--background-color);
+    background: var(--base-color);
     text-align: left !important;
     align-items: left;
   }
@@ -1534,7 +1534,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 18.96px;
-    border: var(--background-color);
+    border: var(--base-color);
     outline: 0;
     height: auto !important;
     color: var(--text-color) !important;
@@ -1651,7 +1651,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: var(--background-color);
+    background: var(--base-color);
     margin-bottom: 6px;
     border: none;
   }
@@ -1665,11 +1665,11 @@
   }
   
   #demo-wrapper .stepper-item.active .step-counter {
-    background-color: var(--background-color);
+    background-color: var(--base-color);
   }
   
   #demo-wrapper .stepper-item.completed .step-counter {
-    background-color: var(--background-color);
+    background-color: var(--base-color);
   }
   
   #demo-wrapper .stepper-item.completed::after {
