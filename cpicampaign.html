@@ -31,20 +31,22 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',    25],
-          ['Eat',      23],
-          ['Commute',  21],
-          ['Watch TV', 21],
-          ['Sleep',    10]
+          ['Category', 'Percentage'],
+          ['Access to Education',    25],
+          ['Nutritious Meals',      23],
+          ['Clean Water',  21],
+          ['Safe Shelter', 21],
+          ['Health and Care',    10]
         ]);
 
         var options = {
           legend: 'none',
-          backgroundColor: 'red',
+          backgroundColor: 'none',
+
           height: 264,
           width: 264,
-          chartArea: {left:8,top:8,width:'90%',height:'90%'}
+          chartArea: {left:0,top:0,width:'100%',height:'100%'},
+          enableInteractivity: false
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -931,13 +933,17 @@
         <div id="columns">
             <div class="column">
                 <div class="statistics">
-                    <h3>Impact</h3>
+                    <h2>Impact</h2>
                     <p class="impact-description">
                         Your support has already made a tremendous difference. Your 
                         adjusted gift helps us sustain vital programs and reach more 
                         children in need, even as costs rise. 
                     </p>
-                    <div id="piechart" style="width: 900px; height: 500px;"></div>
+                    <p>&nbsp;</p>
+                    
+                    <div class ="piechart" id="piechart" style="width: 485px; height: 273px; margin: 0 auto; display: flex; justify-content: center"></div>
+                    
+                    
                 </div>
             </div>
             <div class="column">
@@ -956,9 +962,9 @@
                         <div class="dot"></div>
                        <div class="percentage">23%</div>
                        <div class="description">
-                            <h3>Access to education</h3>
+                            <h3>Nutritious Meals</h3>
                             <p>
-                                Provide school supplies and opportunities for children to learn.
+                                Help children grow strong with healthy food each day.
                             </p>
                         </div>
                     </div>
@@ -966,9 +972,9 @@
                         <div class="dot"></div>
                        <div class="percentage">21%</div>
                        <div class="description">
-                            <h3>Access to education</h3>
+                            <h3>Clean Water</h3>
                             <p>
-                                Provide school supplies and opportunities for children to learn.
+                                Ensure safe drinking water for better health and hygiene.
                             </p>
                         </div>
                     </div>
@@ -976,9 +982,9 @@
                         <div class="dot"></div>
                        <div class="percentage">21%</div>
                        <div class="description">
-                            <h3>Access to education</h3>
+                            <h3>Safe Shelter</h3>
                             <p>
-                                Provide school supplies and opportunities for children to learn.
+                                Protect children with safe and secure living conditions.
                             </p>
                         </div>
                     </div>
@@ -986,9 +992,9 @@
                         <div class="dot"></div>
                        <div class="percentage">10%</div>
                        <div class="description">
-                            <h3>Access to education</h3>
+                            <h3>Health and Care</h3>
                             <p>
-                                Provide school supplies and opportunities for children to learn.
+                                Deliver medical aid and support to children in need.
                             </p>
                         </div>
                     </div>

@@ -12,6 +12,7 @@ function validatePhone(string) {
     return false;
 }
 
+
 document.addEventListener('alpine:init', () => {
     Alpine.data('form', () => ({
         amount: 75,
