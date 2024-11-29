@@ -78,9 +78,9 @@
    ********************************************************/
   
   :root {
-    --text-color: #083F88;
-    --background-color: #F6FAFF;
-    --button-color: #2F8FFF;
+    --text-color: #FFFFFF;
+    --background-color: #024586;
+    --button-color: #00B8A6;
     --fill-color: #FFFFFF;
     --bar-grey: #C8C8C8;
     --bar-grey2: #F1F1F1;
@@ -423,14 +423,17 @@
     padding-left: 50px;
     position: relative;
     z-index: 10;
+    
   }
   
   #main-body #donate .form {
-      background: var(--background-color);
-      padding: px;
+      background: #024586;
       border-radius: 40px;
       box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.1);
       position: relative;
+      border: 3px solid #F3F9FF;
+      
+      
   }
   
   @media screen and (max-width: 767px) {
@@ -462,6 +465,7 @@
       padding-left: 0;
       margin-top: 0px;
       order: 1;
+      
     }
   }
   
@@ -580,11 +584,11 @@
   }
 
   .statistics .type4 {
-    background: #FFAE4C;
+    background: #3CC3DF;
   }
 
   .statistics .type5 {
-    background: #3CC3DF;
+    background: #FFAE4C;
   }
 
   .statistics .percentage {
@@ -2238,6 +2242,7 @@
     width: 150px;
     padding: 10px;
     flex-shrink: 0;
+    background: var(--button-color);
   }
   
   .amount-image img {
@@ -2250,7 +2255,7 @@
     position: relative;
     padding: 1.5rem;
     display: block;
-    background: #fff;
+    background: var(--button-color);
     text-align: left;
     z-index: 2;
   }
