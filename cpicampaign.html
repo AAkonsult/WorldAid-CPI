@@ -40,13 +40,15 @@
         ]);
 
         var options = {
-          legend: 'none',
-          backgroundColor: 'none',
+            legend: 'none',
+            backgroundColor: 'none',
+            height: 264,
+            width: 264,
+            chartArea: {left:0,top:0,width:'100%',height:'100%'},
+            enableInteractivity: false,
+            colors: ['#537FF1', '#8979FF', '#FF928A', '#3CC3DF', '#FFAE4C'],
+            pieSliceTextStyle: {fontName: 'Rubik', fontSize: 20}
 
-          height: 264,
-          width: 264,
-          chartArea: {left:0,top:0,width:'100%',height:'100%'},
-          enableInteractivity: false
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -949,50 +951,50 @@
             <div class="column">
                 <div class="statistics">
                     <div id="block1" class="stat-block">
-                       <div class="dot"></div>
+                       <div class="dot type1"></div>
                        <div class="percentage">25%</div>
                        <div class="description">
-                            <h3>Access to education</h3>
+                            <h3><b>Access to education</b></h3>
                             <p>
                                 Provide school supplies and opportunities for children to learn.
                             </p>
                         </div>
                     </div>
                     <div id="block2" class="stat-block">
-                        <div class="dot"></div>
+                        <div class="dot type2"></div>
                        <div class="percentage">23%</div>
                        <div class="description">
-                            <h3>Nutritious Meals</h3>
+                            <h3><b>Nutritious Meals</b></h3>
                             <p>
                                 Help children grow strong with healthy food each day.
                             </p>
                         </div>
                     </div>
                     <div id="block3" class="stat-block">
-                        <div class="dot"></div>
+                        <div class="dot type3"></div>
                        <div class="percentage">21%</div>
                        <div class="description">
-                            <h3>Clean Water</h3>
+                            <h3><b>Clean Water</b></h3>
                             <p>
                                 Ensure safe drinking water for better health and hygiene.
                             </p>
                         </div>
                     </div>
                     <div id="block4" class="stat-block">
-                        <div class="dot"></div>
+                        <div class="dot type4"></div>
                        <div class="percentage">21%</div>
                        <div class="description">
-                            <h3>Safe Shelter</h3>
+                            <h3><b>Safe Shelter</b></h3>
                             <p>
                                 Protect children with safe and secure living conditions.
                             </p>
                         </div>
                     </div>
                     <div id="block5" class="stat-block">
-                        <div class="dot"></div>
+                        <div class="dot type5"></div>
                        <div class="percentage">10%</div>
                        <div class="description">
-                            <h3>Health and Care</h3>
+                            <h3><b>Health and Care</b></h3>
                             <p>
                                 Deliver medical aid and support to children in need.
                             </p>
@@ -1011,54 +1013,21 @@
             </div>
             <div id="footer-bottom">
                 <div class="inner flex-between">
-                    <div class="logo">
-                        <a href="#">
-                            <img src="images/logo.png" alt="WordAid" width="261" height="60">
-                        </a>
+                    <div class="company-name">
+                        <h4>© Aakonsult Pty Ltd. ABN 00 000 000 000</h4>
                     </div>
                     <div id="footer-menu">
                         <div class="wrapper">
                             <div class="left">
-                                <div class="menu">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">About</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Making a Difference</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Case Studies</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Contact</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="copyright">
-                                    <ul>
-                                        <li>
-                                            Copyright 2023 WorldAid
-                                        </li>
-                                        <li>
-                                            <a href="#">Privacy Policy</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <h4>Powered By</h4>
                             </div>
                             <div class="right">
-                                <a href="#donate" class="button">Donate</a>
+                                <img src="images/P2U_Logo_Horizontal_HiRes 3.png">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="footer-bg">
-            <img src="images/footer-bg.jpg" alt="World Aid Footer">
         </div>
     </footer>
 </body>
