@@ -138,9 +138,8 @@
   
   .inner {
     width: 100%;
-    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 200px;
     position: relative;
   }
   
@@ -420,6 +419,7 @@
   
   #main-body #donate {
     width: 50%;
+    max-width: 1000px;
     padding-left: 50px;
     position: relative;
     z-index: 10;
@@ -431,6 +431,7 @@
       border-radius: 40px;
       box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.1);
       position: relative;
+      min-width: 500px;
       border: 3px solid #F3F9FF;
       
       
@@ -489,7 +490,7 @@
     display: flex;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 30px 80px;
+    gap: 30px 50px;
     justify-content: center;
   }
   
@@ -552,14 +553,11 @@
   }
 
 .stat-block {
-    width: 609px;
+    min-width: 609px;
     height: 117px;
     background-color: var(--fill-color);
     border-radius: 12px;
-    padding-top: 25px;
-    padding-bottom: 21px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 25px 25px;
     gap: 19px;
     display: flex;
     align-items: center;
@@ -593,7 +591,7 @@
 
   .statistics .percentage {
     font-family: var(--form-font);
-    width: 124px;
+    min-width: 124px;
     height: 57px;
     font-weight: 700;
     font-size: 48px;
@@ -604,6 +602,7 @@
   #features .column  .description {
     font-family: var(--form-font);
     color: var(--base-color);
+    min-width: 343px;
   }
 
   .piechart {
@@ -655,6 +654,7 @@
   }
   
   footer #footer-bottom {
+    flex-direction: column;
     position: relative;
     z-index: 200;
   }
@@ -860,7 +860,7 @@
   }
   
   #demo-wrapper #amount button:hover {
-    background: var(--button-color);
+    background: #00b8a6a4;
   }
   
   #demo-wrapper #amount .frequency {
@@ -888,14 +888,14 @@
     position: relative;
     color: var(--button-color);
     font-family: var(--form-font);
-    font-weight: 800;
+    font-weight: 500;
     font-size: 20px;
     transition: all .3s
   }
   
   #demo-wrapper #amount .frequency-options label:hover {
-    background: var(--text-color);
-    border: 1px solid var(--text-color);
+    background: #00b8a6a4;
+    border: 1px solid #00b8a6a4;
     color: var(--fill-color);
   }
   
@@ -1019,7 +1019,7 @@
     display: flex;
     align-items: center;
     padding: 0 10px;
-    color: var(--text-color);
+    color: var(--base-color);
     justify-content: flex-start;
   }
   
@@ -1033,7 +1033,7 @@
     font-family: var(--form-font);
     font-weight: 600;
     font-size: 20px;
-    color: var(--text-color);
+    color: var(--base-color);
     height: auto !important
   }
   
@@ -1044,57 +1044,57 @@
   }
   
   #demo-wrapper #amount .amounts .choice.other label input:focus {
-    color: var(--fill-color);
+    color: var(--base-color);
   }
   
   #demo-wrapper #amount .amounts .choice.other label input:hover {
-    color: var(--fill-color);
+    color: var(--base-color);
   }
   
   #demo-wrapper #amount .amounts .choice.other label input::-moz-placeholder {
     opacity: 1;
-    color: var(--text-color);
+    color: var(--base-color);
   }
   
   #demo-wrapper #amount .amounts .choice.other label input::placeholder {
     opacity: 1;
-    color: var(--text-color)
+    color: var(--base-color);
   }
   
   #demo-wrapper #amount .amounts .choice.other label:hover {
-    color: var(--fill-color);
+    color: var(--base-color);
   }
   
   #demo-wrapper #amount .amounts .choice.other label:hover span {
     opacity: 1;
-    color: var(--fill-color);
+    color: var(--base-color);
   }
   
   #demo-wrapper #amount .amounts .choice.other label:hover input::placeholder {
     opacity: 1;
-    color: var(--fill-color);
+    color: var(--base-color);
   }
   
   #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked+label span {
-    color: var(--fill-color);
+    color: var(--base-color);
   }
   
   #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked+label input {
-    color: var(--fill-color) !important
+    color: var(--base-color) !important
   }
   
   #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked+label input::placeholder {
-    color: var(--fill-color);
-  }
+    color: var(--base-color);
+  }e
   
   #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::placeholder {
     opacity: 1;
-    color: var(--fill-color) !important
+    color: var(--base-color) !important
   }
   
   #demo-wrapper #amount .amounts .choice.other input[type=radio]:checked::placeholder {
     opacity: 1;
-    color: var(--fill-color) !important;
+    color: var(--base-color) !important;
   }
   
   #demo-wrapper #amount .descriptions {
@@ -1190,7 +1190,7 @@
     background-color: var(--fill-color);
     cursor: pointer;
     position: relative;
-    color: var(--button-color);
+    color: var(--base-color);
     font-family: var(--form-font);
     font-weight: 500;
     font-size: 16px;
@@ -1198,8 +1198,8 @@
   }
   
   #demo-wrapper #your-details .donor-options label:hover {
-    background: #004282;
-    border: 1px solid #004282;
+    background: #00b8a6a4;
+    border: 1px solid #00b8a6a4;
     color: var(--fill-color);
   }
   
@@ -1321,7 +1321,7 @@
     border: var(--base-color);
     outline: 0;
     height: auto !important;
-    color: var(--text-color) !important;
+    color: var(--base-color) !important;
   }
   
   #demo-wrapper #your-details input:focus {
@@ -1344,7 +1344,7 @@
   input:-webkit-autofill:hover, 
   input:-webkit-autofill:focus {
     border: 1px solid var(--fill-color);
-    -webkit-text-fill-color: var(--text-color);
+    -webkit-text-fill-color: var(--base-color);
     -webkit-box-shadow: 0 0 0px 1000px #cfd6fa inset;
     transition: background-color 5000s ease-in-out 0s;
   }
@@ -1388,7 +1388,7 @@
   }
   
   #demo-wrapper #your-details button:hover {
-    background: var(--text-color);
+    background: #00b8a6a4;
   }
   
   /*  Test payment details block

@@ -54,7 +54,7 @@ document.addEventListener('alpine:init', () => {
         init() {
             this.total = this.amount; // define total
 
-            document.getElementById('stage1img').src = "images/progress current.svg"
+            document.getElementById('stage1img').src = "images/new progress current.svg"
 
             this.$watch('frequency', (frequency) => {
                 // includes the amount in that frequency
@@ -154,13 +154,13 @@ document.addEventListener('alpine:init', () => {
 
             //Change progress bar images
             if (nextStage == 1) {
-                document.getElementById('stage1img').src = "images/progress current.svg";
+                document.getElementById('stage1img').src = "images/new progress current.svg";
                 document.getElementById('stage2img').src = "images/progress future.svg";
                 document.getElementById('stage3img').src = "images/progress future.svg";
             }
             if (nextStage == 2) {
-                document.getElementById('stage1img').src = "images/progress complete.svg";
-                document.getElementById('stage2img').src = "images/progress current.svg";
+                document.getElementById('stage1img').src = "images/new progress current.svg";
+                document.getElementById('stage2img').src = "images/new progress current.svg";
                 document.getElementById('stage3img').src = "images/progress future.svg";
             }
 
@@ -208,9 +208,9 @@ document.addEventListener('alpine:init', () => {
                 }
                 else {
                     if (nextStage == 3) {
-                        document.getElementById('stage1img').src = "images/progress complete.svg";
-                        document.getElementById('stage2img').src = "images/progress complete.svg";
-                        document.getElementById('stage3img').src = "images/progress current.svg";
+                        document.getElementById('stage1img').src = "images/new progress current.svg";
+                        document.getElementById('stage2img').src = "images/new progress current.svg";
+                        document.getElementById('stage3img').src = "images/new progress current.svg";
                     }
                 }
             }
