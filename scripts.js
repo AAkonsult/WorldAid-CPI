@@ -12,6 +12,15 @@ function validatePhone(string) {
     return false;
 }
 
+function validateAmount(curr_amount, input_amount) {
+    if (input_amount > curr_amount){
+        return true;
+    }
+    return false;
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('form', () => ({
@@ -52,6 +61,11 @@ document.addEventListener('alpine:init', () => {
         _stage: 1,
 
         init() {
+
+            //Set current donation amount
+            let current_amount_str = "Your Current Donation: $" + urlParams.get('amount');
+            document.getElementById("current_amount").innerHTML = current_amount_str;
+            this.amount = urlParams.get('amount')
             this.total = this.amount; // define total
 
             document.getElementById('stage1img').src = "images/new progress current.svg"
@@ -168,7 +182,21 @@ document.addEventListener('alpine:init', () => {
             // reset errors
             this._errors = {};
 
-            // validate
+
+            //validate stage 1
+            /*if (this._stage == 1 && nextStage > this._stage){
+               if (!this.amount || !validateAmount(urlParams.get('amount'))) {
+                    this._errors.amount = true;
+                }
+
+                if (Object.keys(this._errors).length) {
+                    return;
+                }
+            }*/
+
+
+
+            // validate stage 2
             if (this._stage == 2 && nextStage > this._stage) {
                 // validate
                 if (!this.name_first) {
