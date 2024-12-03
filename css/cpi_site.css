@@ -128,9 +128,14 @@
     margin-bottom: 20px;
   }
   
-  a,
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+  }
   a:visited {
-    color: #575757;
+    color: var(--text-color);
   }
   
   a:hover {
@@ -140,11 +145,11 @@
   .inner {
     width: 100%;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 200px;
     position: relative;
   }
   
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1400px) {
     .inner {
       padding: 0 20px;
     }
@@ -487,7 +492,7 @@
     text-align: left;
   }
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 1600px) {
     #features h2 {
       text-align: center;
     }
@@ -508,7 +513,7 @@
     }
   }
   
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 1600px) {
     #features #columns {
       grid-template-columns: 1fr;
     }
@@ -549,6 +554,7 @@
     display: flex;
     flex-direction: column;
     gap: 11px;
+    padding: 0 200px;
   }
 
   #features .statistics .impact-description {
@@ -565,13 +571,13 @@
     text-align: left;
   }
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 1600px) {
     #features .statistics .impact-description p {
       text-align: center;
     }
   }
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 1600px) {
     #features .statistics .impact-description {
       margin: 0 auto;
     }
@@ -697,7 +703,6 @@
   }
 
   footer #cta .footer-about {
-    padding-left: 50px;
     padding-right: 50px;
     display: flex;
     flex-direction: column;
@@ -732,7 +737,6 @@
     grid-template-rows: 1fr;
     gap: 30px 100px;
     justify-content: center;
-    padding-right: 50px;
     min-width: 500px;
   }
 
@@ -740,7 +744,9 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    font-size: 12px;
+    font-size: 16px;
+    color: white;
+    gap: 12px;
     
   }
 
@@ -748,6 +754,7 @@
     footer #cta .footer-links{
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+      font-size: 12px;
     }
   }
   
