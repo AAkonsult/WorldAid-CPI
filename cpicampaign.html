@@ -63,7 +63,7 @@
         <div id="header">
             <div class="inner flex-between">
                 <div id="logo">
-                    <a href="index.html">
+                    <a href="cpicampaign.html">
                         <img src="images/logo.png" alt="WordAid" width="261" height="60">
                     </a>
                 </div>
@@ -193,6 +193,8 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        <p>&nbsp</p>
+                                        <h4 id="current_amount">Your Current Donation:</h4>
                                     </div>
 
                                     <div class="amount">
@@ -356,6 +358,7 @@
                                                                     name="donation-choice" autocomplete="off"
                                                                     x-ref="choice" x-model="choice"
                                                                     x-on:focus="amount = 'other'"></span>
+                                                            <span x-show="_errors.amount" class="error">Please provide an amount larger than your current one</span>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -1027,11 +1030,11 @@
                                 <a href="#" class="button">Donate</a>
                             </div>
                             <div class="footer-btn-right">
-                                <a href="#"><img src="images/facebook.png"></a>
-                                <a href="#"><img src="images/instagram.png"></a>
-                                <a href="#"><img src="images/twitter.png"></a>
-                                <a href="#"><img src="images/youtube.png"></a>
-                                <a href="#"><img src="images/linkedin.png"></a>
+                                <a href="https://www.facebook.com/"><img src="images/facebook.png"></a>
+                                <a href="https://www.instagram.com/"><img src="images/instagram.png"></a>
+                                <a href="https://www.twitter.com/"><img src="images/twitter.png"></a>
+                                <a href="https://www.youtube.com/"><img src="images/youtube.png"></a>
+                                <a href="https://www.linkedin.com/"><img src="images/linkedin.png"></a>
                             </div>
     
                         </div>
