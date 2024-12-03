@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Aid</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#118acb">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <script defer src="https://unpkg.com/alpinejs@3.4.1/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="css/cpi_site.css" />
+    <script src="scripts.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Category', 'Percentage'],
+          ['Access to Education',    25],
+          ['Nutritious Meals',      23],
+          ['Clean Water',  21],
+          ['Safe Shelter', 21],
+          ['Health and Care',    10]
+        ]);
+
+        var options = {
+            legend: 'none',
+            backgroundColor: 'none',
+            height: 264,
+            width: 264,
+            chartArea: {left:0,top:0,width:'100%',height:'100%'},
+            enableInteractivity: false,
+            colors: ['#537FF1', '#8979FF', '#FF928A', '#3CC3DF', '#FFAE4C'],
+            pieSliceTextStyle: {fontName: 'Rubik', fontSize: 20}
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <div class="inner flex-between">
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="WordAid" width="261" height="60">
+                    </a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="hamburger">
+                            <path
+                                d="M12,24A12,12,0,1,1,24,12,12.013,12.013,0,0,1,12,24ZM12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Z">
+                            </path>
+                            <path
+                                d="M17 9H7A1 1 0 0 1 7 7H17a1 1 0 0 1 0 2zM17 13H7a1 1 0 0 1 0-2H17a1 1 0 0 1 0 2zM17 17H7a1 1 0 0 1 0-2H17a1 1 0 0 1 0 2z">
+                            </path>
+                        </svg>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Making a difference</a>
+                        </li>
+                        <li>
+                            <a href="#">Events</a>
+                        </li>
+                        <li>
+                            <a href="#">Membership</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button class="dropbtn">More</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Virtual Seat</a>
+                                    <a href="#">CPI Campaign</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#donate" class="button">Donate</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="main-body" class="inner flex-between">
+        <div id="content">
+            <h1>Hi [Donor Name],</h1>
+            <h1>Keep Making a Difference</h1>
+            <h1>-Adjust Your Gift Today!</h1>
+            <p>Over the twelve months to the September 2024 quarter, the CPI rose 2.8%. A small change to your regular gift 
+                helps us stay ahead of rising costs and continue our vital work.</p>
+            <p>&nbsp;</p>
+                <a href="#features" class="button">How Increased Gift Will Impact</a>
+            
+        </div>
+        <div id="donate">
+            <div class="form">
+                <div id="demo-form-top"></div>
+                <div id="demo-wrapper" x-data="form">
+
+
+                    <!-- Progress bar block-->
+                    <div class="stepper-wrapper">
+                        <div class="stepper-item" :class="{'active': _stage == 1, 'completed': _stage > 1}">
+                            <button class="step-counter" @click.prevent="goTo(1)">
+                                <img src="" , id="stage1img">
+                            </button>
+                            <div class="step-name" :class="{'active': _stage >= 1}">Amount</div>
+                        </div>
+                        <div class="stepper-item" :class="{'active': _stage == 2, 'completed': _stage > 2}">
+                            <button class="step-counter" @click.prevent="goTo(2)">
+                                <img src="images/progress future.svg" , id="stage2img">
+                            </button>
+                            <div class="step-name active" :class="{'active': _stage >=2}">Contact</div>
+                        </div>
+                        <div class="stepper-item" :class="{'active': _stage == 3, 'completed': _stage > 3}">
+                            <button class="step-counter" @click.prevent="goTo(3)">
+                                <img src="images/progress future.svg" , id="stage3img">
+                            </button>
+                            <div class="step-name" :class="{'active': _stage >=3}">Payment</div>
+                        </div>
+                    </div>
+
+                    <div x-ref="wrapper" class="block-wrapper">
+
+                        <form x-ref="donationIntroForm"
+                            action="https://aakonsult-e-dev-ed.develop.my.salesforce-sites.com/AAkPay__CheckoutM?"
+                            method="GET" target="donationform" @submit.prevent="submitToForm">
+
+                            <!-- Amount Block -->
+                            <div id="amount" x-ref="stage-1" x-show="_stage == 1" x-transition:enter="enter"
+                                x-transition:enter-start="enter-start" x-transition:enter-end="enter-end"
+                                x-transition:leave="leave" x-transition:leave-start="leave-start"
+                                x-transition:leave-end="leave-end">
+
+                                <!-- <div id="form-intro">
+                                <h2>
+                                    Change Lives Through Your Generosity.
+                                </h2>
+                                <h3>
+                                    Make a Difference Today: Support Our World Aid Mission.
+                                </h3>
+                            </div> -->
+
+                                <div class="form-content">
+                                    <div class="frequency">
+                                        <h4>I’d like to make this donation</h4>
+                                        <div class="frequency-options">
+                                            <div class="choice">
+                                                <input type="radio" name="PayFrequency" id="frequency1" value="One-off"
+                                                    x-model="frequency">
+                                                <label for="frequency1">
+                                                    <span>Once only</span>
+                                                </label>
+                                            </div>
+                                            <div class="choice">
+                                                <input type="radio" name="PayFrequency" id="frequency2" value="Monthly"
+                                                    x-model="frequency">
+                                                <label for="frequency2">
+                                                    <span>Monthly 💖</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="amount">
+                                        <h4>Please select a donation amount</h4>
+                                        <!-- <p x-text="amount"></p>
+                                    <p x-text="choice"></p>
+                                    <p x-text="frequency"></p> -->
+                                        <div class="amounts">
+                                            <template x-if="frequency === 'Monthly'">
+                                                <div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '15'}" @click="amount = '15'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-15.jpg"
+                                                                alt="$15 Monthly Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation1"
+                                                                value="15" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">15</div>
+                                                            <div class="amount-description">- Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '55'}" @click="amount = '55'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-55.jpg"
+                                                                alt="$55 Monthly Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation2"
+                                                                value="55" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">55</div>
+                                                            <div class="amount-description">- Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '75'}" @click="amount = '75'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-75.jpg"
+                                                                alt="$75 Monthly Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation3"
+                                                                value="75" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">75</div>
+                                                            <div class="amount-description">- Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '100'}" @click="amount = '100'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-100.jpg"
+                                                                alt="$100 Monthly Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation4"
+                                                                value="100" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">100</div>
+                                                            <div class="amount-description">- Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="choice other">
+                                                        <input type="radio" name="donation-amount" id="donation5"
+                                                            value="other" x-model="amount">
+                                                        <label for="donation5">
+                                                            <span>$<input type="number" placeholder="Other amount"
+                                                                    value="" size="20" placeholder=""
+                                                                    name="donation-choice" autocomplete="off"
+                                                                    x-ref="choice" x-model="choice"
+                                                                    x-on:focus="amount = 'other'"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </template>
+
+                                            <template x-if="frequency === 'One-off'">
+                                                <div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '15'}" @click="amount = '15'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-15.jpg"
+                                                                alt="$15 One-off Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation6"
+                                                                value="15" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">15</div>
+                                                            <div class="amount-description">- Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '55'}" @click="amount = '55'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-55.jpg"
+                                                                alt="$55 One-off Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation7"
+                                                                value="55" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">55</div>
+                                                            <div class="amount-description">- Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '75'}" @click="amount = '75'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-75.jpg"
+                                                                alt="$75 One-off Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation8"
+                                                                value="75" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">75</div>
+                                                            <div class="amount-description">- Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '100'}" @click="amount = '100'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-100.jpg"
+                                                                alt="$100 One-off Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation9"
+                                                                value="100" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">100</div>
+                                                            <div class="amount-description">- Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit, sed do eiusmod
+                                                                tempor.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="choice other">
+                                                        <input type="radio" name="donation-amount" id="donation5"
+                                                            value="other" x-model="amount">
+                                                        <label for="donation5">
+                                                            <span>$<input type="number" placeholder="Other amount"
+                                                                    value="" size="20" placeholder=""
+                                                                    name="donation-choice" autocomplete="off"
+                                                                    x-ref="choice" x-model="choice"
+                                                                    x-on:focus="amount = 'other'"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="descriptions">
+                                    <div class="description"
+                                         x-show="frequency === 'Monthly' && amount == 100"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">$100</span>
+                                            <span class="description">provide essential school supplies like textbooks, notebooks, and writing materials to several children.</span>
+                                        </div>
+                                    </div>
+                                    <div class="description"
+                                         x-show="frequency === 'Monthly' && amount == 75"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">$75</span>
+                                            <span class="description">support educational programs, tutoring sessions, or workshops.</span>
+                                        </div>
+                                    </div>
+                                    <div class="description"
+                                         x-show="frequency === 'Monthly' && amount == 50"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">$50</span>
+                                            <span class="description">provide nutritious meals for a week to underprivileged students.</span>
+                                        </div>
+                                    </div>
+                                    <div class="description"
+                                         x-show="frequency === 'Monthly' && amount == 20"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">$15</span>
+                                            <span class="description">Provide transportation costs for children who live far from schools.</span>
+                                        </div>
+                                    </div>
+                                    <div class="description"
+                                         x-show="frequency === 'Monthly' && amount == 'other'"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">Your donation</span>
+                                            <span class="description">will make a difference today.</span>
+                                        </div>
+                                    </div>
+                                    <div class="description"
+                                         x-show="frequency === 'One-off' && amount == 100"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">$100</span>
+                                            <span class="description">offers emergency relief to a disaster-stricken community, providing food, shelter, and medical aid.</span>
+                                        </div>
+                                    </div>
+                                    <div class="description"
+                                         x-show="frequency === 'One-off' && amount == 75"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">$75</span>
+                                            <span class="description">supports a child's education, covering school fees, uniforms, and supplies for a semester.</span>
+                                        </div>
+                                    </div>
+                                    <div class="description"
+                                         x-show="frequency === 'One-off' && amount == 50"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">$50</span>
+                                            <span class="description">supplies clean drinking water to a family for a year, preventing waterborne illnesses.</span>
+                                        </div>
+                                    </div>
+                                    <div class="description"
+                                         x-show="frequency === 'One-off' && amount == 20"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">$20</span>
+                                            <span class="description">provides vital vaccines for several children, protecting them from deadly diseases in impoverished areas.</span>
+                                        </div>
+                                    </div>
+                                    <div class="description"
+                                         x-show="frequency === 'One-off' && amount == 'other'"
+                                         x-transition:enter="enter"
+                                         x-transition:enter-start="enter-start"
+                                         x-transition:enter-end="enter-end"
+                                         x-transition:leave="leave"
+                                         x-transition:leave-start="leave-start"
+                                         x-transition:leave-end="leave-end">
+                                        <div class="text">
+                                            <span class="value">Your donation</span>
+                                            <span class="description">will make a difference today.</span>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                    <div class="button full field">
+                                        <input type="hidden" name="payMSetting" value="a0ZQE000000wQBr2AM">
+                                        <input type="hidden" name="payMType" value="a0bQE000000WExWYAW">
+                                        <input type="hidden" name="hidePaymentOverview" value="true">
+                                        <input type="hidden" name="hidePaymentNote" value="true">
+                                        <input type="hidden" name="hideprogressbar" value="true">
+                                        <input type="hidden" name="PaymentBy" x-model="payment_by">
+                                        <input type="hidden" name="hideTransDetails" value="true">
+                                        <input type="hidden" name="hideContactDetails" value="true">
+                                        <input type="hidden" name="donationAmount" x-model="total" value="">
+                                        <button @click.prevent="progress()">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Your Details Block -->
+                            <div x-ref="stage-2" x-show="_stage == 2" x-transition:enter="enter"
+                                x-transition:enter-start="enter-start" x-transition:enter-end="enter-end"
+                                x-transition:leave="leave" x-transition:leave-start="leave-start"
+                                x-transition:leave-end="leave-end">
+                                <div id="your-details" class="wrapper">
+                                    <div class="fields">
+                                        <div class="donor">
+                                            <h4>I'd like to make my donation as</h4>
+                                            <div class="donor-options">
+                                                <div class="choice">
+                                                    <input type="radio" name="DonationBy" id="DonationBy1"
+                                                        value="Individual" x-model="payment_by">
+                                                    <label for="DonationBy1">
+                                                        <span>Individual</span>
+                                                    </label>
+                                                </div>
+                                                <div class="choice">
+                                                    <input type="radio" name="DonationBy" id="DonationBy2"
+                                                        value="Organisation" x-model="payment_by">
+                                                    <label for="DonationBy2">
+                                                        <span>Company</span>
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fields">
+                                        <div x-show="payment_by === 'Organisation' || payment_by === 'In Memory Of'"
+                                            class="field full">
+                                            <div x-show="payment_by === 'Organisation'">
+                                                <label>Company<span> (to make your donation in a company name enter it
+                                                        here)</span></label>
+                                            </div>
+
+                                            <!--  Block that is not used -->
+                                            <div x-show="payment_by === 'In Memory Of'">
+                                                <label>In memory of<span> (to make your donation in memory of someone
+                                                        enter their name here)</span></label>
+                                            </div>
+
+
+                                            <input type="text" name="PaymentByName" id="PaymentByName"
+                                                x-model="company" />
+                                        </div>
+                                        <div class="field half required">
+                                            <label>First Name</label>
+                                            <input type="text" x-model="name_first"
+                                                :class="{'has-error' : _errors.name_first }" name="FirstName"
+                                                id="FirstName" />
+                                            <span x-show="_errors.name_first" class="error">Please provide your first
+                                                name.</span>
+                                        </div>
+                                        <div class="field half required">
+                                            <label>Last Name</label>
+                                            <input type="text" x-model="name_last"
+                                                :class="{'has-error' : _errors.name_last }" name="LastName"
+                                                id="LastName" />
+                                            <span x-show="_errors.name_last" class="error">Please provide your last
+                                                name.</span>
+                                        </div>
+                                        <div class="field full required">
+                                            <label>Email Address</label>
+                                            <input type="email" x-model="email" :class="{'has-error' : _errors.email }"
+                                                name="Email" id="Email" />
+                                            <span x-show="_errors.email" class="error">Please provide a valid email
+                                                address.</span>
+                                        </div>
+                                        <div class="field full required">
+                                            <label>Phone Number</label>
+                                            <input type="text" x-model="phone" :class="{'has-error' : _errors.phone }"
+                                                name="Phone" id="Phone" />
+                                            <span x-show="_errors.phone" class="error">Please provide a valid phone
+                                                number.</span>
+
+                                        </div>
+                                        <!-- Unecessary for this form
+                                        <div class="field full required">
+                                            <label>Address</label>
+                                            <input type="text" :class="{'has-error' : _errors.mailing_street }"
+                                                name="MailingStreet" id="MailingStreet" x-model="mailing_street" />
+                                            <span x-show="_errors.mailing_street" class="error">Please provide your
+                                                address.</span>
+                                        </div>
+                                        <div class="field half required">
+                                            <label>Suburb</label>
+                                            <input type="text" :class="{'has-error' : _errors.mailing_city }"
+                                                name="MailingCity" id="MailingCity" x-model="mailing_city" />
+                                            <span x-show="_errors.mailing_city" class="error">Please provide your
+                                                suburb.</span>
+                                        </div>
+                                        <div class="field half required">
+                                            <label>State</label>
+                                            <input type="text" :class="{'has-error' : _errors.mailing_state }"
+                                                name="MailingState" id="MailingState" x-model="mailing_state" />
+                                            <span x-show="_errors.mailing_state" class="error">Please provide your
+                                                state.</span>
+                                        </div>
+                                        <div class="field half required">
+                                            <label>Postcode</label>
+                                            <input type="number" :class="{'has-error' : _errors.mailing_postal_code }"
+                                                name="MailingPostalCode" id="MailingPostalCode"
+                                                x-model="mailing_postal_code" />
+                                            <span x-show="_errors.mailing_postal_code" class="error">Please provide your
+                                                postcode.</span>
+                                        </div>
+                                        <div class="field half required">
+                                            <label>Country</label>
+                                            <select name="MailingCountry" id="MailingCountry"
+                                                :class="{'has-error' : _errors.mailing_country }"
+                                                x-model="mailing_country">
+                                                <option value="">Select country...</option>
+                                                <option value="AF">Afghanistan</option>
+                                                <option value="AL">Albania</option>
+                                                <option value="DZ">Algeria</option>
+                                                <option value="AS">American Samoa</option>
+                                                <option value="AD">Andorra</option>
+                                                <option value="AG">Angola</option>
+                                                <option value="AI">Anguilla</option>
+                                                <option value="AG">Antigua &amp; Barbuda</option>
+                                                <option value="AR">Argentina</option>
+                                                <option value="AA">Armenia</option>
+                                                <option value="AW">Aruba</option>
+                                                <option value="AU" selected>Australia</option>
+                                                <option value="AT">Austria</option>
+                                                <option value="AZ">Azerbaijan</option>
+                                                <option value="BS">Bahamas</option>
+                                                <option value="BH">Bahrain</option>
+                                                <option value="BD">Bangladesh</option>
+                                                <option value="BB">Barbados</option>
+                                                <option value="BY">Belarus</option>
+                                                <option value="BE">Belgium</option>
+                                                <option value="BZ">Belize</option>
+                                                <option value="BJ">Benin</option>
+                                                <option value="BM">Bermuda</option>
+                                                <option value="BT">Bhutan</option>
+                                                <option value="BO">Bolivia</option>
+                                                <option value="BL">Bonaire</option>
+                                                <option value="BA">Bosnia &amp; Herzegovina</option>
+                                                <option value="BW">Botswana</option>
+                                                <option value="BR">Brazil</option>
+                                                <option value="BC">British Indian Ocean Ter</option>
+                                                <option value="BN">Brunei</option>
+                                                <option value="BG">Bulgaria</option>
+                                                <option value="BF">Burkina Faso</option>
+                                                <option value="BI">Burundi</option>
+                                                <option value="KH">Cambodia</option>
+                                                <option value="CM">Cameroon</option>
+                                                <option value="CA">Canada</option>
+                                                <option value="IC">Canary Islands</option>
+                                                <option value="CV">Cape Verde</option>
+                                                <option value="KY">Cayman Islands</option>
+                                                <option value="CF">Central African Republic</option>
+                                                <option value="TD">Chad</option>
+                                                <option value="CD">Channel Islands</option>
+                                                <option value="CL">Chile</option>
+                                                <option value="CN">China</option>
+                                                <option value="CI">Christmas Island</option>
+                                                <option value="CS">Cocos Island</option>
+                                                <option value="CO">Colombia</option>
+                                                <option value="CC">Comoros</option>
+                                                <option value="CG">Congo</option>
+                                                <option value="CK">Cook Islands</option>
+                                                <option value="CR">Costa Rica</option>
+                                                <option value="CT">Cote D'Ivoire</option>
+                                                <option value="HR">Croatia</option>
+                                                <option value="CU">Cuba</option>
+                                                <option value="CB">Curacao</option>
+                                                <option value="CY">Cyprus</option>
+                                                <option value="CZ">Czech Republic</option>
+                                                <option value="DK">Denmark</option>
+                                                <option value="DJ">Djibouti</option>
+                                                <option value="DM">Dominica</option>
+                                                <option value="DO">Dominican Republic</option>
+                                                <option value="TM">East Timor</option>
+                                                <option value="EC">Ecuador</option>
+                                                <option value="EG">Egypt</option>
+                                                <option value="SV">El Salvador</option>
+                                                <option value="GQ">Equatorial Guinea</option>
+                                                <option value="ER">Eritrea</option>
+                                                <option value="EE">Estonia</option>
+                                                <option value="ET">Ethiopia</option>
+                                                <option value="FA">Falkland Islands</option>
+                                                <option value="FO">Faroe Islands</option>
+                                                <option value="FJ">Fiji</option>
+                                                <option value="FI">Finland</option>
+                                                <option value="FR">France</option>
+                                                <option value="GF">French Guiana</option>
+                                                <option value="PF">French Polynesia</option>
+                                                <option value="FS">French Southern Ter</option>
+                                                <option value="GA">Gabon</option>
+                                                <option value="GM">Gambia</option>
+                                                <option value="GE">Georgia</option>
+                                                <option value="DE">Germany</option>
+                                                <option value="GH">Ghana</option>
+                                                <option value="GI">Gibraltar</option>
+                                                <option value="GB">Great Britain</option>
+                                                <option value="GR">Greece</option>
+                                                <option value="GL">Greenland</option>
+                                                <option value="GD">Grenada</option>
+                                                <option value="GP">Guadeloupe</option>
+                                                <option value="GU">Guam</option>
+                                                <option value="GT">Guatemala</option>
+                                                <option value="GN">Guinea</option>
+                                                <option value="GY">Guyana</option>
+                                                <option value="HT">Haiti</option>
+                                                <option value="HW">Hawaii</option>
+                                                <option value="HN">Honduras</option>
+                                                <option value="HK">Hong Kong</option>
+                                                <option value="HU">Hungary</option>
+                                                <option value="IS">Iceland</option>
+                                                <option value="IN">India</option>
+                                                <option value="ID">Indonesia</option>
+                                                <option value="IA">Iran</option>
+                                                <option value="IQ">Iraq</option>
+                                                <option value="IR">Ireland</option>
+                                                <option value="IM">Isle of Man</option>
+                                                <option value="IL">Israel</option>
+                                                <option value="IT">Italy</option>
+                                                <option value="JM">Jamaica</option>
+                                                <option value="JP">Japan</option>
+                                                <option value="JO">Jordan</option>
+                                                <option value="KZ">Kazakhstan</option>
+                                                <option value="KE">Kenya</option>
+                                                <option value="KI">Kiribati</option>
+                                                <option value="NK">Korea North</option>
+                                                <option value="KS">Korea South</option>
+                                                <option value="KW">Kuwait</option>
+                                                <option value="KG">Kyrgyzstan</option>
+                                                <option value="LA">Laos</option>
+                                                <option value="LV">Latvia</option>
+                                                <option value="LB">Lebanon</option>
+                                                <option value="LS">Lesotho</option>
+                                                <option value="LR">Liberia</option>
+                                                <option value="LY">Libya</option>
+                                                <option value="LI">Liechtenstein</option>
+                                                <option value="LT">Lithuania</option>
+                                                <option value="LU">Luxembourg</option>
+                                                <option value="MO">Macau</option>
+                                                <option value="MK">Macedonia</option>
+                                                <option value="MG">Madagascar</option>
+                                                <option value="MY">Malaysia</option>
+                                                <option value="MW">Malawi</option>
+                                                <option value="MV">Maldives</option>
+                                                <option value="ML">Mali</option>
+                                                <option value="MT">Malta</option>
+                                                <option value="MH">Marshall Islands</option>
+                                                <option value="MQ">Martinique</option>
+                                                <option value="MR">Mauritania</option>
+                                                <option value="MU">Mauritius</option>
+                                                <option value="ME">Mayotte</option>
+                                                <option value="MX">Mexico</option>
+                                                <option value="MI">Midway Islands</option>
+                                                <option value="MD">Moldova</option>
+                                                <option value="MC">Monaco</option>
+                                                <option value="MN">Mongolia</option>
+                                                <option value="MS">Montserrat</option>
+                                                <option value="MA">Morocco</option>
+                                                <option value="MZ">Mozambique</option>
+                                                <option value="MM">Myanmar</option>
+                                                <option value="NA">Nambia</option>
+                                                <option value="NU">Nauru</option>
+                                                <option value="NP">Nepal</option>
+                                                <option value="AN">Netherland Antilles</option>
+                                                <option value="NL">Netherlands (Holland, Europe)</option>
+                                                <option value="NV">Nevis</option>
+                                                <option value="NC">New Caledonia</option>
+                                                <option value="NZ">New Zealand</option>
+                                                <option value="NI">Nicaragua</option>
+                                                <option value="NE">Niger</option>
+                                                <option value="NG">Nigeria</option>
+                                                <option value="NW">Niue</option>
+                                                <option value="NF">Norfolk Island</option>
+                                                <option value="NO">Norway</option>
+                                                <option value="OM">Oman</option>
+                                                <option value="PK">Pakistan</option>
+                                                <option value="PW">Palau Island</option>
+                                                <option value="PS">Palestine</option>
+                                                <option value="PA">Panama</option>
+                                                <option value="PG">Papua New Guinea</option>
+                                                <option value="PY">Paraguay</option>
+                                                <option value="PE">Peru</option>
+                                                <option value="PH">Philippines</option>
+                                                <option value="PO">Pitcairn Island</option>
+                                                <option value="PL">Poland</option>
+                                                <option value="PT">Portugal</option>
+                                                <option value="PR">Puerto Rico</option>
+                                                <option value="QA">Qatar</option>
+                                                <option value="ME">Republic of Montenegro</option>
+                                                <option value="RS">Republic of Serbia</option>
+                                                <option value="RE">Reunion</option>
+                                                <option value="RO">Romania</option>
+                                                <option value="RU">Russia</option>
+                                                <option value="RW">Rwanda</option>
+                                                <option value="NT">St Barthelemy</option>
+                                                <option value="EU">St Eustatius</option>
+                                                <option value="HE">St Helena</option>
+                                                <option value="KN">St Kitts-Nevis</option>
+                                                <option value="LC">St Lucia</option>
+                                                <option value="MB">St Maarten</option>
+                                                <option value="PM">St Pierre &amp; Miquelon</option>
+                                                <option value="VC">St Vincent &amp; Grenadines</option>
+                                                <option value="SP">Saipan</option>
+                                                <option value="SO">Samoa</option>
+                                                <option value="AS">Samoa American</option>
+                                                <option value="SM">San Marino</option>
+                                                <option value="ST">Sao Tome &amp; Principe</option>
+                                                <option value="SA">Saudi Arabia</option>
+                                                <option value="SN">Senegal</option>
+                                                <option value="RS">Serbia</option>
+                                                <option value="SC">Seychelles</option>
+                                                <option value="SL">Sierra Leone</option>
+                                                <option value="SG">Singapore</option>
+                                                <option value="SK">Slovakia</option>
+                                                <option value="SI">Slovenia</option>
+                                                <option value="SB">Solomon Islands</option>
+                                                <option value="OI">Somalia</option>
+                                                <option value="ZA">South Africa</option>
+                                                <option value="ES">Spain</option>
+                                                <option value="LK">Sri Lanka</option>
+                                                <option value="SD">Sudan</option>
+                                                <option value="SR">Suriname</option>
+                                                <option value="SZ">Swaziland</option>
+                                                <option value="SE">Sweden</option>
+                                                <option value="CH">Switzerland</option>
+                                                <option value="SY">Syria</option>
+                                                <option value="TA">Tahiti</option>
+                                                <option value="TW">Taiwan</option>
+                                                <option value="TJ">Tajikistan</option>
+                                                <option value="TZ">Tanzania</option>
+                                                <option value="TH">Thailand</option>
+                                                <option value="TG">Togo</option>
+                                                <option value="TK">Tokelau</option>
+                                                <option value="TO">Tonga</option>
+                                                <option value="TT">Trinidad &amp; Tobago</option>
+                                                <option value="TN">Tunisia</option>
+                                                <option value="TR">Turkey</option>
+                                                <option value="TU">Turkmenistan</option>
+                                                <option value="TC">Turks &amp; Caicos Is</option>
+                                                <option value="TV">Tuvalu</option>
+                                                <option value="UG">Uganda</option>
+                                                <option value="UA">Ukraine</option>
+                                                <option value="AE">United Arab Emirates</option>
+                                                <option value="GB">United Kingdom</option>
+                                                <option value="US">United States of America</option>
+                                                <option value="UY">Uruguay</option>
+                                                <option value="UZ">Uzbekistan</option>
+                                                <option value="VU">Vanuatu</option>
+                                                <option value="VS">Vatican City State</option>
+                                                <option value="VE">Venezuela</option>
+                                                <option value="VN">Vietnam</option>
+                                                <option value="VB">Virgin Islands (Brit)</option>
+                                                <option value="VA">Virgin Islands (USA)</option>
+                                                <option value="WK">Wake Island</option>
+                                                <option value="WF">Wallis &amp; Futana Is</option>
+                                                <option value="YE">Yemen</option>
+                                                <option value="ZR">Zaire</option>
+                                                <option value="ZM">Zambia</option>
+                                                <option value="ZW">Zimbabwe</option>
+                                            </select>
+                                            <span x-show="_errors.mailing_country" class="error">Please select your
+                                                country.</span>
+                                        </div> -->
+                                        <div class="button full field">
+                                            <button type="submit" @click.prevent="progress()">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+
+                        <!-- Payment Block -->
+                        <div x-ref="stage-3" x-show="_stage == 3" x-transition:enter="enter"
+                            x-transition:enter-start="enter-start" x-transition:enter-end="enter-end"
+                            x-transition:leave="leave" x-transition:leave-start="leave-start"
+                            x-transition:leave-end="leave-end">
+                            <div id="sf-form-wrapper">
+                                <div id="iframe-loading-wrapper" x-show="!_loaded">
+                                    <div id="iframe-loading">
+                                        <div class="loadingio-spinner-spin-e8cgqud3766">
+                                            <div class="ldio-dfenqtjt94v">
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <iframe id="donationform" name="donationform" width="700" height="1000" frameborder="0"
+                                    x-ref="donation-form" x-on:load="formLoaded"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="features" class="inner">
+        <div id="columns">
+            <div class="column">
+                <div class="statistics">
+                    <h2>Impact</h2>
+                    <div class="impact-description">
+                        <p>
+                            Your support has already made a tremendous difference. Your 
+                            adjusted gift helps us sustain vital programs and reach more 
+                            children in need, even as costs rise. 
+                        </p>
+                        <p>&nbsp;</p>
+                    </div>
+                    
+                    
+                    
+                    <div class ="piechart" id="piechart" style="width: 485px; height: 273px; margin: 0 auto; display: flex; justify-content: center"></div>
+                    
+                    
+                </div>
+            </div>
+            <div class="column">
+                <div class="statistics">
+                    <div id="block1" class="stat-block">
+                       <div class="dot type1"></div>
+                       <div class="percentage">25%</div>
+                       <div class="description">
+                            <h3><b>Access to education</b></h3>
+                            <p>
+                                Provide school supplies and opportunities for children to learn.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="block2" class="stat-block">
+                        <div class="dot type2"></div>
+                       <div class="percentage">23%</div>
+                       <div class="description">
+                            <h3><b>Nutritious Meals</b></h3>
+                            <p>
+                                Help children grow strong with healthy food each day.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="block3" class="stat-block">
+                        <div class="dot type3"></div>
+                       <div class="percentage">21%</div>
+                       <div class="description">
+                            <h3><b>Clean Water</b></h3>
+                            <p>
+                                Ensure safe drinking water for better health and hygiene.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="block4" class="stat-block">
+                        <div class="dot type4"></div>
+                       <div class="percentage">21%</div>
+                       <div class="description">
+                            <h3><b>Safe Shelter</b></h3>
+                            <p>
+                                Protect children with safe and secure living conditions.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="block5" class="stat-block">
+                        <div class="dot type5"></div>
+                       <div class="percentage">10%</div>
+                       <div class="description">
+                            <h3><b>Health and Care</b></h3>
+                            <p>
+                                Deliver medical aid and support to children in need.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <footer>
+        <div id="footer">
+            
+            <div id="cta">
+                <div class="inner flex-between">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="images/logo.png" width="200">
+                        </div>
+                        <div class="about-desc">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                        <div class="footer-buttons">
+                            <div class="footer-btn-left">
+                                <a href="#" class="button">Donate</a>
+                            </div>
+                            <div class="footer-btn-right">
+                                <a href="#"><img src="images/facebook.png"></a>
+                                <a href="#"><img src="images/instagram.png"></a>
+                                <a href="#"><img src="images/twitter.png"></a>
+                                <a href="#"><img src="images/youtube.png"></a>
+                                <a href="#"><img src="images/linkedin.png"></a>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="footer-links">
+                        <div class="link-column">
+                            <h4><strong>Research</strong></h4>
+                            <a href="#">Our Projects</a>
+                            <a href="#">Funding Process</a>
+                        </div>
+                        <div class="link-column">
+                            <h4><strong>Donate</strong></h4>
+                            <a href="#">Regular giving</a>
+                            <a href="#">Gifts in memory</a>
+                            <a href="#">Membership</a>
+                        </div>
+                        <div class="link-column">
+                            <h4><strong>About</strong></h4>
+                            <a href="#">Case studies</a>
+                            <a href="#">Our stories</a>
+                        </div>
+                        <div class="link-column">
+                            <h4><strong>Contact</strong></h4>
+                            <a href="#">Call us</a>
+                            <a href="#">Email us</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="footer-bottom">
+                <div class="inner flex-between">
+                    <hr>
+                </div>
+                <div class="inner flex-between"></div>
+                <div class="inner flex-between">
+                    <div class="company-name">
+                        <h4>© Aakonsult Pty Ltd. ABN 00 000 000 000</h4>
+                    </div>
+                    <div id="footer-menu">
+                        <div class="wrapper">
+                            <div class="left">
+                                <h4>Powered By</h4>
+                            </div>
+                            <div class="right">
+                                <img src="images/P2U_Logo_Horizontal_HiRes 3.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
