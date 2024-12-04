@@ -279,6 +279,7 @@
                                                                     x-ref="choice" x-model="choice"
                                                                     x-on:focus="amount = 'other'"></span>
                                                         </label>
+                                                        <span x-show="_errors.amount" class="amount-error">Please provide an amount larger than your current one or contact WorldAid if you wish to lower your donation amount.</span>
                                                     </div>
                                                 </div>
                                             </template>
@@ -358,8 +359,8 @@
                                                                     name="donation-choice" autocomplete="off"
                                                                     x-ref="choice" x-model="choice"
                                                                     x-on:focus="amount = 'other'"></span>
-                                                            <span x-show="_errors.amount" class="error">Please provide an amount larger than your current one</span>
                                                         </label>
+                                                        <span x-show="_errors.amount" class="amount-error">Please provide an amount larger than your current one or contact WorldAid if you wish to lower your donation amount.</span>
                                                     </div>
                                                 </div>
                                             </template>

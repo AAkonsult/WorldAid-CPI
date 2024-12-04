@@ -12,14 +12,16 @@ function validatePhone(string) {
     return false;
 }
 
-function validateAmount(curr_amount, input_amount) {
+function validateAmount(curr_amount, input_amount) {    
     if (input_amount > curr_amount){
         return true;
     }
     return false;
+    
 }
 
 const urlParams = new URLSearchParams(window.location.search);
+const old_amount = urlParams.get('amount');
 
 
 document.addEventListener('alpine:init', () => {
@@ -65,7 +67,9 @@ document.addEventListener('alpine:init', () => {
             //Set current donation amount
             let current_amount_str = "Your Current Donation: $" + urlParams.get('amount');
             document.getElementById("current_amount").innerHTML = current_amount_str;
-            this.amount = urlParams.get('amount')
+
+            
+            this.amount = urlParams.get('amount');
             this.total = this.amount; // define total
 
             document.getElementById('stage1img').src = "images/new progress current.svg"
@@ -81,7 +85,7 @@ document.addEventListener('alpine:init', () => {
 
             this.$watch('amount', (amount) => {
                 this.total = amount;
-
+                this._errors.amount = false;
                 if (amount == 'other') {
                     this.$refs['choice'].focus();
                 } else {
@@ -89,6 +93,7 @@ document.addEventListener('alpine:init', () => {
                 }
             });
             this.$watch('choice', (amount) => {
+                this._errors.choice = false;
                 this.total = amount;
             });
             this.$watch('name_first', (value) => {
@@ -172,11 +177,6 @@ document.addEventListener('alpine:init', () => {
                 document.getElementById('stage2img').src = "images/progress future.svg";
                 document.getElementById('stage3img').src = "images/progress future.svg";
             }
-            if (nextStage == 2) {
-                document.getElementById('stage1img').src = "images/new progress current.svg";
-                document.getElementById('stage2img').src = "images/new progress current.svg";
-                document.getElementById('stage3img').src = "images/progress future.svg";
-            }
 
 
             // reset errors
@@ -184,15 +184,21 @@ document.addEventListener('alpine:init', () => {
 
 
             //validate stage 1
-            /*if (this._stage == 1 && nextStage > this._stage){
-               if (!this.amount || !validateAmount(urlParams.get('amount'))) {
+            if (this._stage == 1 && nextStage > this._stage){
+                if (!this.total || !validateAmount(old_amount, this.total)) {
                     this._errors.amount = true;
                 }
+                
 
                 if (Object.keys(this._errors).length) {
                     return;
                 }
-            }*/
+                else if (nextStage == 2) {
+                    document.getElementById('stage1img').src = "images/new progress current.svg";
+                    document.getElementById('stage2img').src = "images/new progress current.svg";
+                    document.getElementById('stage3img').src = "images/progress future.svg";
+                }
+            }
 
 
 
@@ -234,12 +240,10 @@ document.addEventListener('alpine:init', () => {
                 if (Object.keys(this._errors).length) {
                     return;
                 }
-                else {
-                    if (nextStage == 3) {
-                        document.getElementById('stage1img').src = "images/new progress current.svg";
-                        document.getElementById('stage2img').src = "images/new progress current.svg";
-                        document.getElementById('stage3img').src = "images/new progress current.svg";
-                    }
+                else if (nextStage == 3) {
+                    document.getElementById('stage1img').src = "images/new progress current.svg";
+                    document.getElementById('stage2img').src = "images/new progress current.svg";
+                    document.getElementById('stage3img').src = "images/new progress current.svg";
                 }
             }
 
