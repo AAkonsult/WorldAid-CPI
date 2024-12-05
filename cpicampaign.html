@@ -25,36 +25,36 @@
     <script src="scripts.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+        function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Category', 'Percentage'],
-          ['Access to Education',    25],
-          ['Nutritious Meals',      23],
-          ['Clean Water',  21],
-          ['Safe Shelter', 21],
-          ['Health and Care',    10]
-        ]);
+            var data = google.visualization.arrayToDataTable([
+                ['Category', 'Percentage'],
+                ['Access to Education', 25],
+                ['Nutritious Meals', 23],
+                ['Clean Water', 21],
+                ['Safe Shelter', 21],
+                ['Health and Care', 10]
+            ]);
 
-        var options = {
-            legend: 'none',
-            backgroundColor: 'none',
-            height: 264,
-            width: 264,
-            chartArea: {left:0,top:0,width:'100%',height:'100%'},
-            enableInteractivity: false,
-            colors: ['#537FF1', '#8979FF', '#FF928A', '#3CC3DF', '#FFAE4C'],
-            pieSliceTextStyle: {fontName: 'Rubik', fontSize: 20}
+            var options = {
+                legend: 'none',
+                backgroundColor: 'none',
+                height: 264,
+                width: 264,
+                chartArea: { left: 0, top: 0, width: '100%', height: '100%' },
+                enableInteractivity: false,
+                colors: ['#537FF1', '#8979FF', '#FF928A', '#3CC3DF', '#FFAE4C'],
+                pieSliceTextStyle: { fontName: 'Rubik', fontSize: 20 }
 
-        };
+            };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart.draw(data, options);
-      }
+            chart.draw(data, options);
+        }
     </script>
 </head>
 
@@ -114,21 +114,22 @@
             </div>
         </div>
     </header>
-    <div id="main-body" class="inner flex-between">
+    <div id="main-body" class="inner flex-between" x-data="form">
         <div id="content">
-            <h1>Hi [Donor Name],</h1>
+            <h1>Hi <span x-text="name_first"></span> <span x-text="name_last"></span>,</h1>
             <h1>Keep Making a Difference</h1>
             <h1>-Adjust Your Gift Today!</h1>
-            <p>Over the twelve months to the September 2024 quarter, the CPI rose 2.8%. A small change to your regular gift 
+            <p>Over the twelve months to the September 2024 quarter, the CPI rose 2.8%. A small change to your regular
+                gift
                 helps us stay ahead of rising costs and continue our vital work.</p>
             <p>&nbsp;</p>
-                <a href="#features" class="button">How Increased Gift Will Impact</a>
-            
+            <a href="#features" class="button">How Increased Gift Will Impact</a>
+
         </div>
         <div id="donate">
             <div class="form">
                 <div id="demo-form-top"></div>
-                <div id="demo-wrapper" x-data="form">
+                <div id="demo-wrapper">
 
 
                     <!-- Progress bar block-->
@@ -178,13 +179,13 @@
                                     <div class="frequency">
                                         <h4>I’d like to make this donation</h4>
                                         <div class="frequency-options">
-                                            <div class="choice">
+                                            <!-- <div class="choice">
                                                 <input type="radio" name="PayFrequency" id="frequency1" value="One-off"
                                                     x-model="frequency">
                                                 <label for="frequency1">
                                                     <span>Once only</span>
                                                 </label>
-                                            </div>
+                                            </div> -->
                                             <div class="choice">
                                                 <input type="radio" name="PayFrequency" id="frequency2" value="Monthly"
                                                     x-model="frequency">
@@ -200,28 +201,44 @@
                                     <div class="amount">
                                         <h4>Please select a donation amount</h4>
                                         <!-- <p x-text="amount"></p>
-                                    <p x-text="choice"></p>
-                                    <p x-text="frequency"></p> -->
+                                        <p x-text="choice"></p>
+                                        <p x-text="frequency"></p> -->
                                         <div class="amounts">
                                             <template x-if="frequency === 'Monthly'">
                                                 <div>
-                                                    <div class="amount-card" role="button" tabindex="0"
-                                                        :class="{'selected': amount === '15'}" @click="amount = '15'">
+                                                    <div class="amount-rate">
+                                                        <div class="rate-options">
+                                                            <div class="choice">
+                                                                <input type="radio" name="rate" id="rate1" value="1.028"
+                                                                    x-model="rate">
+                                                                <div class="rate-card">+ 2.8%</div>
+                                                            </div>
+                                                            <div class="choice">
+                                                                <input type="radio" name="rate" id="rate2" value="1.035"
+                                                                    x-model="rate">
+                                                                <div class="rate-card">+ 3.5%</div>
+                                                            </div>
+                                                            <div class="choice">
+                                                                <input type="radio" name="rate" id="rate3" value="1.05"
+                                                                    x-model="rate">
+                                                                <div class="rate-card">+ 5.0%</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="amount-card" role="button" tabindex="0"  x-on:focus="total = amount">
                                                         <div class="amount-image">
-                                                            <img src="images/donation-15.jpg"
+                                                            <img src="images/5b8e5c05f680809f643bcca0725e7618.jpeg"
                                                                 alt="$15 Monthly Donation Impact">
                                                         </div>
                                                         <div class="amount-content">
                                                             <input type="radio" name="donation-amount" id="donation1"
-                                                                value="15" x-model="amount" class="hidden-radio">
+                                                                x-model="amount" class="hidden-radio">
                                                             <div class="amount-description">$</div>
-                                                            <div class="amount-price">15</div>
-                                                            <div class="amount-description">- Lorem ipsum dolor sit
-                                                                amet, consectetur adipiscing elit, sed do eiusmod
-                                                                tempor.</div>
+                                                            <div class="amount-price" x-text="amount"></div>
+                                                            <div class="amount-description">- Provides vital vaccines for several children, protecting them from deadly diseases in impoverished areas.</div>
                                                         </div>
                                                     </div>
-                                                    <div class="amount-card" role="button" tabindex="0"
+                                                    <!-- <div class="amount-card" role="button" tabindex="0"
                                                         :class="{'selected': amount === '55'}" @click="amount = '55'">
                                                         <div class="amount-image">
                                                             <img src="images/donation-55.jpg"
@@ -268,23 +285,21 @@
                                                                 amet, consectetur adipiscing elit, sed do eiusmod
                                                                 tempor.</div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="choice other">
-                                                        <input type="radio" name="donation-amount" id="donation5"
-                                                            value="other" x-model="amount">
+                                                        <!-- <input type="radio" name="donation-amount" id="donation5"
+                                                            value="other" x-model="amount"> -->
                                                         <label for="donation5">
                                                             <span>$<input type="number" placeholder="Other amount"
-                                                                    value="" size="20" placeholder=""
-                                                                    name="donation-choice" autocomplete="off"
-                                                                    x-ref="choice" x-model="choice"
-                                                                    x-on:focus="amount = 'other'"></span>
+                                                                    value="" size="20" name="donation-choice" autocomplete="off"
+                                                                    x-ref="choice" x-model="choice""></span>
                                                         </label>
                                                         <span x-show="_errors.amount" class="amount-error">Please provide an amount larger than your current one or contact WorldAid if you wish to lower your donation amount.</span>
                                                     </div>
                                                 </div>
                                             </template>
 
-                                            <template x-if="frequency === 'One-off'">
+                                            <!-- <template x-if="frequency === 'One-off'">
                                                 <div>
                                                     <div class="amount-card" role="button" tabindex="0"
                                                         :class="{'selected': amount === '15'}" @click="amount = '15'">
@@ -363,7 +378,7 @@
                                                         <span x-show="_errors.amount" class="amount-error">Please provide an amount larger than your current one or contact WorldAid if you wish to lower your donation amount.</span>
                                                     </div>
                                                 </div>
-                                            </template>
+                                            </template> -->
                                         </div>
                                     </div>
 
@@ -520,6 +535,7 @@
                                 x-transition:leave="leave" x-transition:leave-start="leave-start"
                                 x-transition:leave-end="leave-end">
                                 <div id="your-details" class="wrapper">
+                                    <!-- <p x-text="total"></p> -->
                                     <div class="fields">
                                         <div class="donor">
                                             <h4>I'd like to make my donation as</h4>
@@ -942,26 +958,28 @@
                     <h2>Impact</h2>
                     <div class="impact-description">
                         <p>
-                            Your support has already made a tremendous difference. Your 
-                            adjusted gift helps us sustain vital programs and reach more 
-                            children in need, even as costs rise. 
+                            Your support has already made a tremendous difference. Your
+                            adjusted gift helps us sustain vital programs and reach more
+                            children in need, even as costs rise.
                         </p>
                         <p>&nbsp;</p>
                     </div>
-                    
-                    
-                    
-                    <div class ="piechart" id="piechart" style="width: 485px; height: 273px; margin: 0 auto; display: flex; justify-content: center"></div>
-                    
-                    
+
+
+
+                    <div class="piechart" id="piechart"
+                        style="width: 485px; height: 273px; margin: 0 auto; display: flex; justify-content: center">
+                    </div>
+
+
                 </div>
             </div>
             <div class="column">
                 <div class="statistics">
                     <div id="block1" class="stat-block">
-                       <div class="dot type1"></div>
-                       <div class="percentage">25%</div>
-                       <div class="description">
+                        <div class="dot type1"></div>
+                        <div class="percentage">25%</div>
+                        <div class="description">
                             <h3><b>Access to education</b></h3>
                             <p>
                                 Provide school supplies and opportunities for children to learn.
@@ -970,8 +988,8 @@
                     </div>
                     <div id="block2" class="stat-block">
                         <div class="dot type2"></div>
-                       <div class="percentage">23%</div>
-                       <div class="description">
+                        <div class="percentage">23%</div>
+                        <div class="description">
                             <h3><b>Nutritious Meals</b></h3>
                             <p>
                                 Help children grow strong with healthy food each day.
@@ -980,8 +998,8 @@
                     </div>
                     <div id="block3" class="stat-block">
                         <div class="dot type3"></div>
-                       <div class="percentage">21%</div>
-                       <div class="description">
+                        <div class="percentage">21%</div>
+                        <div class="description">
                             <h3><b>Clean Water</b></h3>
                             <p>
                                 Ensure safe drinking water for better health and hygiene.
@@ -990,8 +1008,8 @@
                     </div>
                     <div id="block4" class="stat-block">
                         <div class="dot type4"></div>
-                       <div class="percentage">21%</div>
-                       <div class="description">
+                        <div class="percentage">21%</div>
+                        <div class="description">
                             <h3><b>Safe Shelter</b></h3>
                             <p>
                                 Protect children with safe and secure living conditions.
@@ -1000,8 +1018,8 @@
                     </div>
                     <div id="block5" class="stat-block">
                         <div class="dot type5"></div>
-                       <div class="percentage">10%</div>
-                       <div class="description">
+                        <div class="percentage">10%</div>
+                        <div class="description">
                             <h3><b>Health and Care</b></h3>
                             <p>
                                 Deliver medical aid and support to children in need.
@@ -1010,12 +1028,12 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
     <footer>
         <div id="footer">
-            
+
             <div id="cta">
                 <div class="inner flex-between">
                     <div class="footer-about">
@@ -1023,7 +1041,7 @@
                             <img src="images/logo.png" width="200">
                         </div>
                         <div class="about-desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         </div>
                         <div class="footer-buttons">
@@ -1037,10 +1055,10 @@
                                 <a href="https://www.youtube.com/"><img src="images/youtube.png"></a>
                                 <a href="https://www.linkedin.com/"><img src="images/linkedin.png"></a>
                             </div>
-    
+
                         </div>
                     </div>
-    
+
                     <div class="footer-links">
                         <div class="link-column">
                             <h4><strong>Research</strong></h4>
@@ -1065,7 +1083,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div id="footer-bottom">
                 <div class="inner flex-between">
