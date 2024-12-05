@@ -5,15 +5,9 @@ function validateEmail(string) {
     return false;
 }
 
-// function validatePhone(string) {
-//     if (/^[\+]?\d{2,}?[(]?\d{2,}[)]?[-\s\.]?\d{2,}?[-\s\.]?\d{2,}[-\s\.]?\d{0,9}$/im.test(string)) {
-//         return true;
-//     }
-//     return false;
-// }
-
-function validateAmount(curr_amount, input_amount) {
-    if (input_amount > curr_amount) {
+function validateAmount(curr_amount, input_amount) {    
+    if (parseFloat(input_amount) > parseFloat(curr_amount)){
+        
         return true;
     }
     return false;
@@ -21,13 +15,14 @@ function validateAmount(curr_amount, input_amount) {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
-const old_amount = urlParams.get('amount');
+
 const DELIMITER = String.fromCharCode(30); // Record Separator
 
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('form', () => ({
         amount: 75,
+        current_amount: 0,
         choice: '',
         total: 0,
         rate: '1.05',
@@ -72,11 +67,12 @@ document.addEventListener('alpine:init', () => {
             }
 
             //Set current donation amount
-            let current_amount = parseFloat(urlParams.get('amount') || this.amount);
-            let current_amount_str = "Your Current Donation: $" + current_amount;
+            this.current_amount = parseFloat(urlParams.get('amount') || this.amount);
+            let current_amount_str = "Your Current Donation: $" + this.current_amount;
             document.getElementById("current_amount").innerHTML = current_amount_str;
-            this.amount = Math.round(current_amount * parseFloat(this.rate))
+            this.amount = Math.round(this.current_amount * parseFloat(this.rate))
             this.total = this.amount; // define total
+
 
             document.getElementById('stage1img').src = "images/new progress current.svg"
 
@@ -143,7 +139,7 @@ document.addEventListener('alpine:init', () => {
                 }
             });
             this.$watch('rate', (value) => {
-                const baseAmount = current_amount;
+                const baseAmount = this.current_amount;
                 this.amount = Math.round(baseAmount * parseFloat(value));
                 this.total = this.amount;
             });
@@ -231,6 +227,17 @@ document.addEventListener('alpine:init', () => {
                 document.getElementById('stage2img').src = "images/progress future.svg";
                 document.getElementById('stage3img').src = "images/progress future.svg";
             }
+            if (nextStage == 2 && this._max > 2) {
+                document.getElementById('stage1img').src = "images/new progress current.svg";
+                document.getElementById('stage2img').src = "images/new progress current.svg";
+                document.getElementById('stage3img').src = "images/progress future.svg";
+            }
+            if (nextStage == 3 && this._max > 2) { 
+                document.getElementById('stage1img').src = "images/new progress current.svg";
+                document.getElementById('stage2img').src = "images/new progress current.svg";
+                document.getElementById('stage3img').src = "images/new progress current.svg";
+            }
+
 
 
             // reset errors
@@ -239,7 +246,7 @@ document.addEventListener('alpine:init', () => {
 
             //validate stage 1
             if (this._stage == 1 && nextStage > this._stage){
-                if (!this.total || !validateAmount(old_amount, this.total)) {
+                if (!this.total || !validateAmount(this.current_amount, this.total)) {
                     this._errors.amount = true;
                 }
                 
@@ -274,19 +281,6 @@ document.addEventListener('alpine:init', () => {
                     if (!this.phone) {
                         this._errors.phone = true;
                     }
-                    /*
-                    if (!this.mailing_street) {
-                        this._errors.mailing_street = true;
-                    }
-                    if (!this.mailing_city) {
-                        this._errors.mailing_city = true;
-                    }
-                    if (!this.mailing_state) {
-                        this._errors.mailing_state = true;
-                    }
-                    if (!this.mailing_postal_code) {
-                        this._errors.mailing_postal_code = true;
-                    } */
                 }
 
                 if (Object.keys(this._errors).length) {
