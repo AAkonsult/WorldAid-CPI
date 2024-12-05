@@ -13,7 +13,7 @@ function validatePhone(string) {
 }
 
 function validateAmount(curr_amount, input_amount) {    
-    if (input_amount > curr_amount){
+    if (parseInt(input_amount) > parseInt(curr_amount)){
         return true;
     }
     return false;
