@@ -5,12 +5,12 @@ function validateEmail(string) {
     return false;
 }
 
-function validatePhone(string) {
-    if (/^[\+]?\d{2,}?[(]?\d{2,}[)]?[-\s\.]?\d{2,}?[-\s\.]?\d{2,}[-\s\.]?\d{0,9}$/im.test(string)) {
-        return true;
-    }
-    return false;
-}
+// function validatePhone(string) {
+//     if (/^[\+]?\d{2,}?[(]?\d{2,}[)]?[-\s\.]?\d{2,}?[-\s\.]?\d{2,}[-\s\.]?\d{0,9}$/im.test(string)) {
+//         return true;
+//     }
+//     return false;
+// }
 
 function validateAmount(curr_amount, input_amount) {    
     if (parseInt(input_amount) > parseInt(curr_amount)){
@@ -22,6 +22,7 @@ function validateAmount(curr_amount, input_amount) {
 
 const urlParams = new URLSearchParams(window.location.search);
 const old_amount = urlParams.get('amount');
+const DELIMITER = String.fromCharCode(30); // Record Separator
 
 
 document.addEventListener('alpine:init', () => {
@@ -29,6 +30,7 @@ document.addEventListener('alpine:init', () => {
         amount: 75,
         choice: '',
         total: 0,
+        rate: '1.05',
 
         amountDefaults: {
             'Monthly': 40,
@@ -63,25 +65,29 @@ document.addEventListener('alpine:init', () => {
         _stage: 1,
 
         init() {
+            // get decoded params from URL
+            const encodedData = urlParams.get('data');
+            if (encodedData) {
+                this.decodeAndPopulateForm(encodedData);
+            }
 
             //Set current donation amount
-            let current_amount_str = "Your Current Donation: $" + urlParams.get('amount');
+            let current_amount = parseFloat(urlParams.get('amount') || this.amount);
+            let current_amount_str = "Your Current Donation: $" + current_amount;
             document.getElementById("current_amount").innerHTML = current_amount_str;
-
-            
-            this.amount = urlParams.get('amount');
+            this.amount = Math.round(current_amount * parseFloat(this.rate))
             this.total = this.amount; // define total
 
             document.getElementById('stage1img').src = "images/new progress current.svg"
 
-            this.$watch('frequency', (frequency) => {
-                // includes the amount in that frequency
-                if (!this.amountOptions[frequency].includes(this.amount)) {
-                    this.$nextTick(() => {
-                        this.amount = this.amountDefaults[frequency]
-                    })
-                }
-            });
+            // this.$watch('frequency', (frequency) => {
+            //     // includes the amount in that frequency
+            //     if (!this.amountOptions[frequency].includes(this.amount)) {
+            //         this.$nextTick(() => {
+            //             this.amount = this.amountDefaults[frequency]
+            //         })
+            //     }
+            // });
 
             this.$watch('amount', (amount) => {
                 this.total = amount;
@@ -136,9 +142,11 @@ document.addEventListener('alpine:init', () => {
                     this._errors.mailing_postal_code = !value;
                 }
             });
-
-
-
+            this.$watch('rate', (value) => {
+                const baseAmount = current_amount;
+                this.amount = Math.round(baseAmount * parseFloat(value));
+                this.total = this.amount;
+            });
 
             window.onpopstate = (event) => {
                 if (this._submit) {
@@ -147,6 +155,52 @@ document.addEventListener('alpine:init', () => {
                 }
             };
 
+        },
+
+        // fill form with decoded data
+        async decodeAndPopulateForm(encodedData) {
+            try {
+                const decodedValue = await this.decodeData(encodedData);
+                const fields = decodedValue.split(DELIMITER);
+
+                if (fields.length >= 4) {
+                    this.name_first = fields[0];
+                    this.name_last = fields[1];
+                    this.email = fields[2];
+                    this.phone = fields[3];
+                }
+            } catch (error) {
+                console.error('Error decoding URL data:', error);
+            }
+        },
+
+        async decodeData(encodedValue) {
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+
+            // Extract length information
+            const originalLength = alphabet.indexOf(encodedValue[0]) * 32 +
+                alphabet.indexOf(encodedValue[1]);
+
+            // Convert to bits (skip first two length chars)
+            let bits = '';
+            for (const char of encodedValue.slice(2)) {
+                const index = alphabet.indexOf(char);
+                if (index === -1) continue;
+                bits += index.toString(2).padStart(5, '0');
+            }
+
+            // Trim bits to original length
+            bits = bits.slice(0, originalLength);
+
+            // Convert bits to characters
+            let decoded = '';
+            for (let i = 0; i < bits.length; i += 8) {
+                const byte = bits.slice(i, i + 8);
+                if (byte.length < 8) break;
+                decoded += String.fromCharCode(parseInt(byte, 2));
+            }
+
+            return decoded;
         },
 
         get isMonthly() {
@@ -218,8 +272,6 @@ document.addEventListener('alpine:init', () => {
                 }
                 if (this.isMonthly) {
                     if (!this.phone) {
-                        this._errors.phone = true;
-                    } else if (!validatePhone(this.phone)) {
                         this._errors.phone = true;
                     }
                     /*
