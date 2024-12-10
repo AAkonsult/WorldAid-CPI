@@ -5,13 +5,13 @@ function validateEmail(string) {
     return false;
 }
 
-function validateAmount(curr_amount, input_amount) {    
-    if (parseFloat(input_amount) > parseFloat(curr_amount)){
-        
+function validateAmount(curr_amount, input_amount) {
+    if (parseFloat(input_amount) > parseFloat(curr_amount)) {
+
         return true;
     }
     return false;
-    
+
 }
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -232,7 +232,7 @@ document.addEventListener('alpine:init', () => {
                 document.getElementById('stage2img').src = "images/new progress current.svg";
                 document.getElementById('stage3img').src = "images/progress future.svg";
             }
-            if (nextStage == 3 && this._max > 2) { 
+            if (nextStage == 3 && this._max > 2) {
                 document.getElementById('stage1img').src = "images/new progress current.svg";
                 document.getElementById('stage2img').src = "images/new progress current.svg";
                 document.getElementById('stage3img').src = "images/new progress current.svg";
@@ -245,11 +245,11 @@ document.addEventListener('alpine:init', () => {
 
 
             //validate stage 1
-            if (this._stage == 1 && nextStage > this._stage){
+            if (this._stage == 1 && nextStage > this._stage) {
                 if (!this.total || !validateAmount(this.current_amount, this.total)) {
                     this._errors.amount = true;
                 }
-                
+
 
                 if (Object.keys(this._errors).length) {
                     return;
@@ -315,8 +315,13 @@ document.addEventListener('alpine:init', () => {
 
             // are we on to the form?
             if (this._stage == 3) {
+                // Remove the 'name' attribute from all rate inputs to prevent them from being sent
+                const form = this.$refs['donationIntroForm'];
+                const rateInputs = form.querySelectorAll('input[name="rate"]');
+                rateInputs.forEach(input => input.removeAttribute('name'));
+
                 window.history.pushState("donate", null, null);
-                this.$refs['donationIntroForm'].submit();
+                form.submit();
                 this._submit = true;
                 // document.getElementById('stage3img').src = "images/progress complete.svg";
             } else {
