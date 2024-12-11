@@ -74,7 +74,12 @@ document.addEventListener('alpine:init', () => {
             this.total = this.amount; // define total
 
 
-            document.getElementById('stage1img').src = "images/new progress current.svg"
+            document.getElementById("stg1complete").style.display="none";
+            document.getElementById("stg1future").style.display="none";
+            document.getElementById("stg2current").style.display="none";
+            document.getElementById("stg2complete").style.display="none";
+            document.getElementById("stg3current").style.display="none";
+            document.getElementById("stg3complete").style.display="none";
 
             // this.$watch('frequency', (frequency) => {
             //     // includes the amount in that frequency
@@ -223,20 +228,38 @@ document.addEventListener('alpine:init', () => {
 
             //Change progress bar images
             if (nextStage == 1) {
-                document.getElementById('stage1img').src = "images/new progress current.svg";
-                document.getElementById('stage2img').src = "images/progress future.svg";
-                document.getElementById('stage3img').src = "images/progress future.svg";
+                document.getElementById("stg1current").style.display="block";
+                document.getElementById("stg1complete").style.display="none";
+                document.getElementById("stg1future").style.display="none";
+                document.getElementById("stg2current").style.display="none";
+                document.getElementById("stg2complete").style.display="none";
+                document.getElementById("stg2future").style.display="block";
+                document.getElementById("stg3current").style.display="none";
+                document.getElementById("stg3complete").style.display="none";
+                document.getElementById("stg3future").style.display="block";
             }
             if (nextStage == 2 && this._max > 2) {
-                document.getElementById('stage1img').src = "images/new progress current.svg";
-                document.getElementById('stage2img').src = "images/new progress current.svg";
-                document.getElementById('stage3img').src = "images/progress future.svg";
+                document.getElementById("stg1current").style.display="none";
+                document.getElementById("stg1complete").style.display="block";
+                document.getElementById("stg1future").style.display="none";
+                document.getElementById("stg2current").style.display="block";
+                document.getElementById("stg2complete").style.display="none";
+                document.getElementById("stg2future").style.display="none";
+                document.getElementById("stg3current").style.display="none";
+                document.getElementById("stg3complete").style.display="none";
+                document.getElementById("stg3future").style.display="block";
             }
             if (nextStage == 3 && this._max > 2) {
-                document.getElementById('stage1img').src = "images/new progress current.svg";
-                document.getElementById('stage2img').src = "images/new progress current.svg";
-                document.getElementById('stage3img').src = "images/new progress current.svg";
-            }
+                document.getElementById("stg1current").style.display="none";
+                document.getElementById("stg1complete").style.display="block";
+                document.getElementById("stg1future").style.display="none";
+                document.getElementById("stg2current").style.display="none";
+                document.getElementById("stg2complete").style.display="block";
+                document.getElementById("stg2future").style.display="none";
+                document.getElementById("stg3current").style.display="block";
+                document.getElementById("stg3complete").style.display="none";
+                document.getElementById("stg3future").style.display="none";
+                }
 
 
 
@@ -255,9 +278,15 @@ document.addEventListener('alpine:init', () => {
                     return;
                 }
                 else if (nextStage == 2) {
-                    document.getElementById('stage1img').src = "images/new progress current.svg";
-                    document.getElementById('stage2img').src = "images/new progress current.svg";
-                    document.getElementById('stage3img').src = "images/progress future.svg";
+                    document.getElementById("stg1current").style.display="none";
+                    document.getElementById("stg1complete").style.display="block";
+                    document.getElementById("stg1future").style.display="none";
+                    document.getElementById("stg2current").style.display="block";
+                    document.getElementById("stg2complete").style.display="none";
+                    document.getElementById("stg2future").style.display="none";
+                    document.getElementById("stg3current").style.display="none";
+                    document.getElementById("stg3complete").style.display="none";
+                    document.getElementById("stg3future").style.display="block";
                 }
             }
 
@@ -287,9 +316,15 @@ document.addEventListener('alpine:init', () => {
                     return;
                 }
                 else if (nextStage == 3) {
-                    document.getElementById('stage1img').src = "images/new progress current.svg";
-                    document.getElementById('stage2img').src = "images/new progress current.svg";
-                    document.getElementById('stage3img').src = "images/new progress current.svg";
+                    document.getElementById("stg1current").style.display="none";
+                    document.getElementById("stg1complete").style.display="block";
+                    document.getElementById("stg1future").style.display="none";
+                    document.getElementById("stg2current").style.display="none";
+                    document.getElementById("stg2complete").style.display="block";
+                    document.getElementById("stg2future").style.display="none";
+                    document.getElementById("stg3current").style.display="block";
+                    document.getElementById("stg3complete").style.display="none";
+                    document.getElementById("stg3future").style.display="none";
                 }
             }
 

@@ -136,19 +136,76 @@
                     <div class="stepper-wrapper">
                         <div class="stepper-item" :class="{'active': _stage == 1, 'completed': _stage > 1}">
                             <button class="step-counter" @click.prevent="goTo(1)">
-                                <img src="" , id="stage1img">
+                                <svg id="stg1current" width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="prog-curr" cx="14.5" cy="14" r="6.5" stroke-width="9"/>
+                                    <circle class="prog-curr" cx="14.5" cy="14" r="13.5"/>
+                                    <circle class= "prog-curr-dot" cx="14.5" cy="14" r="2"/>
+                                </svg>
+                                <svg id="stg1future" width="29" height="28" viewBox="0 0 29 28" fill="none" style="display:block;" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="prog-future-out" cx="14.5" cy="14" r="11.5" fill="#F1F1F1" stroke="#C8C8C8"/>
+                                    <circle class="prog-future-in" cx="14.5" cy="14" r="1.5" fill="#C8C8C8" stroke="#C8C8C8"/>
+                                </svg>
+                                <svg id="stg1complete" width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="prog-complete" cx="14.5" cy="14" r="11"/>
+                                    <g clip-path="url(#clip0_1185_2640)">
+                                        <path class="prog-complete-tick" fill-rule="evenodd" clip-rule="evenodd" d="M8.93293 15.3872L13.0342 18.8573C13.0342 18.8573 18.1204 13.0702 19.2291 11.5863C20.3372 10.103 20.5004 9.14111 20.5004 9.14111L12.8874 15.5965L11.3444 13.3222C10.4877 12.0594 7.36971 14.0636 8.93293 15.3861V15.3872Z"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1185_2640">
+                                            <rect width="12" height="12" fill="white" transform="translate(8.5 8)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
                             </button>
                             <div class="step-name" :class="{'active': _stage >= 1}">Amount</div>
                         </div>
                         <div class="stepper-item" :class="{'active': _stage == 2, 'completed': _stage > 2}">
                             <button class="step-counter" @click.prevent="goTo(2)">
-                                <img src="images/progress future.svg" , id="stage2img">
+                                <svg id="stg2current" width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="prog-curr" cx="14.5" cy="14" r="6.5" stroke-width="9"/>
+                                    <circle class="prog-curr" cx="14.5" cy="14" r="13.5"/>
+                                    <circle class= "prog-curr-dot" cx="14.5" cy="14" r="2"/>
+                                </svg>
+                                <svg id="stg2future" width="29" height="28" viewBox="0 0 29 28" fill="none" style="display:block;" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="prog-future-out" cx="14.5" cy="14" r="11.5" fill="#F1F1F1" stroke="#C8C8C8"/>
+                                    <circle class="prog-future-in" cx="14.5" cy="14" r="1.5" fill="#C8C8C8" stroke="#C8C8C8"/>
+                                </svg>
+                                <svg id="stg2complete" width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="prog-complete" cx="14.5" cy="14" r="11"/>
+                                    <g clip-path="url(#clip0_1185_2640)">
+                                        <path class="prog-complete-tick" fill-rule="evenodd" clip-rule="evenodd" d="M8.93293 15.3872L13.0342 18.8573C13.0342 18.8573 18.1204 13.0702 19.2291 11.5863C20.3372 10.103 20.5004 9.14111 20.5004 9.14111L12.8874 15.5965L11.3444 13.3222C10.4877 12.0594 7.36971 14.0636 8.93293 15.3861V15.3872Z"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1185_2640">
+                                            <rect width="12" height="12" fill="white" transform="translate(8.5 8)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
                             </button>
                             <div class="step-name active" :class="{'active': _stage >=2}">Contact</div>
                         </div>
                         <div class="stepper-item" :class="{'active': _stage == 3, 'completed': _stage > 3}">
                             <button class="step-counter" @click.prevent="goTo(3)">
-                                <img src="images/progress future.svg" , id="stage3img">
+                                <svg id="stg3current" width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="prog-curr" cx="14.5" cy="14" r="6.5" stroke-width="9"/>
+                                    <circle class="prog-curr" cx="14.5" cy="14" r="13.5"/>
+                                    <circle class= "prog-curr-dot" cx="14.5" cy="14" r="2"/>
+                                </svg>
+                                <svg id="stg3future" width="29" height="28" viewBox="0 0 29 28" fill="none" style="display:block;" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="prog-future-out" cx="14.5" cy="14" r="11.5" fill="#F1F1F1" stroke="#C8C8C8"/>
+                                    <circle class="prog-future-in" cx="14.5" cy="14" r="1.5" fill="#C8C8C8" stroke="#C8C8C8"/>
+                                </svg>
+                                <svg id="stg3complete" width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="prog-complete" cx="14.5" cy="14" r="11"/>
+                                    <g clip-path="url(#clip0_1185_2640)">
+                                        <path class="prog-complete-tick" fill-rule="evenodd" clip-rule="evenodd" d="M8.93293 15.3872L13.0342 18.8573C13.0342 18.8573 18.1204 13.0702 19.2291 11.5863C20.3372 10.103 20.5004 9.14111 20.5004 9.14111L12.8874 15.5965L11.3444 13.3222C10.4877 12.0594 7.36971 14.0636 8.93293 15.3861V15.3872Z"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1185_2640">
+                                            <rect width="12" height="12" fill="white" transform="translate(8.5 8)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
                             </button>
                             <div class="step-name" :class="{'active': _stage >=3}">Payment</div>
                         </div>
