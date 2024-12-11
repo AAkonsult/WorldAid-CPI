@@ -1747,6 +1747,7 @@ input:-webkit-autofill:focus {
 .prog-complete-tick {
   fill: var(--fill-color)
 }
+
 #demo-wrapper .enter {
   transition-property: opacity, transform;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);

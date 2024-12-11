@@ -74,15 +74,12 @@ document.addEventListener('alpine:init', () => {
             this.total = this.amount; // define total
 
 
-            //document.getElementById("stg1current").style.display="none";
             document.getElementById("stg1complete").style.display="none";
             document.getElementById("stg1future").style.display="none";
             document.getElementById("stg2current").style.display="none";
             document.getElementById("stg2complete").style.display="none";
-            //document.getElementById("stg2future").style.display="none";
             document.getElementById("stg3current").style.display="none";
             document.getElementById("stg3complete").style.display="none";
-            //document.getElementById("stg3future").style.display="none";
 
             // this.$watch('frequency', (frequency) => {
             //     // includes the amount in that frequency
