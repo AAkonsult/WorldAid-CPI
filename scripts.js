@@ -70,7 +70,7 @@ document.addEventListener('alpine:init', () => {
             this.current_amount = parseFloat(urlParams.get('amount') || this.amount);
             let current_amount_str = "Your Current Donation: $" + this.current_amount;
             document.getElementById("current_amount").innerHTML = current_amount_str;
-            this.amount = Math.round(this.current_amount * parseFloat(this.rate))
+            this.amount = Math.round(this.current_amount * parseFloat(this.rate) * 100) / 100; // define amount
             this.total = this.amount; // define total
 
 
@@ -80,6 +80,7 @@ document.addEventListener('alpine:init', () => {
             document.getElementById("stg2complete").style.display="none";
             document.getElementById("stg3current").style.display="none";
             document.getElementById("stg3complete").style.display="none";
+
 
             // this.$watch('frequency', (frequency) => {
             //     // includes the amount in that frequency
@@ -145,7 +146,7 @@ document.addEventListener('alpine:init', () => {
             });
             this.$watch('rate', (value) => {
                 const baseAmount = this.current_amount;
-                this.amount = Math.round(baseAmount * parseFloat(value));
+                this.amount = Math.round(baseAmount * parseFloat(value) *100) / 100;
                 this.total = this.amount;
             });
 
