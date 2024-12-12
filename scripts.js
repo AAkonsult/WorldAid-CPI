@@ -204,6 +204,15 @@ document.addEventListener('alpine:init', () => {
             return decoded;
         },
 
+        getImageForRate(rate) {
+            const rateMap = {
+                '1.028': 'images/8aff547d8f1d5a2c539af7cf4d5b87d3.jpeg',
+                '1.035': 'images/abd18fa7e78683fab9f1e92226c1d533.jpeg', 
+                '1.05': 'images/5b8e5c05f680809f643bcca0725e7618.jpeg'
+            };
+            return rateMap[rate] || 'images/5b8e5c05f680809f643bcca0725e7618.jpeg';
+        },
+
         get isMonthly() {
             return this.frequency === 'Monthly';
         },

@@ -284,8 +284,8 @@
                                                     </div>
                                                     <div class="amount-card" role="button" tabindex="0"  x-on:focus="total = amount">
                                                         <div class="amount-image">
-                                                            <img src="images/5b8e5c05f680809f643bcca0725e7618.jpeg"
-                                                                alt="$15 Monthly Donation Impact">
+                                                            <img :src="getImageForRate(rate)"
+                                                                 :alt="`$${amount} Monthly Donation with ${(parseFloat(rate)-1)*100}% Increase`">
                                                         </div>
                                                         <div class="amount-content">
                                                             <input type="radio" name="donation-amount" id="donation1"
