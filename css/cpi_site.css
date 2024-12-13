@@ -164,7 +164,13 @@ ul {
   .flex-center {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap-reverse;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .flex-center {
+      flex-wrap: wrap-reverse;
+    }
+    
   }
   
   /* Header block */
