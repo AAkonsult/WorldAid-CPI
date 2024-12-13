@@ -164,7 +164,13 @@ ul {
   .flex-center {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap-reverse;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .flex-center {
+      flex-wrap: wrap-reverse;
+    }
+    
   }
   
   /* Header block */
@@ -811,7 +817,7 @@ footer #cta .footer-links .link-column {
 
 }
 
-  @media screen and (max-width: 1000px){
+  @media screen and (max-width: 1100px){
     footer #cta .footer-links{
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;

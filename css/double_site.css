@@ -79,7 +79,9 @@
   
   :root {
     --text-color: #FFFFFF;
+    --text-color2: #118ACB;
     --base-color: #024586;
+    --base-color2: #F3F9FF;
     --button-color: #00B8A6;
     --button-hover: #00b8a6a4;
     --fill-color: #FFFFFF;
@@ -93,7 +95,7 @@
      * Fonts
      ********************************************************/
   :root {
-    --form-font: Rubik;
+    --base-font: Rubik;
   }
   
   /********************************************************
@@ -105,7 +107,7 @@
     }
     
     body {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 400;
       font-size: 16px;
       color: #575757;
@@ -114,7 +116,7 @@
     }
     
     h1 {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 800;
       font-size: 36px;
       color: white;
@@ -122,7 +124,7 @@
     }
     
     h2 {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 600;
       font-size: 23px;
       color: #004282;
@@ -165,6 +167,8 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap-reverse;
+      padding-left: 20px;
+      padding-right: 20px;
     }
     
     /* Header block */
@@ -249,7 +253,7 @@
     
     .menu ul a,
     .menu ul a:visited {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 600;
       font-size: 18px;
       color: var(--fill-color);
@@ -259,7 +263,7 @@
     
     .menu ul a.button,
     .menu ul a:visited.button {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 800;
       font-size: 18px;
     }
@@ -324,7 +328,7 @@
       font-size: 18px;
       min-width: fit-content;
       border: none;
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       transition: all 0.3s;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
@@ -376,7 +380,7 @@
     
     a.button,
     a.button:visited {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 800;
       font-size: 18px;
       text-decoration: none;
@@ -392,14 +396,145 @@
       background: var(--button-hover);
       color: var(--fill-color) !important;
     }
-    
-    /* Main body block */
-    #main-body {
-      padding-top: 50px;
-      padding-bottom: 70px;
-      border-bottom: 1px solid #D1D1D1;
+
+    /* Banner info block */
+    #banner-info {
       background-color: var(--base-color);
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 30px;
+      padding-top: 50px;
+      justify-content: space-evenly;
     }
+
+    #banner-content {
+      max-width: 600px;
+    }
+
+    @media screen and (max-width: 1100px) {
+      #banner-info {
+        flex-wrap: wrap;
+      }
+
+      #banner-content {
+        text-align: center;
+      }
+      
+    }
+
+    
+
+    #banner-content p {
+      font-size: 48px;
+      font-weight: 400;
+      font-family: var(--base-font);
+      color: var(--fill-color);
+    }
+
+    #banner-content h1 {
+      font-size: 48px;
+      font-weight: 700;
+      font-family: var(--base-font);
+      color: var(--fill-color);
+    }
+
+    #banner-img {
+      width: 517px;
+      height: 414px;
+      margin: 20px;
+
+    }
+
+    @media screen and (max-width: 600px) {
+
+      #banner-content p {
+        font-size: 32px;
+        text-align: center;
+      }
+  
+      #banner-content h1 {
+        font-size: 32px;
+      } 
+
+      #banner-img {
+        width: 348.37px;
+        height: 278px;
+      }
+    }
+
+    /* Countdown block */
+    #countdown {
+      background-color: var(--base-color2);
+      display: flex;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-family: var(--base-font);
+      text-align: center;
+    }
+    
+    #countdown-info {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      order: 2;
+    }
+
+    #countdown-info h2 {
+      font-size: 36px;
+      font-weight: 700;
+      font-family: var(--base-font);
+      color: var(--base-color);
+    }
+
+    #countdown-timer {
+      display: flex;
+      flex-wrap: nowrap;
+      font-family: var(--base-font);
+      max-width: 609px;
+      order: 1;
+      width: 100%;
+    }
+
+    #countdown-timer ul {
+      display: grid;
+      grid-template-columns: 20% 6% 20% 6% 20% 6% 20%;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+      #countdown-timer {
+        max-width: 430px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      
+    }
+
+    #countdown-timer li{
+
+      display: inline-block;
+      font-size: 16px;
+      list-style-type: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: left;
+      color: var(--base-color);
+    }
+
+    #countdown-timer li span {
+      display: block;
+      font-size: 48px;
+      color: var(--text-color2);
+    }
+
+    #countdown-timer li.colon {
+      position: relative;
+      font-size: 40px;
+      color: var(--base-color);
+    }
+
+    /* Main body block */
     
     #main-body p {
       margin-bottom: 20px;
@@ -411,52 +546,64 @@
     }
     
     #main-body #content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 50px;
+      padding-bottom: 70px;
       width: 50%;
-      padding-right: 50px;
-      color: white;
+      background-color: var(--text-color);
+      color: var(--base-color);
+    }
+
+    #main-body #content #content-inner {
+      max-width: 530px;
     }
   
     #main-body #content h1 {
       width: 100%;
-      font-family: var(--form-font);
-      font-size: 48px;
+      font-family: var(--base-font);
+      font-size: 64px;
       font-weight: 700;
+      color: var(--base-color);
+    }
+  
+    
+  
+    #main-body #content p {
+      width: fit-content;
+      font-family: var(--base-font);
+      font-size: 24px;
+      font-weight: 400;
     }
   
     @media screen and (max-width: 600px) {
       #main-body #content h1 {
-        font-size: 24px;
+        font-size: 36px;
       }
-    }
-  
-    #main-body #content p {
-      width: fit-content;
-      font-family: var(--form-font);
-      font-size: 20px;
-      font-weight: 400;
-    }
-  
-    @media screen and (max-width) {
+
       #main-body #content p {
-        font-size: 12px;
+        font-size: 20px;
     
       }
     }
     
     #main-body #donate {
+      display: flex;
+      width: 50%;
+      padding-top: 50px;
+      padding-bottom: 70px;
       position: relative;
       z-index: 10;
       padding-bottom: 20px;
-      
+      background-color: var(--base-color);
+      justify-content: center;
     }
   
     
     #main-body #donate .form {
         background: var(--base-color);
-        border-radius: 40px;
-        box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.1);
         position: relative;
-        border: 3px solid #F3F9FF;
         max-width: 600px;
         padding: 30px 30px;
         
@@ -482,7 +629,7 @@
     
       #main-body #content {
         width: 100%;
-        padding-right: 0;
+        padding: 50px 20px;
         order: 1;
         padding-top: 50px;
         margin: 0 auto;
@@ -501,20 +648,19 @@
     
     /*Features block */
     #features {
-      padding-top: 50px;
-      padding-bottom: 70px;
-      background-color: #F3F9FF;
+      padding: 100px 100px;
+      background-color: var(--base-color2);
     }
     
     #features h2 {
       color: var(--base-color);
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 700;
       font-size: 48px;
       text-align: left;
     }
   
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 600px) {
       #features h2 {
         text-align: center;
         font-size: 24px;
@@ -522,33 +668,39 @@
     }
     
     #features #columns {
+      
+      width: 100%;
       margin-top: 50px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr;
       gap: 30px 50px;
     }
     
-    @media screen and (max-width: 1000px) {
+    
+    @media screen and (max-width: 800px) {
       #features #columns {
+        grid-template-columns: 1fr;
         gap: 30px 50px;
       }
     }
     
-    @media screen and (max-width: 1100px) {
-      #features #columns {
-        grid-template-columns: 1fr;
-      }
-    }
-    
     #features .column {
+      width: 100%;
+      max-width: 400px;
       font-size: 16px;
       line-height: 1.4em;
-      align-content: center;
+      justify-self: center;
+    }
+
+    #features .column h1{
+      color: var(--text-color2);
+      font-weight: 700;
+      font-size: 48;
     }
     
     #features .column h3 {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 400;
       font-size: 20px;
       color: var(--base-color);
@@ -556,8 +708,8 @@
     }
   
     #features .column p {
-      display: flex;
-      font-family: var(--form-font);
+      display:inline;
+      font-family: var(--base-font);
       font-weight: 400;
       font-size: 20px;
       color: var(--base-color);
@@ -566,7 +718,7 @@
     
     #features .column a,
     #features .column a:visited {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 800;
       text-decoration: none;
     }
@@ -579,17 +731,12 @@
       align-items: center;
     }
   
-    @media screen and (max-width:1100px){
-      .statistics {
-        align-items: center;
-      }
-    }
   
     #features .statistics .impact-description {
       width: 100%;
       max-width: 500px;
       color: var(--base-color);
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-size: 20px;
       font-weight: 400;
       margin-bottom: 50px;
@@ -661,7 +808,7 @@
   }
   
     .statistics .percentage {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       width: fit-content;
       height: 57px;
       font-weight: 700;
@@ -677,7 +824,7 @@
     }
   
     #features .column  .description {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       color: var(--base-color);
       font-size: 20px;
     }
@@ -689,12 +836,62 @@
       }
     }
   
-    .piechart { 
-      margin: 0 auto; 
-      display: flex; 
-      justify-content: center
+    /* Info card block */
+
+    
+
+    #last-info-card {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 80px;
+      padding-top: 50px;
+      align-items: center;
+      justify-content: space-evenly;
     }
     
+    @media screen and (max-width: 1100px) {
+      #last-info-card {
+        flex-wrap: wrap;
+      }
+    }
+
+    #last-info-card h1 {
+      color: var(--base-color);
+      font-size: 48px;
+      font-weight: 700;
+      max-width: 600px;
+    }
+
+    #last-info-card p {
+      color: var(--base-color);
+      font-size: 24px;
+      font-weight: 400;
+      max-width: 600px;
+    }
+
+    #info-card-img {
+      width: 402px;
+      height: 509px;
+      padding: 20px;;
+    }
+
+    @media screen and (max-width: 600px) {
+
+      #last-info-card p {
+        font-size: 20px;
+        text-align: center;
+      }
+  
+      #last-info-card h1 {
+        font-size: 36px;
+      } 
+
+      #info-card-img {
+        width: 358px;
+        height: 453.29px;
+      }
+    }
+
     /* Footer block */
     footer {
       position: relative;
@@ -705,7 +902,7 @@
   
   footer h4 {
     color: #FFFFFF;
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-size: 16px;
     font-weight: 400;
   }
@@ -723,7 +920,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       text-align: left;
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 800;
       font-size: 36px;
       color: var(--fill-color);
@@ -749,7 +946,7 @@
         padding-bottom: 80px;
         padding-left: 20px;
         padding-right: 20px;
-        font-family: var(--form-font);
+        font-family: var(--base-font);
         font-weight: 800;
         font-size: 26px;
         grid-template-columns: 1fr
@@ -883,7 +1080,7 @@
     }
     
     footer #footer-menu .menu li a {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 400;
       font-size: 14px;
     }
@@ -901,7 +1098,7 @@
     }
     
     footer #footer-menu .copyright {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 400;
       font-size: 14px;
       color: var(--fill-color);
@@ -991,22 +1188,22 @@
   }
   
   #demo-wrapper h2 {
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 800;
     font-size: 30px;
-    color: #118ACB;
+    color: var(--text-color2);
     margin-bottom: 0;
   }
   
   #demo-wrapper h3 {
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 800;
     font-size: 30px;
     color: #00B8A6;
   }
   
   #demo-wrapper h4 {
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 600;
     /* font-size: 20px; */
     color: var(--text-color);
@@ -1020,7 +1217,7 @@
   }
   
   #demo-wrapper #amount button {
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 800;
     font-size: 20px;
     transition: all .3s;
@@ -1065,7 +1262,7 @@
     cursor: pointer;
     position: relative;
     color: var(--button-color);
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 500;
     font-size: 20px;
     transition: all .3s
@@ -1139,7 +1336,7 @@
     border: 1px solid var(--bar-grey);
     color: var(--base-color);
     cursor: pointer;
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-size: 24px;
   }
   
@@ -1200,7 +1397,7 @@
   }
   
   #demo-wrapper #amount .amount label span {
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 800;
     font-size: 20px;
   }
@@ -1234,7 +1431,7 @@
   
   #demo-wrapper #amount .amounts .choice.other label {
     color: var(--bar-grey);
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 600;
     font-size: 20px;
     justify-content: flex-start;
@@ -1242,7 +1439,7 @@
   }
   
   #demo-wrapper #amount .amounts .choice.other label span {
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 600;
     font-size: 20px;
     display: flex;
@@ -1259,7 +1456,7 @@
     border-radius: 0;
     outline: 0;
     margin-left: 3px;
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 600;
     font-size: 20px;
     color: var(--base-color);
@@ -1340,7 +1537,7 @@
   
   #demo-wrapper #amount .descriptions .text span.value {
     padding-right: 3px;
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 800;
   }
   
@@ -1427,7 +1624,7 @@
     cursor: pointer;
     position: relative;
     color: var(--base-color);
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 500;
     font-size: 16px;
     transition: all 0.3s;
@@ -1441,7 +1638,7 @@
   
   @media screen and (max-width: 767px) {
     #demo-wrapper #your-details .donor-options label {
-      font-family: var(--form-font);
+      font-family: var(--base-font);
       font-weight: 800;
       font-size: 16px;
     }
@@ -1494,14 +1691,14 @@
   #demo-wrapper #your-details .fields .field label {
     display: block;
     color: var(--text-color);
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 500;
     font-size: 16px;
     padding-bottom: 5px;
   }
   
   #demo-wrapper #your-details .fields .field label span {
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 400;
     font-size: 12px;
   }
@@ -1550,7 +1747,7 @@
     width: 100%;
     padding: 10px;
     border-radius: 28px;
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 400;
     font-size: 16px;
     line-height: 18.96px;
@@ -1590,7 +1787,7 @@
     padding: 10px;
     border: 1px solid var(--fill-color);
     border-radius: 50px;
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 400;
     font-size: 16px;
     outline: 0;
@@ -1611,7 +1808,7 @@
   #demo-wrapper #your-details button {
     width: 129px;
     height: 47px;
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 500;
     font-size: 16px;
     transition: all 0.3s;
@@ -2002,7 +2199,7 @@
   }
   
   .single-event-intro .button {
-    background: #118ACB !important;
+    background: var(--text-color2) !important;
   }
   
   .event-detail-container {
@@ -2010,7 +2207,7 @@
   }
   
   .event-detail-container h2 {
-    color: #118ACB;
+    color: var(--text-color2);
     font-weight: 600;
   }
   
@@ -2035,7 +2232,7 @@
   }
   
   .event-detail .button {
-    background-color: #118ACB !important;
+    background-color: var(--text-color2) !important;
   }
   
   .upcoming-events {
@@ -2181,7 +2378,7 @@
     width: 300px;
     margin: 10px 0;
     padding: 10px 20px;
-    background: #118acb;
+    background: var(--text-color2);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -2225,7 +2422,7 @@
   }
   
   #newsletter button {
-    background: #118acb;
+    background: var(--text-color2);
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -2250,7 +2447,7 @@
   
   #stages .stage.active {
     font-weight: bold;
-    color: #118acb;
+    color: var(--text-color2);
   }
   
   .block-wrapper {
@@ -2312,14 +2509,14 @@
   
   .amount-content {
     position: relative;
-    padding: 1.5rem;
+    padding: 10px;
     display: block;
     text-align: left;
     z-index: 2;
   }
   
   .amount-price {
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 800;
     font-size: 1.75rem;
     color: var(--base-color);
@@ -2328,7 +2525,7 @@
   }
   
   .amount-description {
-    font-family: var(--form-font);
+    font-family: var(--base-font);
     font-weight: 400;
     font-size: 1rem;
     color: var(--base-color);
