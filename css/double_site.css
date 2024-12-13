@@ -678,7 +678,7 @@
     }
     
     
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
       #features #columns {
         grid-template-columns: 1fr;
         gap: 30px 50px;
@@ -686,10 +686,11 @@
     }
     
     #features .column {
+      width: 100%;
       max-width: 400px;
       font-size: 16px;
       line-height: 1.4em;
-      align-content: center;
+      justify-self: center;
     }
 
     #features .column h1{
