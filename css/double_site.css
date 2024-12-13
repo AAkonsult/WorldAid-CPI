@@ -167,6 +167,8 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap-reverse;
+      padding-left: 20px;
+      padding-right: 20px;
     }
     
     /* Header block */
@@ -402,6 +404,11 @@
       flex-wrap: nowrap;
       padding-bottom: 30px;
       padding-top: 50px;
+      justify-content: space-evenly;
+    }
+
+    #banner-content {
+      max-width: 600px;
     }
 
     @media screen and (max-width: 1100px) {
@@ -438,7 +445,7 @@
 
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 600px) {
 
       #banner-content p {
         font-size: 32px;
@@ -641,8 +648,7 @@
     
     /*Features block */
     #features {
-      padding-top: 50px;
-      padding-bottom: 70px;
+      padding: 100px 100px;
       background-color: var(--base-color2);
     }
     
@@ -662,29 +668,34 @@
     }
     
     #features #columns {
+      
+      width: 100%;
       margin-top: 50px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr;
       gap: 30px 50px;
     }
     
-    @media screen and (max-width: 1000px) {
-      #features #columns {
-        gap: 30px 50px;
-      }
-    }
     
     @media screen and (max-width: 1100px) {
       #features #columns {
         grid-template-columns: 1fr;
+        gap: 30px 50px;
       }
     }
     
     #features .column {
+      max-width: 400px;
       font-size: 16px;
       line-height: 1.4em;
       align-content: center;
+    }
+
+    #features .column h1{
+      color: var(--text-color2);
+      font-weight: 700;
+      font-size: 48;
     }
     
     #features .column h3 {
@@ -696,7 +707,7 @@
     }
   
     #features .column p {
-      display: flex;
+      display:inline;
       font-family: var(--base-font);
       font-weight: 400;
       font-size: 20px;
@@ -829,12 +840,62 @@
       }
     }
   
-    .piechart { 
-      margin: 0 auto; 
-      display: flex; 
-      justify-content: center
+    /* Info card block */
+
+    
+
+    #last-info-card {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 80px;
+      padding-top: 50px;
+      align-items: center;
+      justify-content: space-evenly;
     }
     
+    @media screen and (max-width: 1100px) {
+      #last-info-card {
+        flex-wrap: wrap;
+      }
+    }
+
+    #last-info-card h1 {
+      color: var(--base-color);
+      font-size: 48px;
+      font-weight: 700;
+      max-width: 600px;
+    }
+
+    #last-info-card p {
+      color: var(--base-color);
+      font-size: 24px;
+      font-weight: 400;
+      max-width: 600px;
+    }
+
+    #info-card-img {
+      width: 402px;
+      height: 509px;
+      padding: 20px;;
+    }
+
+    @media screen and (max-width: 600px) {
+
+      #last-info-card p {
+        font-size: 20px;
+        text-align: center;
+      }
+  
+      #last-info-card h1 {
+        font-size: 36px;
+      } 
+
+      #info-card-img {
+        width: 358px;
+        height: 453.29px;
+      }
+    }
+
     /* Footer block */
     footer {
       position: relative;
