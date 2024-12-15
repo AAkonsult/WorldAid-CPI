@@ -284,7 +284,7 @@
                                                     </div>
                                                     <div class="amount-card" role="button" tabindex="0"  x-on:focus="total = amount">
                                                         <div class="amount-image">
-                                                            <img :src="getImageForRate(rate)"
+                                                            <img :src="changeForRate(rate)"
                                                                  :alt="`$${amount} Monthly Donation with ${(parseFloat(rate)-1)*100}% Increase`">
                                                         </div>
                                                         <div class="amount-content">
@@ -292,7 +292,7 @@
                                                                 x-model="amount" class="hidden-radio">
                                                             <div class="amount-description">$</div>
                                                             <div class="amount-price" x-text="amount"></div>
-                                                            <div class="amount-description">- Provides vital vaccines for several children, protecting them from deadly diseases in impoverished areas.</div>
+                                                            <div id="amount-desc" class="amount-description">- Provides vital vaccines for several children, protecting them from deadly diseases in impoverished areas.</div>
                                                         </div>
                                                     </div>
                                                     <!-- <div class="amount-card" role="button" tabindex="0"
