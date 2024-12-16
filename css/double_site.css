@@ -307,6 +307,7 @@
       display: none;
       cursor: pointer;
       transition: all 0.3s;
+      justify-self: center;
     }
     
     #hamburger:hover {
@@ -409,6 +410,7 @@
 
     #banner-content {
       max-width: 600px;
+      align-self: center;
     }
 
     @media screen and (max-width: 1100px) {
@@ -1793,7 +1795,7 @@
     outline: 0;
     height: auto !important;
     background: var(--fill-color);
-    color: var(--text-color) !important;
+    color: var(--base-color) !important;
     background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
     background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
     background-size: 5px 5px, 5px 5px, 1px 1.5em;

@@ -6,7 +6,7 @@ function validateEmail(string) {
 }
 
 function validateAmount(curr_amount, input_amount) {
-    if (parseFloat(input_amount) > parseFloat(curr_amount)) {
+    if (parseFloat(input_amount) > parseFloat(curr_amount)) { // requires at least 0.00000000000001 higher amount
 
         return true;
     }
@@ -205,12 +205,22 @@ document.addEventListener('alpine:init', () => {
             return decoded;
         },
 
-        getImageForRate(rate) {
+        changeForRate(rate) {
             const rateMap = {
                 '1.028': 'images/8aff547d8f1d5a2c539af7cf4d5b87d3.jpeg',
                 '1.035': 'images/abd18fa7e78683fab9f1e92226c1d533.jpeg', 
                 '1.05': 'images/5b8e5c05f680809f643bcca0725e7618.jpeg'
             };
+
+            if (rate == 1.028) {
+                document.getElementById("amount-desc").innerHTML = "- Offers emergency relief to a disaster-stricken community, providing food, shelter, and medical aid."
+            }
+            else if (rate == 1.035) {
+                document.getElementById("amount-desc").innerHTML = "- Supplies clean drinking water to a family for a year, preventing waterborne illnesses."
+            }
+            else if (rate == 1.05) {
+                document.getElementById("amount-desc").innerHTML = "- Provides vital vaccines for several children, protecting them from deadly diseases in impoverished areas."
+            }
             return rateMap[rate] || 'images/5b8e5c05f680809f643bcca0725e7618.jpeg';
         },
 
