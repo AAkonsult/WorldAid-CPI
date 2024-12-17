@@ -315,10 +315,82 @@ ul {
     fill: #00B8A6;
   }
   
+  /* Dropdown Button */
+  .hamburger-dropbtn {
+    background-color: transparent;
+    color: var(--fill-color);
+    padding: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    min-width: fit-content;
+    border: none;
+    font-family: var(--base-font);
+    transition: all 0.3s;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: center;
+    z-index: 500;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .hamburger-dropdown {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s;
+    z-index: 500;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .hamburger-content {
+    display: none;
+    position: absolute;
+    background-color: var(--base-color);
+    min-width:max-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
+    transition: all 0.3s;
+    border-radius: 20px;
+    left: -50%;
+    z-index: 700;
+    border: 1px solid white;
+  }
+  
+  /* Links inside the dropdown */
+  .hamburger-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s;
+    z-index: 600;
+  }
+  
+  
+  
   @media screen and (max-width: 780px) {
     #hamburger {
       display: block;
+  
+      
     }
+
+    .hamburger-content a:hover:first-child {
+      border-top-left-radius: 17px;
+      border-top-right-radius: 17px;
+    }
+  
+    .hamburger-content a:hover:last-child {
+      border-bottom-left-radius: 17px;
+      border-bottom-right-radius: 17px;
+    }
+  
+    /* Change color of dropdown links on hover */
+    .hamburger-content a:hover {background-color: var(--fill-color); transition: all 0.3s;}
+  
+    /* Show the dropdown menu on hover */
+    .hamburger-dropdown:hover .hamburger-content {display: block; transition: all 0.3s; z-index: inherit;}
+  
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .hamburger-dropdown:hover .hamburger-dropbtn {background-color: transparent; color: #00B8A6; transition: all 0.3s;}
   }
   
   /* Dropdown Button */
@@ -372,7 +444,17 @@ ul {
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: transparent; transition: all 0.3s;}
+  .dropdown-content a:hover {background-color: var(--fill-color); transition: all 0.3s;}
+
+  .dropdown-content a:hover:first-child {
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+  }
+
+  .dropdown-content a:hover:last-child {
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
+  }
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block; transition: all 0.3s; z-index: inherit;}
@@ -455,7 +537,7 @@ ul {
     position: relative;
     z-index: 10;
     padding-bottom: 20px;
-    justify-items: center;
+    justify-: center;
     align-items: center;
     width: 50%;
   }
