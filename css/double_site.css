@@ -598,7 +598,7 @@
       position: relative;
       z-index: 10;
       padding-bottom: 20px;
-      background-color: var(--base-color);
+      background-color: var(--fill-color);
       justify-content: center;
     }
   
@@ -606,9 +606,11 @@
     #main-body #donate .form {
         background: var(--base-color);
         position: relative;
-        max-width: 600px;
+        max-width: 800px;
         padding: 30px 30px;
-        
+        border-radius: 40px;
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+        width: 80%;
         
     }
     
@@ -624,7 +626,7 @@
       }
     }
     
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1400px) {
       #main-body.flex-between {
         flex-wrap: wrap;
       }
@@ -1178,7 +1180,7 @@
   /* Form block */
   #demo-wrapper {
     width: 100%;
-    max-width: 419px;
+    max-width: 70%;
     margin: 0 auto;
     padding: 0;
     position: relative;
@@ -1240,11 +1242,11 @@
   }
   
   #demo-wrapper #amount .frequency-options {
-    padding-top: 10px;
+    padding-top: 30px;
     /* border-bottom: 1px solid #D1D1D1; */
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
   }
   
   #demo-wrapper #amount #current_amount {
@@ -1278,7 +1280,7 @@
   
   #demo-wrapper #amount .frequency-options .choice {
     width: 100%;
-    max-width: 150px;
+    min-width: 129px;
     position: relative;
   }
   
@@ -1307,6 +1309,35 @@
     color: var(--fill-color);
     position: relative
   }
+
+  #demo-wrapper #amount .frequency-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 25%;
+  }
+
+  #demo-wrapper #amount .impact-image {
+    margin-left: -6%; 
+  }
+  
+  @media screen and (max-width: 600px) {
+    #demo-wrapper #amount .impact-image {
+      position: absolute;
+      right: -25%;
+    }
+  
+    #demo-wrapper #amount .frequency-options {
+      padding-top: 30px;
+      padding-right: 30%;
+    }
+  
+    
+    #demo-wrapper #amount .impact-img {
+      width: 75px;
+    }
+  }
+  
   
   .amount-rate {
     width: 100%;
@@ -2474,7 +2505,7 @@
   .amount-card {
     position: relative;
     display: flex;
-    height: 150px;
+    height: fit-content;
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -2520,7 +2551,7 @@
   .amount-price {
     font-family: var(--base-font);
     font-weight: 800;
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     color: var(--base-color);
     display: inline;
     margin-right: 0.5rem;
@@ -2529,8 +2560,19 @@
   .amount-description {
     font-family: var(--base-font);
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: var(--base-color);
     display: inline;
     text-align: left;
+  }
+
+  @media screen and (max-width: 1500px) {
+    .amount-price {
+      font-size: 2.5rem;
+    }
+    
+    .amount-description {
+      font-size: 1rem;
+
+    }
   }
