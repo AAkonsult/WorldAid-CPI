@@ -282,7 +282,7 @@ ul {
     }
   
     .menu ul li:last-child {
-      display: block;
+      display: none;
     }
   }
   
@@ -853,7 +853,7 @@ ul {
     display:inline;
     font-family: var(--base-font);
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     color: var(--base-color);
     margin-bottom: 8px;
   }
@@ -980,7 +980,194 @@ ul {
 
   /* Info card block */
 
+  #text-info-block {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    justify-items: center; 
+  }
+
+  #text-info-block h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--base-color);
+    max-width: 751px;
+  }
+
+  #text-info-block p {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--base-color);
+    max-width: 658px;
+  }
+
+  @media screen and (max-width: 600px) {
+    #text-info-block h2 {
+      font-size: 24px;
+    }
+
+    #text-info-block p {
+      font-size: 20px;
+    }
+  }
+
+  #features2 {
+    padding: 100px 100px;
+    background-color: var(--base-color2);
+  }
   
+  #features2 h2 {
+    color: var(--base-color);
+    font-family: var(--base-font);
+    font-weight: 700;
+    font-size: 48px;
+    text-align: left;
+  }
+
+  @media screen and (max-width: 600px) {
+    #features2 h2 {
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+  
+  #features2 #columns {
+    
+    width: 100%;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px 50px;
+  }
+  
+  
+  @media screen and (max-width: 1400px) {
+    #features2 #columns {
+      grid-template-columns: 1fr;
+      gap: 30px 50px;
+    }
+  }
+  
+  #features2 .column {
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+    line-height: 1.4em;
+    justify-self: center;
+  }
+
+  #features2 .column h1{
+    color: var(--text-color2);
+    font-weight: 700;
+    font-size: 48px;
+    margin-top: 20px
+  }
+  
+  #features2 .column h3 {
+    font-family: var(--base-font);
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--base-color);
+    margin-bottom: 8px;
+  }
+
+  #features2 .column p {
+    display:inline;
+    font-family: var(--base-font);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--base-color);
+    margin-bottom: 8px;
+  }
+  
+  #features2 .column a,
+  #features2 .column a:visited {
+    font-family: var(--base-font);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  #features2 .column  .description {
+    font-family: var(--base-font);
+    color: var(--base-color);
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #features2 .column  .description {
+      
+      font-size: 10px;
+    }
+  }
+
+  .more-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    padding: 20px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  @media  screen and (max-width: 1300px) {
+    .more-card {
+      grid-template-columns: 1fr;
+    }
+    
+  }
+
+  .more-img {
+    justify-self: center;
+    align-self: center;
+  }
+
+  #more-info {
+    margin: 20px;
+  }
+
+  .more-btns {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .colored {
+    background-color: var(--base-color2);
+    border-radius: 40px;
+  }
+
+  .uncolored {
+    background-color: var(--fill-color);
+  }
+
+  .more-card h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--base-color);
+  }
+
+  .more-card p {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--base-color);
+    padding-bottom: 10px;
+    max-width: 500px;
+  }
+
+  .more-card a {
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--base-color);
+    margin-right: 10px;
+  }
+
+  .more-card a.button {
+    background: var(--base-color);
+    color: var(--fill-color);
+  }
 
   #last-info-card {
     display: flex;
