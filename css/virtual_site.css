@@ -438,22 +438,21 @@ a.button:hover {
 
 #banner-content h1 {
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 700;
   font-family: var(--base-font);
   color: var(--fill-color);
 }
 
 #banner-content h1 .subtitle {
   font-size: 48px;
-  font-weight: 100;
+  font-weight: 400;
   display: inline;
 }
 
 #banner-img {
-  width: 517px;
-  height: 414px;
+  width: 516px;
+  height: 460px;
   margin: 20px;
-
 }
 
 @media screen and (max-width: 600px) {
@@ -468,76 +467,61 @@ a.button:hover {
   }
 }
 
-/* Countdown block */
-#countdown {
-  background-color: var(--base-color2);
+/* Second banner info block */
+#second-banner-info {
+  background-color: var(--fill-color);
   display: flex;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-family: var(--base-font);
-  text-align: center;
+  flex-wrap: nowrap;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  justify-content: space-evenly;
 }
 
-#countdown-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  order: 2;
+#second-banner-content {
+  max-width: 600px;
+  align-self: center;
 }
 
-#countdown-info h2 {
-  font-size: 36px;
+@media screen and (max-width: 1100px) {
+  #second-banner-info {
+    flex-wrap: wrap;
+  }
+
+  #second-banner-content {
+    text-align: center;
+  }
+}
+
+#second-banner-content h1 {
+  font-size: 48px;
   font-weight: 700;
   font-family: var(--base-font);
   color: var(--base-color);
 }
 
-#countdown-timer {
-  display: flex;
-  flex-wrap: nowrap;
+#second-banner-content p {
+  font-size: 20px;
+  font-weight: 400;
   font-family: var(--base-font);
-  max-width: 609px;
-  order: 1;
-  width: 100%;
+  color: var(--base-color);
 }
 
-#countdown-timer ul {
-  display: grid;
-  grid-template-columns: 20% 6% 20% 6% 20% 6% 20%;
-  width: 100%;
+#second-banner-img {
+  width: 547px;
+  height: 476px;
+  margin: 20px;
 }
 
-@media screen and (max-width: 480px) {
-  #countdown-timer {
-    max-width: 430px;
-    padding-left: 10px;
-    padding-right: 10px;
+@media screen and (max-width: 600px) {
+
+  #second-banner-content h1 {
+    font-size: 32px;
   }
 
-}
-
-#countdown-timer li {
-
-  display: inline-block;
-  font-size: 16px;
-  list-style-type: none;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: left;
-  color: var(--base-color);
-}
-
-#countdown-timer li span {
-  display: block;
-  font-size: 48px;
-  color: var(--text-color2);
-}
-
-#countdown-timer li.colon {
-  position: relative;
-  font-size: 40px;
-  color: var(--base-color);
+  #second-banner-img {
+    width: 348.37px;
+    height: 278px;
+  }
 }
 
 /* Main body block */

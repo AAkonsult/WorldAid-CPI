@@ -5,74 +5,26 @@ function validateEmail(string) {
     return false;
 }
 
-//Countdown timer function
-(function () {
-    const second = 1000,
-          minute = second * 60,
-          hour = minute * 60,
-          day = hour * 24;
-  
-    //I'm adding this section so I don't have to keep updating this pen every year :-)
-    //remove this if you don't need it
-    let today = new Date(),
-        dd = String(today.getDate()).padStart(2, "0"),
-        mm = String(today.getMonth() + 1).padStart(2, "0"),
-        yyyy = today.getFullYear(), //Change year value if needed
-        nextYear = yyyy + 1, 
-        dayMonth = "12/21/", //Change date if needed (month/day)
-        deadline = dayMonth + yyyy;
-    
-    today = mm + "/" + dd + "/" + yyyy;
-    if (today > deadline) {
-      deadline = dayMonth + nextYear;
-    }
-    //end
-    
-    const countDown = new Date(deadline).getTime(),
-        x = setInterval(function() {    
-  
-          const now = new Date().getTime(),
-                distance = countDown - now;
-  
-          document.getElementById("days").innerText = Math.floor(distance / (day)),
-            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
-  
-          //do something later when date is reached
-          if (distance < 0) {
-            document.getElementById("headline").innerText = "It's my deadline!";
-            document.getElementById("countdown").style.display = "none";
-            document.getElementById("content").style.display = "block";
-            clearInterval(x);
-          }
-          //seconds
-        }, 0)
-    }());
-
 //Address finder function
-(function() {
+(function () {
 
     const address_key = 'RC9G6UM7PVEQLNJA4FBD' //Modify value with own key 
 
-    
-    
-
-    var widget, initAddressFinder = function() {
+    var widget, initAddressFinder = function () {
         widget = new AddressFinder.Widget(
             document.getElementById('MailingStreet'),
             address_key,
             'AU', {
-                "address_params": {
-                    "post_box": "0",
-                    "source": "gnaf,paf"
-                }
+            "address_params": {
+                "post_box": "0",
+                "source": "gnaf,paf"
             }
+        }
         );
 
-        
+
         //Change address field inputs and flashes Alpine form data
-        widget.on('address:select', function(fullAddress, metaData) {
+        widget.on('address:select', function (fullAddress, metaData) {
             document.getElementById('MailingStreet').value = metaData.address_line_combined;
             document.getElementById('MailingStreet').dispatchEvent(new Event('input'));
             document.getElementById('MailingCity').value = metaData.locality_name;
@@ -138,12 +90,12 @@ document.addEventListener('alpine:init', () => {
         init() {
             this.total = this.amount; // define total
 
-            document.getElementById("stg1complete").style.display="none";
-            document.getElementById("stg1future").style.display="none";
-            document.getElementById("stg2current").style.display="none";
-            document.getElementById("stg2complete").style.display="none";
-            document.getElementById("stg3current").style.display="none";
-            document.getElementById("stg3complete").style.display="none";
+            document.getElementById("stg1complete").style.display = "none";
+            document.getElementById("stg1future").style.display = "none";
+            document.getElementById("stg2current").style.display = "none";
+            document.getElementById("stg2complete").style.display = "none";
+            document.getElementById("stg3current").style.display = "none";
+            document.getElementById("stg3complete").style.display = "none";
 
             this.$watch('frequency', (frequency) => {
                 // includes the amount in that frequency
@@ -244,37 +196,37 @@ document.addEventListener('alpine:init', () => {
 
             //Change progress bar images
             if (nextStage == 1) {
-                document.getElementById("stg1current").style.display="block";
-                document.getElementById("stg1complete").style.display="none";
-                document.getElementById("stg1future").style.display="none";
-                document.getElementById("stg2current").style.display="none";
-                document.getElementById("stg2complete").style.display="none";
-                document.getElementById("stg2future").style.display="block";
-                document.getElementById("stg3current").style.display="none";
-                document.getElementById("stg3complete").style.display="none";
-                document.getElementById("stg3future").style.display="block";
+                document.getElementById("stg1current").style.display = "block";
+                document.getElementById("stg1complete").style.display = "none";
+                document.getElementById("stg1future").style.display = "none";
+                document.getElementById("stg2current").style.display = "none";
+                document.getElementById("stg2complete").style.display = "none";
+                document.getElementById("stg2future").style.display = "block";
+                document.getElementById("stg3current").style.display = "none";
+                document.getElementById("stg3complete").style.display = "none";
+                document.getElementById("stg3future").style.display = "block";
             }
             if (nextStage == 2) {
-                document.getElementById("stg1current").style.display="none";
-                document.getElementById("stg1complete").style.display="block";
-                document.getElementById("stg1future").style.display="none";
-                document.getElementById("stg2current").style.display="block";
-                document.getElementById("stg2complete").style.display="none";
-                document.getElementById("stg2future").style.display="none";
-                document.getElementById("stg3current").style.display="none";
-                document.getElementById("stg3complete").style.display="none";
-                document.getElementById("stg3future").style.display="block";
+                document.getElementById("stg1current").style.display = "none";
+                document.getElementById("stg1complete").style.display = "block";
+                document.getElementById("stg1future").style.display = "none";
+                document.getElementById("stg2current").style.display = "block";
+                document.getElementById("stg2complete").style.display = "none";
+                document.getElementById("stg2future").style.display = "none";
+                document.getElementById("stg3current").style.display = "none";
+                document.getElementById("stg3complete").style.display = "none";
+                document.getElementById("stg3future").style.display = "block";
             }
-            if(nextStage == 3 && this._stage == 1 && this._max >2) {
-                document.getElementById("stg1current").style.display="none";
-                document.getElementById("stg1complete").style.display="block";
-                document.getElementById("stg1future").style.display="none";
-                document.getElementById("stg2current").style.display="none";
-                document.getElementById("stg2complete").style.display="block";
-                document.getElementById("stg2future").style.display="none";
-                document.getElementById("stg3current").style.display="block";
-                document.getElementById("stg3complete").style.display="none";
-                document.getElementById("stg3future").style.display="none";
+            if (nextStage == 3 && this._stage == 1 && this._max > 2) {
+                document.getElementById("stg1current").style.display = "none";
+                document.getElementById("stg1complete").style.display = "block";
+                document.getElementById("stg1future").style.display = "none";
+                document.getElementById("stg2current").style.display = "none";
+                document.getElementById("stg2complete").style.display = "block";
+                document.getElementById("stg2future").style.display = "none";
+                document.getElementById("stg3current").style.display = "block";
+                document.getElementById("stg3complete").style.display = "none";
+                document.getElementById("stg3future").style.display = "none";
             }
 
 
@@ -297,7 +249,7 @@ document.addEventListener('alpine:init', () => {
                 if (this.isMonthly) {
                     if (!this.phone) {
                         this._errors.phone = true;
-                    } 
+                    }
                     if (!this.mailing_street) {
                         this._errors.mailing_street = true;
                     }
@@ -317,15 +269,15 @@ document.addEventListener('alpine:init', () => {
                 }
                 else {
                     if (nextStage == 3) {
-                        document.getElementById("stg1current").style.display="none";
-                        document.getElementById("stg1complete").style.display="block";
-                        document.getElementById("stg1future").style.display="none";
-                        document.getElementById("stg2current").style.display="none";
-                        document.getElementById("stg2complete").style.display="block";
-                        document.getElementById("stg2future").style.display="none";
-                        document.getElementById("stg3current").style.display="block";
-                        document.getElementById("stg3complete").style.display="none";
-                        document.getElementById("stg3future").style.display="none";
+                        document.getElementById("stg1current").style.display = "none";
+                        document.getElementById("stg1complete").style.display = "block";
+                        document.getElementById("stg1future").style.display = "none";
+                        document.getElementById("stg2current").style.display = "none";
+                        document.getElementById("stg2complete").style.display = "block";
+                        document.getElementById("stg2future").style.display = "none";
+                        document.getElementById("stg3current").style.display = "block";
+                        document.getElementById("stg3complete").style.display = "none";
+                        document.getElementById("stg3future").style.display = "none";
                     }
                 }
             }
