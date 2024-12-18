@@ -100,7 +100,7 @@
     <div id="banner-info" class="inner flex-center">
         <img id="banner-img" src="images/Virtual-Image.png">
         <div id="banner-content">
-            <h1>Purchase a virtual school seat today 
+            <h1>Purchase a virtual school seat today
                 <span class="subtitle">
                     and help a child unlock their potential through education.
                 </span>
@@ -112,22 +112,35 @@
     <div id="second-banner-info" class="inner flex-center">
         <div id="second-banner-content">
             <h1>A Seat for a Brighter Tomorrow</h1>
-            <p>Millions of children worldwide lack access to proper education. This campaign allows you to purchase a virtual school seat, symbolizing your support in providing essential learning resources. With your help, children gain not just a seat at school but also the tools and guidance they need to succeed. Each virtual seat moves us closer to a world where every child has the opportunity to learn and grow.</p>
+            <p>Millions of children worldwide lack access to proper education. This campaign allows you to purchase a
+                virtual school seat, symbolizing your support in providing essential learning resources. With your help,
+                children gain not just a seat at school but also the tools and guidance they need to succeed. Each
+                virtual seat moves us closer to a world where every child has the opportunity to learn and grow.</p>
             <p>&nbsp;</p>
             <a href="#donate" class="button">Purchase a Virtual Seat Now!</a>
         </div>
         <img id="second-banner-img" src="images/Seat-Image.png">
     </div>
-    <div id="main-body" class="flex-between">
-        <div id="content">
-            <div id="content-inner">
-                <h1>2x Your Impact Today!</h1>
-                <p>This Giving Day, every dollar you donate will be matched by our generous partners.
-                    That means your contribution will go twice as far in providing food, education,
-                    and a brighter future for children in need. Don’t miss this chance to make a life-changing impact!
-                </p>
+    <div id="third-banner-info" class="inner flex-center">
+        <div id="third-banner-wrapper">
+            <div class="square">
+                <img class="square-img" src="images/study-desk.png">
+                <h1 class="square-h1">$50</h1>
+                <p class="square-p">Provides a desk and chair for a child at school</p>
+            </div>
+            <div class="square">
+                <img class="square-img" src="images/book.png">
+                <h1 class="square-h1">$100</h1>
+                <p class="square-p">Covers textbooks, notebooks, and supplies for one year</p>
+            </div>
+            <div class="square">
+                <img class="square-img" src="images/training-lecture.png">
+                <h1 class="square-h1">$150</h1>
+                <p class="square-p">Funds teacher training and salaries to improve education quality</p>
             </div>
         </div>
+    </div>
+    <div id="main-body" class="flex-between">
         <div id="donate">
             <div class="form">
                 <div id="demo-form-top"></div>
@@ -276,7 +289,7 @@
                                         <div class="amounts">
                                             <template x-if="frequency === 'Monthly'">
                                                 <div>
-                                                    <div class="amount-card" role="button" tabindex="0"
+                                                    <!-- <div class="amount-card" role="button" tabindex="0"
                                                         :class="{'selected': amount === '15'}" @click="amount = '15'">
                                                         <div class="amount-image">
                                                             <img src="images/donation-15.jpg"
@@ -292,55 +305,50 @@
                                                                 children, protecting them from deadly diseases in
                                                                 impoverished areas.</div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="amount-card" role="button" tabindex="0"
-                                                        :class="{'selected': amount === '55'}" @click="amount = '55'">
+                                                        :class="{'selected': amount === '50'}" @click="amount = '50'">
                                                         <div class="amount-image">
-                                                            <img src="images/donation-55.jpg"
-                                                                alt="$55 Monthly Donation Impact">
+                                                            <img src="images/donation-50.jpg"
+                                                                alt="$50 Monthly Donation Impact">
                                                         </div>
                                                         <div class="amount-content">
                                                             <input type="radio" name="donation-amount" id="donation2"
-                                                                value="55" x-model="amount" class="hidden-radio">
+                                                                value="50" x-model="amount" class="hidden-radio">
                                                             <div class="amount-description">$</div>
-                                                            <div class="amount-price">55</div>
-                                                            <div class="amount-description">- supplies clean drinking
-                                                                water to a family for a
-                                                                year, preventing waterborne illnesses.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="amount-card" role="button" tabindex="0"
-                                                        :class="{'selected': amount === '75'}" @click="amount = '75'">
-                                                        <div class="amount-image">
-                                                            <img src="images/donation-75.jpg"
-                                                                alt="$75 Monthly Donation Impact">
-                                                        </div>
-                                                        <div class="amount-content">
-                                                            <input type="radio" name="donation-amount" id="donation3"
-                                                                value="75" x-model="amount" class="hidden-radio">
-                                                            <div class="amount-description">$</div>
-                                                            <div class="amount-price">75</div>
-                                                            <div class="amount-description">- supports a child's
-                                                                education,
-                                                                covering school fees, uniforms, and supplies for a
-                                                                semester.</div>
+                                                            <div class="amount-price">50</div>
+                                                            <div class="amount-description">- Provides a desk and chair
+                                                                for a child at school</div>
                                                         </div>
                                                     </div>
                                                     <div class="amount-card" role="button" tabindex="0"
                                                         :class="{'selected': amount === '100'}" @click="amount = '100'">
                                                         <div class="amount-image">
-                                                            <img src="images/donation-100.jpg"
+                                                            <img src="images/donation-100-1.jpg"
                                                                 alt="$100 Monthly Donation Impact">
                                                         </div>
                                                         <div class="amount-content">
-                                                            <input type="radio" name="donation-amount" id="donation4"
+                                                            <input type="radio" name="donation-amount" id="donation3"
                                                                 value="100" x-model="amount" class="hidden-radio">
                                                             <div class="amount-description">$</div>
                                                             <div class="amount-price">100</div>
-                                                            <div class="amount-description">- offers emergency relief to
-                                                                a
-                                                                disaster-stricken community, providing food, shelter,
-                                                                and medical aid.</div>
+                                                            <div class="amount-description">- Covers textbooks,
+                                                                notebooks, and supplies for one year</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '150'}" @click="amount = '150'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-150.jpg"
+                                                                alt="$150 Monthly Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation4"
+                                                                value="150" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">150</div>
+                                                            <div class="amount-description">- Funds teacher training and
+                                                                salaries to improve education quality</div>
                                                         </div>
                                                     </div>
                                                     <div class="choice other">
@@ -359,7 +367,7 @@
 
                                             <template x-if="frequency === 'One-off'">
                                                 <div>
-                                                    <div class="amount-card" role="button" tabindex="0"
+                                                    <!-- <div class="amount-card" role="button" tabindex="0"
                                                         :class="{'selected': amount === '15'}" @click="amount = '15'">
                                                         <div class="amount-image">
                                                             <img src="images/donation-15.jpg"
@@ -375,55 +383,50 @@
                                                                 children, protecting them from deadly diseases in
                                                                 impoverished areas.</div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="amount-card" role="button" tabindex="0"
-                                                        :class="{'selected': amount === '55'}" @click="amount = '55'">
+                                                        :class="{'selected': amount === '50'}" @click="amount = '50'">
                                                         <div class="amount-image">
-                                                            <img src="images/donation-55.jpg"
-                                                                alt="$55 One-off Donation Impact">
+                                                            <img src="images/donation-50.jpg"
+                                                                alt="$50 One-off Donation Impact">
                                                         </div>
                                                         <div class="amount-content">
                                                             <input type="radio" name="donation-amount" id="donation7"
-                                                                value="55" x-model="amount" class="hidden-radio">
+                                                                value="50" x-model="amount" class="hidden-radio">
                                                             <div class="amount-description">$</div>
-                                                            <div class="amount-price">55</div>
-                                                            <div class="amount-description">- supplies clean drinking
-                                                                water to a family for a
-                                                                year, preventing waterborne illnesses.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="amount-card" role="button" tabindex="0"
-                                                        :class="{'selected': amount === '75'}" @click="amount = '75'">
-                                                        <div class="amount-image">
-                                                            <img src="images/donation-75.jpg"
-                                                                alt="$75 One-off Donation Impact">
-                                                        </div>
-                                                        <div class="amount-content">
-                                                            <input type="radio" name="donation-amount" id="donation8"
-                                                                value="75" x-model="amount" class="hidden-radio">
-                                                            <div class="amount-description">$</div>
-                                                            <div class="amount-price">75</div>
-                                                            <div class="amount-description">- supports a child's
-                                                                education,
-                                                                covering school fees, uniforms, and supplies for a
-                                                                semester.</div>
+                                                            <div class="amount-price">50</div>
+                                                            <div class="amount-description">- Provides a desk and chair
+                                                                for a child at school</div>
                                                         </div>
                                                     </div>
                                                     <div class="amount-card" role="button" tabindex="0"
                                                         :class="{'selected': amount === '100'}" @click="amount = '100'">
                                                         <div class="amount-image">
-                                                            <img src="images/donation-100.jpg"
+                                                            <img src="images/donation-100-1.jpg"
                                                                 alt="$100 One-off Donation Impact">
                                                         </div>
                                                         <div class="amount-content">
-                                                            <input type="radio" name="donation-amount" id="donation9"
+                                                            <input type="radio" name="donation-amount" id="donation8"
                                                                 value="100" x-model="amount" class="hidden-radio">
                                                             <div class="amount-description">$</div>
                                                             <div class="amount-price">100</div>
-                                                            <div class="amount-description">- offers emergency relief to
-                                                                a
-                                                                disaster-stricken community, providing food, shelter,
-                                                                and medical aid.</div>
+                                                            <div class="amount-description">- Covers textbooks,
+                                                                notebooks, and supplies for one year</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="amount-card" role="button" tabindex="0"
+                                                        :class="{'selected': amount === '150'}" @click="amount = '150'">
+                                                        <div class="amount-image">
+                                                            <img src="images/donation-150.jpg"
+                                                                alt="$150 One-off Donation Impact">
+                                                        </div>
+                                                        <div class="amount-content">
+                                                            <input type="radio" name="donation-amount" id="donation9"
+                                                                value="150" x-model="amount" class="hidden-radio">
+                                                            <div class="amount-description">$</div>
+                                                            <div class="amount-price">150</div>
+                                                            <div class="amount-description">- Funds teacher training and
+                                                                salaries to improve education quality</div>
                                                         </div>
                                                     </div>
                                                     <div class="choice other">
@@ -882,33 +885,12 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="features" class="inner flex-center">
-        <div id="columns">
-            <div class="column">
-                <img src="images/Students Couple.png">
-                <h1>500+</h1>
-                <p>
-                    <strong>500+ children</strong> provided with nutritious meals
-                </p>
+        <div id="content">
+            <div id="content-inner">
+                <p>Join our mission to provide education to children in disadvantaged areas by purchasing a virtual
+                    school seat.</p>
+                <img src="images/desktop.png">
             </div>
-            <div class="column">
-                <img src="images/School.png">
-                <h1>300</h1>
-                <p>
-                    <strong>300 new school supplies kits</strong>
-                    delivered to underprivileged students
-                </p>
-            </div>
-            <div class="column">
-                <img src="images/Family.png">
-                <h1>100+</h1>
-                <p>
-                    <strong>100+ families</strong> supported with
-                    essential aid and services
-                </p>
-            </div>
-
         </div>
     </div>
     <div id="last-info-card" class="inner flex-center">
