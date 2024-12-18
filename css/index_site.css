@@ -282,7 +282,7 @@ ul {
     }
   
     .menu ul li:last-child {
-      display: none;
+      display: block;
     }
   }
   
@@ -1124,6 +1124,7 @@ ul {
 
   #more-info {
     margin: 20px;
+    justify-self: center;
   }
 
   .more-btns {
@@ -1167,6 +1168,14 @@ ul {
   .more-card a.button {
     background: var(--base-color);
     color: var(--fill-color);
+  }
+
+  .more-card a.button:hover {
+    background: var(--text-color2);
+  }
+
+  .more-card a:hover{
+    color: var(--button-hover);
   }
 
   #last-info-card {

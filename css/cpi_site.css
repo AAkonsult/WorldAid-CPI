@@ -537,7 +537,7 @@ ul {
     position: relative;
     z-index: 10;
     padding-bottom: 20px;
-    justify-: center;
+    justify-items: center;
     align-items: center;
     width: 50%;
   }
@@ -551,7 +551,7 @@ ul {
       border: 3px solid #F3F9FF;
       max-width: 800px;
       padding: 30px 30px;
-      width: 80%;
+      width: 100%;
       
       
   }
