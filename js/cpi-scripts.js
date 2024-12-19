@@ -14,6 +14,50 @@ function validateAmount(curr_amount, input_amount) {
 
 }
 
+//Pie chart function
+function drawPieChart(stats, color_array, chart_height, chart_width) {
+    google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable(stats);
+
+            var options = {
+                legend: 'none',
+                backgroundColor: 'none',
+                height: chart_height,
+                width: chart_width,
+                chartArea: { left: 0, top: 0, width: '100%', height: '100%' },
+                enableInteractivity: false,
+                colors: color_array,
+                pieSliceTextStyle: { fontName: 'Rubik', fontSize: 20 }
+
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    }
+
+
+// Call the function after the window loads
+window.onload = () => {
+    drawPieChart([
+        ['Category', 'Percentage'],
+        ['Access to Education', 25],
+        ['Nutritious Meals', 23],
+        ['Clean Water', 21],
+        ['Safe Shelter', 21],
+        ['Health and Care', 10]], 
+        ['#537FF1', '#8979FF', '#FF928A', '#3CC3DF', '#FFAE4C'],
+        264, 264);
+};
+
+
+
+
 const urlParams = new URLSearchParams(window.location.search);
 
 const DELIMITER = String.fromCharCode(30); // Record Separator
