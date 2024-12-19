@@ -625,7 +625,6 @@ a.button:hover {
 
   #main-body #content p {
     font-size: 20px;
-
   }
 }
 
@@ -640,7 +639,6 @@ a.button:hover {
   background-color: var(--base-color2);
   justify-content: center;
 }
-
 
 #main-body #donate .form {
   background: var(--base-color);
@@ -684,6 +682,101 @@ a.button:hover {
     justify-content: center;
 
   }
+}
+
+/* Last banner info block */
+#last-banner-info {
+  background-color: var(--fill-color);
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 100px;
+  padding-top: 50px;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+#last-banner-info #testimonials-title {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: var(--base-font);
+  color: var(--base-color);
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+#last-banner-wrapper {
+  width: 1067px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+#last-banner-wrapper .square {
+  width: 341px;
+  height: 344px;
+  background-color: var(--base-color2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border-radius: 12px;
+  padding: 53px 29px;
+}
+
+#last-banner-wrapper .square .img-container {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#last-banner-wrapper .square .img-container .square-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+#last-banner-wrapper .square .img-container #image-1 {
+  transform: scale(1.3);
+  object-position: 0% 0%;
+}
+
+#last-banner-wrapper .square #image-2 {
+  transform: scale(1.1);
+  object-position: 0% 0%;
+}
+
+#last-banner-wrapper .square #image-3 {
+  transform: scale(1.3);
+  object-position: 95% 0%;
+}
+
+#last-banner-wrapper .square h3 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--base-font);
+  color: var(--base-color);
+}
+
+#last-banner-wrapper .square p {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: var(--base-font);
+  color: var(--base-color);
+}
+
+#last-banner-wrapper .square p.description {
+  font-style: italic;
+}
+
+#last-banner-info .button{
+  display: inline-block;
+  width: auto;
+  margin: 50px auto;
 }
 
 /*Features block */
@@ -873,63 +966,6 @@ a.button:hover {
   #features .column .description {
 
     font-size: 10px;
-  }
-}
-
-/* Info card block */
-
-
-
-#last-info-card {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-bottom: 80px;
-  padding-top: 50px;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-@media screen and (max-width: 1100px) {
-  #last-info-card {
-    flex-wrap: wrap;
-  }
-}
-
-#last-info-card h1 {
-  color: var(--base-color);
-  font-size: 48px;
-  font-weight: 700;
-  max-width: 600px;
-}
-
-#last-info-card p {
-  color: var(--base-color);
-  font-size: 24px;
-  font-weight: 400;
-  max-width: 600px;
-}
-
-#info-card-img {
-  width: 402px;
-  height: 509px;
-  padding: 20px;
-  ;
-}
-
-@media screen and (max-width: 600px) {
-
-  #last-info-card p {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  #last-info-card h1 {
-    font-size: 36px;
-  }
-
-  #info-card-img {
-    width: 358px;
-    height: 453.29px;
   }
 }
 
@@ -2513,7 +2549,7 @@ input:-webkit-autofill:focus {
 .amount-card {
   position: relative;
   display: flex;
-  height: 100px;
+  height: 88px;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -2535,7 +2571,7 @@ input:-webkit-autofill:focus {
 
 .amount-image {
   width: 85px;
-  height: 98px;
+  height: 88px;
   padding: 6px;
   flex-shrink: 0;
   overflow: hidden;
