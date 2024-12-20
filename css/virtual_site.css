@@ -461,6 +461,10 @@ a.button:hover {
     font-size: 32px;
   }
 
+  #banner-content h1 .subtitle {
+    font-size: 32px;
+  }
+
   #banner-img {
     width: 348.37px;
     height: 278px;
@@ -516,6 +520,12 @@ a.button:hover {
 
   #second-banner-content h1 {
     font-size: 32px;
+    text-align: left;
+  }
+
+  #second-banner-content p {
+    font-size: 20px;
+    text-align: left;
   }
 
   #second-banner-img {
@@ -569,7 +579,19 @@ a.button:hover {
   color: var(--base-color);
 }
 
+@media screen and (max-width: 600px) {
+  #third-banner-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* Main body block */
+#main-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
 #main-body p {
   margin-bottom: 20px;
@@ -593,6 +615,9 @@ a.button:hover {
 #main-body #content #content-inner {
   max-width: 100%;
   justify-content: space-between;
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 #main-body #content h1 {
@@ -603,10 +628,12 @@ a.button:hover {
   color: var(--base-color);
 }
 
-#main-body #content .img {
-  width: 552px;
-  height: 100%;
-  margin: 20px;
+#main-body #content #content-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  margin: 0 auto;
 }
 
 #main-body #content p {
@@ -616,16 +643,6 @@ a.button:hover {
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
-}
-
-@media screen and (max-width: 600px) {
-  #main-body #content h1 {
-    font-size: 36px;
-  }
-
-  #main-body #content p {
-    font-size: 20px;
-  }
 }
 
 #main-body #donate {
@@ -668,7 +685,6 @@ a.button:hover {
   #main-body #content {
     width: 100%;
     padding: 50px 20px;
-    order: 1;
     padding-top: 50px;
     margin: 0 auto;
   }
@@ -677,10 +693,14 @@ a.button:hover {
     width: 100%;
     padding-left: 0;
     margin-top: 0px;
-    order: 2;
     display: flex;
     justify-content: center;
+  }
 
+  #main-body #content p {
+    width: 100%;
+    padding-bottom: 50px;
+    font-size: 36px;
   }
 }
 
@@ -773,10 +793,21 @@ a.button:hover {
   font-style: italic;
 }
 
-#last-banner-info .button{
+#last-banner-info .button {
   display: inline-block;
   width: auto;
   margin: 50px auto;
+}
+
+@media screen and (max-width: 600px) {
+  #last-banner-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #last-banner-info .button {
+    display: none;
+  }
 }
 
 /*Features block */
