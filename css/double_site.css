@@ -283,13 +283,12 @@
       }
     
       .menu ul li:last-child {
-        display: block;
+        display: none;
       }
     }
     
     @media screen and (max-width: 1050px) {
       .menu {
-        margin-top: 20px;
         width: 100%;
         text-align: center;
       }
@@ -298,12 +297,20 @@
         justify-content: center;
       }
     }
+
+    @media screen and (max-width: 780px) {
+      header .flex-between{
+        flex-wrap: nowrap;
+      }
+  
+      .menu ul{
+        justify-content: end;
+      }
+    }
     
     #hamburger {
       fill: var(--fill-color);
-      width: 38px;
-      height: 38px;
-      margin-right: 20px;
+      width: 38px;      height: 38px;
       display: none;
       cursor: pointer;
       transition: all 0.3s;
@@ -314,11 +321,84 @@
       fill: #00B8A6;
     }
     
-    @media screen and (max-width: 780px) {
-      #hamburger {
-        display: block;
-      }
-    }
+      /* Dropdown Button */
+.hamburger-dropbtn {
+  background-color: transparent;
+  color: var(--fill-color);
+  padding: 16px 0;
+  font-weight: 600;
+  font-size: 18px;
+  min-width: fit-content;
+  border: none;
+  font-family: var(--base-font);
+  transition: all 0.3s;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  z-index: 500;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.hamburger-dropdown {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s;
+  z-index: 500;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.hamburger-content {
+  display: none;
+  position: absolute;
+  background-color: var(--base-color);
+  min-width:max-content;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
+  transition: all 0.3s;
+  border-radius: 20px;
+  right: -10%;
+  z-index: 700;
+  border: 1px solid white;
+  justify-items: end;
+}
+
+/* Links inside the dropdown */
+.hamburger-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s;
+  z-index: 600;
+  width: 100%;
+  text-align: right;
+}
+
+@media screen and (max-width: 780px) {
+  #hamburger {
+    display: block;
+
+    
+  }
+
+  /* Change color of dropdown links on hover */
+  .hamburger-content a:hover {background-color: var(--fill-color); transition: all 0.3s;}
+
+  .hamburger-content a:hover:first-child {
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+  }
+
+  .hamburger-content a:hover:last-child {
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
+  }
+
+  /* Show the dropdown menu on hover */
+  .hamburger-dropdown:hover .hamburger-content {display: block; transition: all 0.3s; z-index: inherit;}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .hamburger-dropdown:hover .hamburger-dropbtn {background-color: transparent; color: #00B8A6; transition: all 0.3s;}
+}
     
     /* Dropdown Button */
     .dropbtn {
@@ -371,7 +451,17 @@
     }
     
     /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {background-color: transparent; transition: all 0.3s;}
+    .dropdown-content a:hover {background-color: var(--fill-color); transition: all 0.3s;}
+
+    .dropdown-content a:hover:first-child {
+      border-top-left-radius: 17px;
+      border-top-right-radius: 17px;
+    }
+  
+    .dropdown-content a:hover:last-child {
+      border-bottom-left-radius: 17px;
+      border-bottom-right-radius: 17px;
+    }
     
     /* Show the dropdown menu on hover */
     .dropdown:hover .dropdown-content {display: block; transition: all 0.3s; z-index: inherit;}
@@ -424,7 +514,6 @@
       
     }
 
-    
 
     #banner-content p {
       font-size: 48px;
@@ -598,7 +687,7 @@
       position: relative;
       z-index: 10;
       padding-bottom: 20px;
-      background-color: var(--base-color);
+      background-color: var(--fill-color);
       justify-content: center;
     }
   
@@ -606,9 +695,11 @@
     #main-body #donate .form {
         background: var(--base-color);
         position: relative;
-        max-width: 600px;
+        max-width: 800px;
         padding: 30px 30px;
-        
+        border-radius: 40px;
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+        width: 100%;
         
     }
     
@@ -624,7 +715,7 @@
       }
     }
     
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1400px) {
       #main-body.flex-between {
         flex-wrap: wrap;
       }
@@ -994,7 +1085,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr;
-      gap: 30px 100px;
+      gap: 30px 90px;
       padding-top: 20px;
       justify-content: center;
       width: fit-content;
@@ -1010,7 +1101,7 @@
   
   }
   
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 1300px){
       footer #cta .footer-links{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -1178,7 +1269,7 @@
   /* Form block */
   #demo-wrapper {
     width: 100%;
-    max-width: 419px;
+    max-width: 70%;
     margin: 0 auto;
     padding: 0;
     position: relative;
@@ -1240,11 +1331,11 @@
   }
   
   #demo-wrapper #amount .frequency-options {
-    padding-top: 10px;
+    padding-top: 30px;
     /* border-bottom: 1px solid #D1D1D1; */
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
   }
   
   #demo-wrapper #amount #current_amount {
@@ -1278,7 +1369,7 @@
   
   #demo-wrapper #amount .frequency-options .choice {
     width: 100%;
-    max-width: 150px;
+    min-width: 129px;
     position: relative;
   }
   
@@ -1307,6 +1398,35 @@
     color: var(--fill-color);
     position: relative
   }
+
+  #demo-wrapper #amount .frequency-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 25%;
+  }
+
+  #demo-wrapper #amount .impact-image {
+    margin-left: -6%; 
+  }
+  
+  @media screen and (max-width: 600px) {
+    #demo-wrapper #amount .impact-image {
+      position: absolute;
+      right: -25%;
+    }
+  
+    #demo-wrapper #amount .frequency-options {
+      padding-top: 30px;
+      padding-right: 30%;
+    }
+  
+    
+    #demo-wrapper #amount .impact-img {
+      width: 75px;
+    }
+  }
+  
   
   .amount-rate {
     width: 100%;
@@ -2474,7 +2594,7 @@
   .amount-card {
     position: relative;
     display: flex;
-    height: 150px;
+    height: fit-content;
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -2520,7 +2640,7 @@
   .amount-price {
     font-family: var(--base-font);
     font-weight: 800;
-    font-size: 1.75rem;
+    font-size: 2.5rem;
     color: var(--base-color);
     display: inline;
     margin-right: 0.5rem;
@@ -2529,8 +2649,19 @@
   .amount-description {
     font-family: var(--base-font);
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: var(--base-color);
     display: inline;
     text-align: left;
+  }
+
+  @media screen and (max-width: 1500px) {
+    .amount-price {
+      font-size: 2.5rem;
+    }
+    
+    .amount-description {
+      font-size: 1rem;
+
+    }
   }

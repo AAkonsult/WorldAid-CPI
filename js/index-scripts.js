@@ -5,27 +5,85 @@ function validateEmail(string) {
     return false;
 }
 
-function validateAmount(curr_amount, input_amount) {
-    if (parseFloat(input_amount) > parseFloat(curr_amount)) { // requires at least 0.00000000000001 higher amount
+function updateProgressBar(raisedAmount, goalAmount, donors, progressBarId, raisedId, goalId, donorsId) {
+    const progressBar = document.getElementById(progressBarId);
+    const raisedElement = document.getElementById(raisedId);
+    const goalElement = document.getElementById(goalId);
+    const donorsElement = document.getElementById(donorsId);
+  
+    // Update the displayed values dynamically
+    raisedElement.textContent = raisedAmount;
+    goalElement.textContent = goalAmount;
+    donorsElement.textContent = donors + " Donors";
+  
+    // Calculate the progress percentage
+    const progressPercentage = (raisedAmount / goalAmount) * 100;
+  
+    // Animate the progress bar width
+    setTimeout(() => {
+      progressBar.style.width = progressPercentage + "%";
+    }, 200); // Small delay for animation
+  }
+  
+  // Call the function after the window loads
+  window.onload = () => {
+    updateProgressBar(3000, 5000, 220, "progress-bar", "raised-1", "goal-1", "donors-1");
+  };
+  
 
-        return true;
-    }
-    return false;
 
-}
+//Address finder function
+(function() {
 
-const urlParams = new URLSearchParams(window.location.search);
+    const address_key = 'RC9G6UM7PVEQLNJA4FBD' //Modify value with own key 
 
-const DELIMITER = String.fromCharCode(30); // Record Separator
+    
+    
+
+    var widget, initAddressFinder = function() {
+        widget = new AddressFinder.Widget(
+            document.getElementById('MailingStreet'),
+            address_key,
+            'AU', {
+                "address_params": {
+                    "post_box": "0",
+                    "source": "gnaf,paf"
+                }
+            }
+        );
+
+        
+        //Change address field inputs and flashes Alpine form data
+        widget.on('address:select', function(fullAddress, metaData) {
+            document.getElementById('MailingStreet').value = metaData.address_line_combined;
+            document.getElementById('MailingStreet').dispatchEvent(new Event('input'));
+            document.getElementById('MailingCity').value = metaData.locality_name;
+            document.getElementById('MailingCity').dispatchEvent(new Event('input'));
+            document.getElementById('MailingState').value = metaData.state_territory;
+            document.getElementById('MailingState').dispatchEvent(new Event('input'));
+            document.getElementById('MailingPostalCode').value = metaData.postcode;
+            document.getElementById('MailingPostalCode').dispatchEvent(new Event('input'));
+        });
+    };
+
+    function downloadAddressFinder() {
+        var script = document.createElement('script');
+        script.src = 'https://api.addressfinder.io/assets/v3/widget.js';
+        script.async = true;
+        script.onload = initAddressFinder;
+        document.body.appendChild(script);
+    };
+
+    document.addEventListener('DOMContentLoaded', downloadAddressFinder);
+})();
 
 
+//Donation form
 document.addEventListener('alpine:init', () => {
     Alpine.data('form', () => ({
         amount: 75,
-        current_amount: 0,
         choice: '',
         total: 0,
-        rate: '1.05',
 
         amountDefaults: {
             'Monthly': 40,
@@ -60,19 +118,7 @@ document.addEventListener('alpine:init', () => {
         _stage: 1,
 
         init() {
-            // get decoded params from URL
-            const encodedData = urlParams.get('data');
-            if (encodedData) {
-                this.decodeAndPopulateForm(encodedData);
-            }
-
-            //Set current donation amount
-            this.current_amount = parseFloat(urlParams.get('amount') || this.amount);
-            let current_amount_str = "Your Current Donation: $" + this.current_amount;
-            document.getElementById("current_amount").innerHTML = current_amount_str;
-            this.amount = Math.round(this.current_amount * parseFloat(this.rate) * 100) / 100; // define amount
             this.total = this.amount; // define total
-
 
             document.getElementById("stg1complete").style.display="none";
             document.getElementById("stg1future").style.display="none";
@@ -81,19 +127,19 @@ document.addEventListener('alpine:init', () => {
             document.getElementById("stg3current").style.display="none";
             document.getElementById("stg3complete").style.display="none";
 
+            this.$watch('frequency', (frequency) => {
+                // includes the amount in that frequency
+                if (!this.amountOptions[frequency].includes(this.amount)) {
+                    this.$nextTick(() => {
+                        this.amount = this.amountDefaults[frequency]
+                    })
+                }
+            });
 
-            // this.$watch('frequency', (frequency) => {
-            //     // includes the amount in that frequency
-            //     if (!this.amountOptions[frequency].includes(this.amount)) {
-            //         this.$nextTick(() => {
-            //             this.amount = this.amountDefaults[frequency]
-            //         })
-            //     }
-            // });
-
+            //Watch changes to input values
             this.$watch('amount', (amount) => {
                 this.total = amount;
-                this._errors.amount = false;
+
                 if (amount == 'other') {
                     this.$refs['choice'].focus();
                 } else {
@@ -101,7 +147,6 @@ document.addEventListener('alpine:init', () => {
                 }
             });
             this.$watch('choice', (amount) => {
-                this._errors.choice = false;
                 this.total = amount;
             });
             this.$watch('name_first', (value) => {
@@ -144,11 +189,9 @@ document.addEventListener('alpine:init', () => {
                     this._errors.mailing_postal_code = !value;
                 }
             });
-            this.$watch('rate', (value) => {
-                const baseAmount = this.current_amount;
-                this.amount = Math.round(baseAmount * parseFloat(value) *100) / 100;
-                this.total = this.amount;
-            });
+
+
+
 
             window.onpopstate = (event) => {
                 if (this._submit) {
@@ -157,71 +200,6 @@ document.addEventListener('alpine:init', () => {
                 }
             };
 
-        },
-
-        // fill form with decoded data
-        async decodeAndPopulateForm(encodedData) {
-            try {
-                const decodedValue = await this.decodeData(encodedData);
-                const fields = decodedValue.split(DELIMITER);
-
-                if (fields.length >= 4) {
-                    this.name_first = fields[0];
-                    this.name_last = fields[1];
-                    this.email = fields[2];
-                    this.phone = fields[3];
-                }
-            } catch (error) {
-                console.error('Error decoding URL data:', error);
-            }
-        },
-
-        async decodeData(encodedValue) {
-            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
-
-            // Extract length information
-            const originalLength = alphabet.indexOf(encodedValue[0]) * 32 +
-                alphabet.indexOf(encodedValue[1]);
-
-            // Convert to bits (skip first two length chars)
-            let bits = '';
-            for (const char of encodedValue.slice(2)) {
-                const index = alphabet.indexOf(char);
-                if (index === -1) continue;
-                bits += index.toString(2).padStart(5, '0');
-            }
-
-            // Trim bits to original length
-            bits = bits.slice(0, originalLength);
-
-            // Convert bits to characters
-            let decoded = '';
-            for (let i = 0; i < bits.length; i += 8) {
-                const byte = bits.slice(i, i + 8);
-                if (byte.length < 8) break;
-                decoded += String.fromCharCode(parseInt(byte, 2));
-            }
-
-            return decoded;
-        },
-
-        changeForRate(rate) {
-            const rateMap = {
-                '1.028': 'images/8aff547d8f1d5a2c539af7cf4d5b87d3.jpeg',
-                '1.035': 'images/abd18fa7e78683fab9f1e92226c1d533.jpeg', 
-                '1.05': 'images/5b8e5c05f680809f643bcca0725e7618.jpeg'
-            };
-
-            if (rate == 1.028) {
-                document.getElementById("amount-desc").innerHTML = "- Offers emergency relief to a disaster-stricken community, providing food, shelter, and medical aid."
-            }
-            else if (rate == 1.035) {
-                document.getElementById("amount-desc").innerHTML = "- Supplies clean drinking water to a family for a year, preventing waterborne illnesses."
-            }
-            else if (rate == 1.05) {
-                document.getElementById("amount-desc").innerHTML = "- Provides vital vaccines for several children, protecting them from deadly diseases in impoverished areas."
-            }
-            return rateMap[rate] || 'images/5b8e5c05f680809f643bcca0725e7618.jpeg';
         },
 
         get isMonthly() {
@@ -258,7 +236,7 @@ document.addEventListener('alpine:init', () => {
                 document.getElementById("stg3complete").style.display="none";
                 document.getElementById("stg3future").style.display="block";
             }
-            if (nextStage == 2 && this._max > 2) {
+            if (nextStage == 2) {
                 document.getElementById("stg1current").style.display="none";
                 document.getElementById("stg1complete").style.display="block";
                 document.getElementById("stg1future").style.display="none";
@@ -269,7 +247,7 @@ document.addEventListener('alpine:init', () => {
                 document.getElementById("stg3complete").style.display="none";
                 document.getElementById("stg3future").style.display="block";
             }
-            if (nextStage == 3 && this._max > 2) {
+            if(nextStage == 3 && this._stage == 1 && this._max >2) {
                 document.getElementById("stg1current").style.display="none";
                 document.getElementById("stg1complete").style.display="block";
                 document.getElementById("stg1future").style.display="none";
@@ -279,42 +257,14 @@ document.addEventListener('alpine:init', () => {
                 document.getElementById("stg3current").style.display="block";
                 document.getElementById("stg3complete").style.display="none";
                 document.getElementById("stg3future").style.display="none";
-                }
-
+            }
 
 
             // reset errors
             this._errors = {};
 
-
-            //validate stage 1
-            if (this._stage == 1 && nextStage > this._stage) {
-                if (!this.total || !validateAmount(this.current_amount, this.total)) {
-                    this._errors.amount = true;
-                }
-
-
-                if (Object.keys(this._errors).length) {
-                    return;
-                }
-                else if (nextStage == 2) {
-                    document.getElementById("stg1current").style.display="none";
-                    document.getElementById("stg1complete").style.display="block";
-                    document.getElementById("stg1future").style.display="none";
-                    document.getElementById("stg2current").style.display="block";
-                    document.getElementById("stg2complete").style.display="none";
-                    document.getElementById("stg2future").style.display="none";
-                    document.getElementById("stg3current").style.display="none";
-                    document.getElementById("stg3complete").style.display="none";
-                    document.getElementById("stg3future").style.display="block";
-                }
-            }
-
-
-
-            // validate stage 2
+            // validate
             if (this._stage == 2 && nextStage > this._stage) {
-                // validate
                 if (!this.name_first) {
                     this._errors.name_first = true;
                 }
@@ -329,22 +279,36 @@ document.addEventListener('alpine:init', () => {
                 if (this.isMonthly) {
                     if (!this.phone) {
                         this._errors.phone = true;
+                    } 
+                    if (!this.mailing_street) {
+                        this._errors.mailing_street = true;
+                    }
+                    if (!this.mailing_city) {
+                        this._errors.mailing_city = true;
+                    }
+                    if (!this.mailing_state) {
+                        this._errors.mailing_state = true;
+                    }
+                    if (!this.mailing_postal_code) {
+                        this._errors.mailing_postal_code = true;
                     }
                 }
 
                 if (Object.keys(this._errors).length) {
                     return;
                 }
-                else if (nextStage == 3) {
-                    document.getElementById("stg1current").style.display="none";
-                    document.getElementById("stg1complete").style.display="block";
-                    document.getElementById("stg1future").style.display="none";
-                    document.getElementById("stg2current").style.display="none";
-                    document.getElementById("stg2complete").style.display="block";
-                    document.getElementById("stg2future").style.display="none";
-                    document.getElementById("stg3current").style.display="block";
-                    document.getElementById("stg3complete").style.display="none";
-                    document.getElementById("stg3future").style.display="none";
+                else {
+                    if (nextStage == 3) {
+                        document.getElementById("stg1current").style.display="none";
+                        document.getElementById("stg1complete").style.display="block";
+                        document.getElementById("stg1future").style.display="none";
+                        document.getElementById("stg2current").style.display="none";
+                        document.getElementById("stg2complete").style.display="block";
+                        document.getElementById("stg2future").style.display="none";
+                        document.getElementById("stg3current").style.display="block";
+                        document.getElementById("stg3complete").style.display="none";
+                        document.getElementById("stg3future").style.display="none";
+                    }
                 }
             }
 
@@ -370,13 +334,8 @@ document.addEventListener('alpine:init', () => {
 
             // are we on to the form?
             if (this._stage == 3) {
-                // Remove the 'name' attribute from all rate inputs to prevent them from being sent
-                const form = this.$refs['donationIntroForm'];
-                const rateInputs = form.querySelectorAll('input[name="rate"]');
-                rateInputs.forEach(input => input.removeAttribute('name'));
-
                 window.history.pushState("donate", null, null);
-                form.submit();
+                this.$refs['donationIntroForm'].submit();
                 this._submit = true;
                 // document.getElementById('stage3img').src = "images/progress complete.svg";
             } else {

@@ -21,14 +21,15 @@
         rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
     <script defer src="https://unpkg.com/alpinejs@3.4.1/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="css/double_site.css" />
-    <script src="js/double-scripts.js"></script>
+    <link rel="stylesheet" href="css/index_site.css" />
+    <script src="js/index-scripts.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
     <header>
-        <div id="header">
+        <img id="banner-img" src="images/eye img.png">
+        <div id="header"> 
             <div class="inner flex-between">
                 <div id="logo">
                     <a href="index.html">
@@ -50,21 +51,21 @@
                                     17ZM7 25H25C25.2652 25 25.5196 24.8946 25.7071 24.7071C25.8946 24.5196 26 24.2652 26 24C26 
                                     23.7348 25.8946 23.4804 25.7071 23.2929C25.5196 23.1054 25.2652 23 25 23H7C6.73478 23 6.48043 
                                     23.1054 6.29289 23.2929C6.10536 23.4804 6 23.7348 6 24C6 24.2652 6.10536 24.5196 6.29289 24.7071C6.48043 24.8946 6.73478 25 7 25Z"/>
-                                </svg>
+                                </svg> 
                             </button>
                             <div class="hamburger-content">
-                                <a href="index.html">Home</a>
+                                <a href="#">Home</a>
                                 <a href="#">Making a difference</a>
                                 <a href="#">Events</a>
                                 <a href="#">Membership</a>
                                 <a href="#footer">Contact</a>
                                 <a href="virtual.html">Virtual Seat</a>
                                 <a href="cpicampaign.html">CPI Campaign</a>
-                                <a href="#">Giving Day</a>
+                                <a href="doubledonation.html">Giving Day</a>
                             </div>
                         </div>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="#">Home</a>
                         </li>
                         <li>
                             <a href="#">Making a difference</a>
@@ -84,7 +85,7 @@
                                 <div class="dropdown-content">
                                     <a href="virtual.html">Virtual Seat</a>
                                     <a href="cpicampaign.html">CPI Campaign</a>
-                                    <a href="#">Giving Day</a>
+                                    <a href="doubledonation.html">Giving Day</a>
                                 </div>
                             </div>
                         </li>
@@ -96,42 +97,45 @@
                 </div>
             </div>
         </div>
+        <div id="banner-info" class="inner flex-center">
+            <div class="banner-spacer"></div>
+            <div id="banner-content">
+                <h1>Life changes through your generosity.</h1>
+                <p>Make a Difference Today: 
+                    Support Our World Aid Mission.</p>
+            </div>
+        </div>
     </header>
-    <div id="banner-info" class="inner flex-center">
-        <img id="banner-img" src="images/Hero Image.png">
-        <div id="banner-content">
-            <h1>2x Your Impact!</h1>
-            <p>This Giving Day, Let's Make a Difference for Disadvantaged Children.</p>
-            <p>&nbsp;</p>
-            <a href="#donate" class="button">Donate Now!</a>
-        </div>
-    </div>
-    <div id="countdown" class="inner flex-center">
-        <div id="countdown-info" class="inner flex-center">
-            <h2>DOUBLE your donation in November.</h2>
-            <h2>The countdown is on!</h2>
-        </div>
-        <div id="countdown-timer">
-            <ul>
-                <li><span id="days"></span>Day</li>
-                <li class="colon">:</li>
-                <li><span id="hours"></span>Hr</li>
-                <li class="colon">:</li>
-                <li><span id="minutes"></span>Min</li>
-                <li class="colon">:</li>
-                <li><span id="seconds"></span>Sec</li>
-            </ul>
-        </div>
-
-    </div>
+    
     <div id="main-body"class="inner flex-between">
         <div id="content">
             <div id="content-inner">
-                <h1>2x Your Impact Today!</h1>
-                <p>This Giving Day, every dollar you donate will be matched by our generous partners. 
-                    That means your contribution will go twice as far in providing food, education, 
-                    and a brighter future for children in need. Don’t miss this chance to make a life-changing impact!</p>
+                <h1>Make a difference where it counts</h1>
+                <p>Thanks to your generosity, we've reached communities in over 100 countries, 
+                    bringing change to more than 200 million children worldwide through our programs and initiatives.
+                    Your contributions are more than just donations—they drive real, tangible results.</p>
+                <p>&nbsp;</p>
+                <p>
+                    From building schools and providing clean water to delivering healthcare, your support has transformed lives and communities. 
+                    We are deeply grateful for your commitment to making a meaningful difference and for your continued partnership in this vital work.
+                </p>
                 
+            </div>
+            <div class="progress-container">
+                <div class="progress-header">
+                  <div>
+                    <h2>$<span id="raised-1">0</span></h2>
+                    <p>Raised</p>
+                  </div>
+                  <div>
+                    <h2>$<span id="goal-1">0</span></h2>
+                    <p>Goal</p>
+                  </div>
+                </div>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <p id="donors-1" class="donors">0 Donors</p>
             </div>
         </div>
         <div id="donate">
@@ -894,40 +898,155 @@
     <div id="features" class="inner flex-center">
         <div id="columns">
             <div class="column">
-               <img src="images/Students Couple.png">
-               <h1>500+</h1>
+               <img src="images/Vaccine.png">
+               <h1>Vital vaccine</h1>
                <p>
-                <strong>500+ children</strong> provided with nutritious meals
+                Provides vital vaccines for several children, 
+                protecting them from deadly diseases in impoverished areas.
                </p> 
             </div>
             <div class="column">
-                <img src="images/School.png">
-                <h1>300</h1>
+                <img src="images/Hematology.png">
+                <h1>Clean drinking water</h1>
                 <p>
-                    <strong>300 new school supplies kits</strong> 
-                    delivered to underprivileged students
+                    Supplies clean drinking water to a family for a year, 
+                    preventing waterborne illnesses.
                 </p>
             </div>
             <div class="column">
-                <img src="images/Family.png">
-                <h1>100+</h1>
+                <img src="images/Child Patient.png">
+                <h1>Education</h1>
                 <p>
-                    <strong>100+ families</strong> supported with
-                     essential aid and services
+                    Supports a child's education, covering school fees, 
+                    uniforms, and supplies for a semester.
+                </p>
+            </div>
+            <div class="column">
+                <img src="images/Air Ambulance.png">
+                <h1>Emergency relief</h1>
+                <p>
+                    Offers emergency relief to a disaster-stricken community, 
+                    providing food, shelter, and medical aid.
                 </p>
             </div>
 
         </div>
     </div>
-    <div id="last-info-card" class="inner flex-center">
-        <img id="info-card-img" src="images/kids.png">
-        <div id="banner-content">
-            <h1>Every moment counts. Every child matters.</h1>
-            <p>Your support on this Giving Day helps us bring hope 
-                to children facing unimaginable challenges. Together, we can ensure no child is left behind. 
-                Donate now and be the difference.</p>
-            <p>&nbsp;</p>
-            <a href="#donate" class="button">Donate Now!</a>
+    <div id="text-info-block" class="inner">
+        <h2>Global Impact Through Compassion and Action.</h2>
+        <p>Join forces with more than 100,000 Aussies who are dedicated to creating positive change for underprivileged children and communities globally.</p>
+    </div>
+    <div id="features2" class="inner flex-center">
+        <div id="columns">
+            <div class="column">
+               <img src="images/Hematology.png">
+               <h1>2 Million</h1>
+               <p>
+                Over 2 million children in Africa have received educational support.
+               </p> 
+            </div>
+            <div class="column">
+                <img src="images/Vaccine.png">
+                <h1>300,000</h1>
+                <p>
+                    Delivered essential healthcare services to 
+                    300,000 children and mothers in underserved regions
+                </p>
+            </div>
+            <div class="column">
+                <img src="images/Child Patient.png">
+                <h1>150,000</h1>
+                <p>
+                    Build and supported 200 schools, providing education to 150,000 children
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div id="more-info" class="inner">
+        <div class="colored">
+            <div id="card1" class="more-card">
+                <div class="more-img">
+                    <img src="images/Image - relief when it's needed.png" style="width: 90%; margin: 10px;">
+                </div>
+                <div class="more-info">
+                    <h1>
+                        Relief when it's needed
+                    </h1>
+                    <p>
+                        In times of crisis, we provide immediate relief, 
+                        from disaster response to humanitarian aid. 
+                        Our teams work tirelessly to bring hope and 
+                        stability to communities affected by natural disasters, 
+                        conflicts, and poverty. Your contributions 
+                        make it possible to distribute food, shelter, 
+                        and medical supplies, offering a lifeline to those 
+                        in dire circumstances.
+                    </p>
+                    <div class="more-btns">
+                        <a href="#donate" class="button">
+                            Donate
+                        </a>
+                        <a href="#">
+                            Learn more >
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="card2" class="more-card">
+                <div class="more-info">
+                    <h1>
+                        Empowering communities
+                    </h1>
+                    <p>
+                        Beyond immediate relief, we focus on empowering 
+                        communities for long-term success. We invest in education, 
+                        clean water, healthcare, and livelihood programs 
+                        that equip individuals with the tools they need to 
+                        break the cycle of poverty. By promoting self-sufficiency a
+                        nd resilience, we're helping communities build brighter futures.
+                    </p>
+                    <div class="more-btns">
+                        <a href="#donate" class="button">
+                            Donate
+                        </button>
+                        <a href="#">
+                            Learn more >
+                        </a>
+                    </div>
+                </div>
+                <div class="more-img">
+                    <img src="images/Image - empowering communities.png" style="width: 90%; margin: 10px;">
+                </div>
+            </div>
+        </div>
+        <div class="uncolored">
+            <div id="card3" class="more-card">
+                <div class="more-img">
+                    <img src="images/Image - global reach.png" style="width: 90%; margin: 10px;">
+                </div>
+                <div class="more-info">
+                    <h1>
+                        Global reach
+                    </h1>
+                    <p>
+                        Together with dedicated supporters like you, 
+                        we've touched countless lives in over 100 countries. 
+                        Our global network reaches 200 million children and families, 
+                        providing real solutions to complex challenges. 
+                        Your generosity fuels our mission to create positive change, 
+                        shaping a world where everyone has the opportunity to thrive.
+                    </p>
+                    <div class="more-btns">
+                        <a href="#donate" class="button">
+                            Donate
+                        </a>
+                        <a href="#">
+                          Learn more > 
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
