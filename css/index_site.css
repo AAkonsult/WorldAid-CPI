@@ -1592,6 +1592,7 @@ footer #footer-bg:after {
 /* Form block */
 #demo-wrapper {
   width: 100%;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0;
   position: relative;
@@ -2001,7 +2002,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 
 #demo-wrapper #iframe-loading-wrapper {
   z-index: 20;
-  background-color: var(--fill-color);
+  background-color: var(--base-color2);
   position: absolute;
   left: 0;
   top: 0;
