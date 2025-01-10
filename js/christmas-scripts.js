@@ -14,54 +14,54 @@ function validateAmount(curr_amount, input_amount) {
 
 }
 
-//Pie chart function
-function drawPieChart(stats, color_array, chart_height, chart_width) {
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
+//Countdown timer function
+(function () {
+    const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
 
-    function drawChart() {
+    //I'm adding this section so I don't have to keep updating this pen every year :-)
+    //remove this if you don't need it
+    let today = new Date(),
+        dd = String(today.getDate()).padStart(2, "0"),
+        mm = String(today.getMonth() + 1).padStart(2, "0"),
+        yyyy = today.getFullYear(), //Change year value if needed
+        nextYear = yyyy + 1,
+        dayMonth = "12/24/", //Change date if needed (month/day)
+        deadline = dayMonth + yyyy;
 
-        var data = google.visualization.arrayToDataTable(stats);
-
-        var options = {
-            legend: 'none',
-            backgroundColor: 'none',
-            height: chart_height,
-            width: chart_width,
-            chartArea: { left: 0, top: 0, width: '100%', height: '100%' },
-            enableInteractivity: false,
-            colors: color_array,
-            pieSliceTextStyle: { fontName: 'Rubik', fontSize: 20 }
-
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
+    today = mm + "/" + dd + "/" + yyyy;
+    if (today > deadline) {
+        deadline = dayMonth + nextYear;
     }
-}
+    //end
 
+    const countDown = new Date(deadline).getTime(),
+        x = setInterval(function () {
 
-// Call the function after the window loads
-window.onload = () => {
-    drawPieChart([
-        ['Category', 'Percentage'],
-        ['Access to Education', 25],
-        ['Nutritious Meals', 23],
-        ['Clean Water', 21],
-        ['Safe Shelter', 21],
-        ['Health and Care', 10]],
-        ['#537FF1', '#8979FF', '#FF928A', '#3CC3DF', '#FFAE4C'],
-        264, 264);
-};
+            const now = new Date().getTime(),
+                distance = countDown - now;
 
+            document.getElementById("days").innerText = Math.floor(distance / (day)),
+                document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
 
-
+            //do something later when date is reached
+            if (distance < 0) {
+                document.getElementById("headline").innerText = "It's my deadline!";
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("content").style.display = "block";
+                clearInterval(x);
+            }
+            //seconds
+        }, 0)
+}());
 
 const urlParams = new URLSearchParams(window.location.search);
 
 const DELIMITER = String.fromCharCode(30); // Record Separator
-
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('form', () => ({
