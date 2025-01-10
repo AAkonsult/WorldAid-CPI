@@ -736,7 +736,7 @@ a.button:hover {
 }
 
 @media screen and (max-width: 1400px) {
-  .main-body.flex-between {
+  .main-body .flex-between {
     flex-wrap: wrap;
   }
 
