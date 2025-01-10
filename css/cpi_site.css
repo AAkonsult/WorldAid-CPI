@@ -1465,7 +1465,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 
 #demo-wrapper #iframe-loading-wrapper {
   z-index: 20;
-  background-color: var(--fill-color);
+  background-color: var(--base-color);
   position: absolute;
   left: 0;
   top: 0;
@@ -1904,7 +1904,7 @@ input:-webkit-autofill:focus {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #004282;
+  background: var(--button-color);
   animation: ldio-dfenqtjt94v 1s linear infinite;
 }
 

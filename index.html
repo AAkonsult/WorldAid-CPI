@@ -28,10 +28,10 @@
 
 <body>
     <header>
-        <img id="banner-img" src="images/eye img.png">
-        <div id="header"> 
+        <img class="banner-img" src="images/eye img.png">
+        <div id="header">
             <div class="inner flex-between">
-                <div id="logo">
+                <div class="logo">
                     <a href="index.html">
                         <img src="images/logo.png" alt="WordAid" width="261" height="60">
                     </a>
@@ -40,8 +40,9 @@
                     <ul>
                         <div class="hamburger-dropdown">
                             <button class="hamburger-dropbtn">
-                                <svg id="hamburger" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7 9H25C25.2652 9 25.5196 8.89464 25.7071 8.70711C25.8946 8.51957 
+                                <svg class="hamburger" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 9H25C25.2652 9 25.5196 8.89464 25.7071 8.70711C25.8946 8.51957 
                                     26 8.26522 26 8C26 7.73478 25.8946 7.48043 25.7071 7.29289C25.5196 7.10536 25.2652 7 
                                     25 7H7C6.73478 7 6.48043 7.10536 6.29289 7.29289C6.10536 7.48043 6 7.73478 6 8C6 8.26522 
                                     6.10536 8.51957 6.29289 8.70711C6.48043 8.89464 6.73478 9 7 9ZM7 17H25C25.2652 17 25.5196 
@@ -50,8 +51,8 @@
                                     15.4804 6 15.7348 6 16C6 16.2652 6.10536 16.5196 6.29289 16.7071C6.48043 16.8946 6.73478 17 7 
                                     17ZM7 25H25C25.2652 25 25.5196 24.8946 25.7071 24.7071C25.8946 24.5196 26 24.2652 26 24C26 
                                     23.7348 25.8946 23.4804 25.7071 23.2929C25.5196 23.1054 25.2652 23 25 23H7C6.73478 23 6.48043 
-                                    23.1054 6.29289 23.2929C6.10536 23.4804 6 23.7348 6 24C6 24.2652 6.10536 24.5196 6.29289 24.7071C6.48043 24.8946 6.73478 25 7 25Z"/>
-                                </svg> 
+                                    23.1054 6.29289 23.2929C6.10536 23.4804 6 23.7348 6 24C6 24.2652 6.10536 24.5196 6.29289 24.7071C6.48043 24.8946 6.73478 25 7 25Z" />
+                                </svg>
                             </button>
                             <div class="hamburger-content">
                                 <a href="#">Home</a>
@@ -97,50 +98,53 @@
                 </div>
             </div>
         </div>
-        <div id="banner-info" class="inner flex-center">
-            <div class="banner-spacer"></div>
-            <div id="banner-content">
-                <h1>Life changes through your generosity.</h1>
-                <p>Make a Difference Today: 
-                    Support Our World Aid Mission.</p>
+        <div class="banner-info">
+            <div class="inner flex-center">
+                <div class="banner-content">
+                    <h1>Life changes through your generosity.</h1>
+                    <p>Make a Difference Today:
+                        Support Our World Aid Mission.</p>
+                </div>
             </div>
+
         </div>
     </header>
-    
-    <div id="main-body"class="inner flex-between">
-        <div id="content">
-            <div id="content-inner">
+
+    <div class="main-body inner flex-between">
+        <div class="content">
+            <div>
                 <h1>Make a difference where it counts</h1>
-                <p>Thanks to your generosity, we've reached communities in over 100 countries, 
+                <p>Thanks to your generosity, we've reached communities in over 100 countries,
                     bringing change to more than 200 million children worldwide through our programs and initiatives.
                     Your contributions are more than just donations—they drive real, tangible results.</p>
                 <p>
-                    From building schools and providing clean water to delivering healthcare, your support has transformed lives and communities. 
-                    We are deeply grateful for your commitment to making a meaningful difference and for your continued partnership in this vital work.
+                    From building schools and providing clean water to delivering healthcare, your support has
+                    transformed lives and communities.
+                    We are deeply grateful for your commitment to making a meaningful difference and for your continued
+                    partnership in this vital work.
                 </p>
-                
+
             </div>
             <div class="progress-container">
                 <div class="progress-header">
-                  <div>
-                    <h2>$<span id="raised-1">0</span></h2>
-                    <p>Raised</p>
-                  </div>
-                  <div>
-                    <h2>$<span id="goal-1">0</span></h2>
-                    <p>Goal</p>
-                  </div>
+                    <div>
+                        <h2>$<span id="raised-1">0</span></h2>
+                        <p>Raised</p>
+                    </div>
+                    <div>
+                        <h2>$<span id="goal-1">0</span></h2>
+                        <p>Goal</p>
+                    </div>
                 </div>
                 <div class="progress-bar-container">
-                  <div class="progress-bar" id="progress-bar"></div>
+                    <div class="progress-bar" id="progress-bar"></div>
                 </div>
                 <p id="donors-1" class="donors">0 Donors</p>
             </div>
         </div>
         <div id="donate">
             <div class="form">
-                <div id="demo-form-top"></div>
-                <div id="demo-wrapper" x-data="form">
+                <div class="demo-wrapper" x-data="form">
 
                     <!-- Progress bar block -->
                     <div class="stepper-wrapper">
@@ -274,10 +278,12 @@
                                                         <span>Monthly 💖</span>
                                                     </label>
                                                 </div>
-                                                
+
 
                                             </div>
-                                            <div class="impact-image"><img src="images/impact.png" class ='impact-img'></div>
+
+                                        </div>
+                                        <div class="impact-image"><img src="images/impact.png" class='impact-img'>
                                         </div>
 
                                     </div>
@@ -538,14 +544,14 @@
                                         <div class="field full required">
                                             <label>Email Address</label>
                                             <input type="email" x-model="email" :class="{'has-error' : _errors.email }"
-                                                name="Email" id="Email" />
+                                                name="Email" id="Email" autocomplete="on" />
                                             <span x-show="_errors.email" class="error">Please provide a valid email
                                                 address.</span>
                                         </div>
                                         <div class="field full required">
                                             <label>Phone Number</label>
                                             <input type="text" x-model="phone" :class="{'has-error' : _errors.phone }"
-                                                name="Phone" id="Phone" />
+                                                name="Phone" id="Phone" autocomplete="on " />
                                             <span x-show="_errors.phone" class="error">Please provide a valid phone
                                                 number.</span>
 
@@ -894,21 +900,21 @@
             </div>
         </div>
     </div>
-    <div id="features" class="inner flex-center">
-        <div id="columns">
+    <div class="features inner flex-center">
+        <div class="columns">
             <div class="column">
-               <img class="feature-icon" src="images/Vaccine.png">
-               <h1>Vital vaccine</h1>
-               <p>
-                Provides vital vaccines for several children, 
-                protecting them from deadly diseases in impoverished areas.
-               </p> 
+                <img class="feature-icon" src="images/Vaccine.png">
+                <h1>Vital vaccine</h1>
+                <p>
+                    Provides vital vaccines for several children,
+                    protecting them from deadly diseases in impoverished areas.
+                </p>
             </div>
             <div class="column">
                 <img class="feature-icon" src="images/Hematology.png">
                 <h1>Clean drinking water</h1>
                 <p>
-                    Supplies clean drinking water to a family for a year, 
+                    Supplies clean drinking water to a family for a year,
                     preventing waterborne illnesses.
                 </p>
             </div>
@@ -916,7 +922,7 @@
                 <img class="feature-icon" src="images/Child Patient.png">
                 <h1>Education</h1>
                 <p>
-                    Supports a child's education, covering school fees, 
+                    Supports a child's education, covering school fees,
                     uniforms, and supplies for a semester.
                 </p>
             </div>
@@ -924,31 +930,34 @@
                 <img class="feature-icon" src="images/Air Ambulance.png">
                 <h1>Emergency relief</h1>
                 <p>
-                    Offers emergency relief to a disaster-stricken community, 
+                    Offers emergency relief to a disaster-stricken community,
                     providing food, shelter, and medical aid.
                 </p>
             </div>
-
         </div>
     </div>
-    <div id="text-info-block" class="inner">
-        <h2>Global Impact Through Compassion and Action.</h2>
-        <p>Join forces with more than 100,000 Aussies who are dedicated to creating positive change for underprivileged children and communities globally.</p>
+    <div class="inner">
+        <div class="text-info-block">
+            <h2>Global Impact Through Compassion and Action.</h2>
+            <p>Join forces with more than 100,000 Aussies who are dedicated to creating positive change for
+                underprivileged
+                children and communities globally.</p>
+        </div>
     </div>
-    <div id="features2" class="inner flex-center">
-        <div id="columns">
+    <div class="features2 inner flex-center">
+        <div class="columns">
             <div class="column">
-               <img class="feature-icon" src="images/Hematology.png">
-               <h1>2 Million</h1>
-               <p>
-                Over 2 million children in Africa have received educational support.
-               </p> 
+                <img class="feature-icon" src="images/Hematology.png">
+                <h1>2 Million</h1>
+                <p>
+                    Over 2 million children in Africa have received educational support.
+                </p>
             </div>
             <div class="column">
                 <img class="feature-icon" src="images/Vaccine.png">
                 <h1>300,000</h1>
                 <p>
-                    Delivered essential healthcare services to 
+                    Delivered essential healthcare services to
                     300,000 children and mothers in underserved regions
                 </p>
             </div>
@@ -959,165 +968,164 @@
                     Build and supported 200 schools, providing education to 150,000 children
                 </p>
             </div>
-
         </div>
     </div>
-    <div id="more-info" class="inner">
-        <div class="colored">
-            <div id="card1" class="more-card">
-                <div class="more-img">
-                    <img src="images/Image - relief when it's needed.png" style="width: 90%; margin: 10px;">
+    <div class="inner">
+        <div class="info-cards">
+            <div class="colored">
+                <div id="card1" class="more-card">
+                    <div class="more-img">
+                        <img src="images/Image - relief when it's needed.png" style="width: 90%; margin: 10px;">
+                    </div>
+                    <div class="more-info">
+                        <h1>
+                            Relief when it's needed
+                        </h1>
+                        <p>
+                            In times of crisis, we provide immediate relief,
+                            from disaster response to humanitarian aid.
+                            Our teams work tirelessly to bring hope and
+                            stability to communities affected by natural disasters,
+                            conflicts, and poverty. Your contributions
+                            make it possible to distribute food, shelter,
+                            and medical supplies, offering a lifeline to those
+                            in dire circumstances.
+                        </p>
+                        <div class="more-btns">
+                            <a href="#donate" class="button">
+                                Donate
+                            </a>
+                            <a href="#">
+                                Learn more >
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="more-info">
-                    <h1>
-                        Relief when it's needed
-                    </h1>
-                    <p>
-                        In times of crisis, we provide immediate relief, 
-                        from disaster response to humanitarian aid. 
-                        Our teams work tirelessly to bring hope and 
-                        stability to communities affected by natural disasters, 
-                        conflicts, and poverty. Your contributions 
-                        make it possible to distribute food, shelter, 
-                        and medical supplies, offering a lifeline to those 
-                        in dire circumstances.
-                    </p>
-                    <div class="more-btns">
-                        <a href="#donate" class="button">
-                            Donate
-                        </a>
-                        <a href="#">
-                            Learn more >
-                        </a>
+                <div id="card2" class="more-card">
+                    <div class="more-info">
+                        <h1>
+                            Empowering communities
+                        </h1>
+                        <p>
+                            Beyond immediate relief, we focus on empowering
+                            communities for long-term success. We invest in education,
+                            clean water, healthcare, and livelihood programs
+                            that equip individuals with the tools they need to
+                            break the cycle of poverty. By promoting self-sufficiency a
+                            nd resilience, we're helping communities build brighter futures.
+                        </p>
+                        <div class="more-btns">
+                            <a href="#donate" class="button">
+                                Donate
+                                </button>
+                                <a href="#">
+                                    Learn more >
+                                </a>
+                        </div>
+                    </div>
+                    <div class="more-img">
+                        <img src="images/Image - empowering communities.png" style="width: 90%; margin: 10px;">
                     </div>
                 </div>
             </div>
-            <div id="card2" class="more-card">
-                <div class="more-info">
-                    <h1>
-                        Empowering communities
-                    </h1>
-                    <p>
-                        Beyond immediate relief, we focus on empowering 
-                        communities for long-term success. We invest in education, 
-                        clean water, healthcare, and livelihood programs 
-                        that equip individuals with the tools they need to 
-                        break the cycle of poverty. By promoting self-sufficiency a
-                        nd resilience, we're helping communities build brighter futures.
-                    </p>
-                    <div class="more-btns">
-                        <a href="#donate" class="button">
-                            Donate
-                        </button>
-                        <a href="#">
-                            Learn more >
-                        </a>
+            <div class="uncolored">
+                <div id="card3" class="more-card">
+                    <div class="more-img">
+                        <img src="images/Image - global reach.png" style="width: 90%; margin: 10px;">
                     </div>
-                </div>
-                <div class="more-img">
-                    <img src="images/Image - empowering communities.png" style="width: 90%; margin: 10px;">
-                </div>
-            </div>
-        </div>
-        <div class="uncolored">
-            <div id="card3" class="more-card">
-                <div class="more-img">
-                    <img src="images/Image - global reach.png" style="width: 90%; margin: 10px;">
-                </div>
-                <div class="more-info">
-                    <h1>
-                        Global reach
-                    </h1>
-                    <p>
-                        Together with dedicated supporters like you, 
-                        we've touched countless lives in over 100 countries. 
-                        Our global network reaches 200 million children and families, 
-                        providing real solutions to complex challenges. 
-                        Your generosity fuels our mission to create positive change, 
-                        shaping a world where everyone has the opportunity to thrive.
-                    </p>
-                    <div class="more-btns">
-                        <a href="#donate" class="button">
-                            Donate
-                        </a>
-                        <a href="#">
-                          Learn more > 
-                        </a>
+                    <div class="more-info">
+                        <h1>
+                            Global reach
+                        </h1>
+                        <p>
+                            Together with dedicated supporters like you,
+                            we've touched countless lives in over 100 countries.
+                            Our global network reaches 200 million children and families,
+                            providing real solutions to complex challenges.
+                            Your generosity fuels our mission to create positive change,
+                            shaping a world where everyone has the opportunity to thrive.
+                        </p>
+                        <div class="more-btns">
+                            <a href="#donate" class="button">
+                                Donate
+                            </a>
+                            <a href="#">
+                                Learn more >
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <footer>
-        <div id="footer">
-            <div class="inner flex-between">
-                <div id="cta">
-
-                    <div class="footer-about">
-                        <div class="footer-logo">
-                            <img src="images/logo.png" width="200">
+        <div class="inner flex-between">
+            <div class="cta">
+                <!-- About and socials -->
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" width="200">
+                    </div>
+                    <div class="about-desc">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                    <div class="footer-buttons">
+                        <div class="footer-btn-left">
+                            <a href="#donate" class="button">Donate</a>
                         </div>
-                        <div class="about-desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        </div>
-                        <div class="footer-buttons">
-                            <div class="footer-btn-left">
-                                <a href="#donate" class="button">Donate</a>
-                            </div>
-                            <div class="footer-btn-right">
-                                <a href="https://www.facebook.com/"><img src="images/facebook.png"></a>
-                                <a href="https://www.instagram.com/"><img src="images/instagram.png"></a>
-                                <a href="https://www.twitter.com/"><img src="images/twitter.png"></a>
-                                <a href="https://www.youtube.com/"><img src="images/youtube.png"></a>
-                                <a href="https://www.linkedin.com/"><img src="images/linkedin.png"></a>
-                            </div>
-
+                        <div class="footer-btn-right">
+                            <a href="https://www.facebook.com/"><img src="images/facebook.png"></a>
+                            <a href="https://www.instagram.com/"><img src="images/instagram.png"></a>
+                            <a href="https://www.twitter.com/"><img src="images/twitter.png"></a>
+                            <a href="https://www.youtube.com/"><img src="images/youtube.png"></a>
+                            <a href="https://www.linkedin.com/"><img src="images/linkedin.png"></a>
                         </div>
                     </div>
-                    <div class="spacer"></div>
-                    <div class="footer-links">
-                        <div class="link-column">
-                            <h4><strong>Research</strong></h4>
-                            <a href="#">Our Projects</a>
-                            <a href="#">Funding Process</a>
-                        </div>
-                        <div class="link-column">
-                            <h4><strong>Donate</strong></h4>
-                            <a href="#">Regular giving</a>
-                            <a href="#">Gifts in memory</a>
-                            <a href="#">Membership</a>
-                        </div>
-                        <div class="link-column">
-                            <h4><strong>About</strong></h4>
-                            <a href="#">Case studies</a>
-                            <a href="#">Our stories</a>
-                        </div>
-                        <div class="link-column">
-                            <h4><strong>Contact</strong></h4>
-                            <a href="#">Call us</a>
-                            <a href="#">Email us</a>
-                        </div>
-                    </div>
+                </div>
+                <div class="spacer"></div>
 
+                <!-- Links section -->
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4><strong>Research</strong></h4>
+                        <a href="#">Our Projects</a>
+                        <a href="#">Funding Process</a>
+                    </div>
+                    <div class="link-column">
+                        <h4><strong>Donate</strong></h4>
+                        <a href="#">Regular giving</a>
+                        <a href="#">Gifts in memory</a>
+                        <a href="#">Membership</a>
+                    </div>
+                    <div class="link-column">
+                        <h4><strong>About</strong></h4>
+                        <a href="#">Case studies</a>
+                        <a href="#">Our stories</a>
+                    </div>
+                    <div class="link-column">
+                        <h4><strong>Contact</strong></h4>
+                        <a href="#">Call us</a>
+                        <a href="#">Email us</a>
+                    </div>
                 </div>
             </div>
-            <div id="footer-bottom">
-                <div class="inner flex-between">
-                    <hr>
+        </div>
+        <div class="footer-bottom">
+            <div class="inner flex-between">
+                <hr>
+            </div>
+            <div class="inner flex-between">
+                <div class="company-name">
+                    <h4>© Aakonsult Pty Ltd. ABN 00 000 000 000</h4>
                 </div>
-                <div class="inner flex-between">
-                    <div class="company-name">
-                        <h4>© Aakonsult Pty Ltd. ABN 00 000 000 000</h4>
-                    </div>
-                    <div id="footer-menu">
-                        <div class="wrapper">
-                            <div class="left">
-                                <h4>Powered By</h4>
-                            </div>
-                            <div class="right">
-                                <img src="images/P2U_Logo_Horizontal_HiRes 3.png">
-                            </div>
+                <div class="footer-menu">
+                    <div class="wrapper">
+                        <div class="left">
+                            <h4>Powered By</h4>
+                        </div>
+                        <div class="right">
+                            <img src="images/P2U_Logo_Horizontal_HiRes 3.png">
                         </div>
                     </div>
                 </div>
