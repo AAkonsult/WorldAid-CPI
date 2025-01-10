@@ -146,10 +146,21 @@
     }
     
     .inner {
-      width: 100%;
       margin: 0 auto;
       padding: 0 200px;
       position: relative;
+    }
+    
+    @media screen and (max-width: 1439px) {
+      .inner {
+        padding: 0 100px;
+      }
+    }
+    
+    @media screen and (min-width: 1921px) {
+      .inner {
+        padding: 0 300px;
+      }
     }
     
     @media screen and (max-width: 767px) {
@@ -167,8 +178,6 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap-reverse;
-      padding-left: 20px;
-      padding-right: 20px;
     }
     
     /* Header block */
@@ -220,10 +229,7 @@
     }
     
     @media screen and (max-width: 1000px) {
-      header {
-        height: 200px;
-        background: var(--base-color);
-      }
+      
     
   
     
@@ -556,7 +562,8 @@
     /* Countdown block */
     #countdown {
       background-color: var(--base-color2);
-      display: flex;
+      display: grid;
+      grid-template-rows: auto auto;
       padding-top: 20px;
       padding-bottom: 20px;
       font-family: var(--base-font);
@@ -568,7 +575,7 @@
       flex-direction: column;
       align-items: center;
       padding: 20px;
-      order: 2;
+      order: 1;
     }
 
     #countdown-info h2 {
@@ -583,7 +590,7 @@
       flex-wrap: nowrap;
       font-family: var(--base-font);
       max-width: 609px;
-      order: 1;
+      order: 2;
       width: 100%;
     }
 
@@ -741,7 +748,6 @@
     
     /*Features block */
     #features {
-      padding: 100px 100px;
       background-color: var(--base-color2);
     }
     
@@ -763,7 +769,8 @@
     #features #columns {
       
       width: 100%;
-      margin-top: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr;

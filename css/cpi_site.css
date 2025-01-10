@@ -142,12 +142,23 @@ ul {
   a:hover {
     color: #00B8A6;
   }
-  
+
   .inner {
-    width: 100%;
     margin: 0 auto;
     padding: 0 200px;
     position: relative;
+  }
+  
+  @media screen and (max-width: 1439px) {
+    .inner {
+      padding: 0 100px;
+    }
+  }
+  
+  @media screen and (min-width: 1921px) {
+    .inner {
+      padding: 0 300px;
+    }
   }
   
   @media screen and (max-width: 767px) {
@@ -222,10 +233,7 @@ ul {
   }
   
   @media screen and (max-width: 1000px) {
-    header {
-      height: 200px;
-      background: var(--base-color);
-    }
+    
   
 
   
@@ -513,7 +521,7 @@ ul {
   
   #main-body #content {
     width: 50%;
-    padding-right: 50px;
+    padding: 100px;
     color: white;
   }
 
@@ -547,7 +555,7 @@ ul {
   #main-body #donate {
     position: relative;
     z-index: 10;
-    padding-bottom: 20px;
+    padding: 20px;
     justify-items: center;
     align-items: center;
     width: 50%;
@@ -573,11 +581,6 @@ ul {
     }
   }
   
-  @media screen and (max-width: 1050px) {
-    #main-body #donate {
-      padding-left: 0;
-    }
-  }
   
   @media screen and (max-width: 1400px) {
     #main-body.flex-between {
@@ -586,7 +589,6 @@ ul {
   
     #main-body #content {
       width: 100%;
-      padding-right: 0;
       order: 1;
       padding-top: 50px;
       margin: 0 auto;
@@ -594,7 +596,6 @@ ul {
   
     #main-body #donate {
       width: 100%;
-      padding-left: 0;
       margin-top: 0px;
       order: 2;
       display: flex;
@@ -1464,7 +1465,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 
 #demo-wrapper #iframe-loading-wrapper {
   z-index: 20;
-  background-color: var(--fill-color);
+  background-color: var(--base-color);
   position: absolute;
   left: 0;
   top: 0;
@@ -1903,7 +1904,7 @@ input:-webkit-autofill:focus {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #004282;
+  background: var(--button-color);
   animation: ldio-dfenqtjt94v 1s linear infinite;
 }
 

@@ -147,10 +147,21 @@ a:hover {
 }
 
 .inner {
-  width: 100%;
   margin: 0 auto;
   padding: 0 200px;
   position: relative;
+}
+
+@media screen and (max-width: 1439px) {
+  .inner {
+    padding: 0 100px;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  .inner {
+    padding: 0 300px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -168,8 +179,6 @@ a:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap-reverse;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 /* Header block */
@@ -221,11 +230,6 @@ header #banner img {
 }
 
 @media screen and (max-width: 1000px) {
-  header {
-    height: 200px;
-    background: var(--base-color);
-  }
-
 
 
   header #banner {
@@ -625,11 +629,12 @@ a.button:hover {
 
 #third-banner-wrapper {
   width: 100%;
+  max-width: max-content;
   align-self: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px 50px;
+  justify-items: center;
 }
 
 #third-banner-wrapper .square {
@@ -658,10 +663,16 @@ a.button:hover {
   color: var(--base-color);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1300px) {
   #third-banner-wrapper {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  #third-banner-wrapper {
+    gap: 30px 100px;
   }
 }
 
@@ -806,11 +817,12 @@ a.button:hover {
 
 #last-banner-wrapper {
   width: 100%;
+  max-width: max-content;
   align-self: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px 50px;
+  justify-items: center;
 }
 
 #last-banner-wrapper .square {
@@ -878,12 +890,21 @@ a.button:hover {
   margin: 50px auto;
 }
 
-@media screen and (max-width: 600px) {
-  #last-banner-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
 
+@media screen and (max-width: 1300px) {
+  #last-banner-wrapper {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  #last-banner-wrapper {
+    gap: 30px 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
   #last-banner-info .button {
     display: none;
   }
