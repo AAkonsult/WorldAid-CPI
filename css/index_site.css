@@ -608,6 +608,7 @@ a.button:hover {
   background-color: var(--text-color);
   color: var(--base-color);
   flex-direction: column;
+  align-self: center;
 }
 
 .main-body .content h1 {
@@ -858,7 +859,6 @@ a.button:hover {
   padding-top: 80px;
   padding-bottom: 80px;
   justify-items: center;
-  line-height: 140%;
 }
 
 .text-info-block h2 {
@@ -981,9 +981,10 @@ a.button:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 55px;
-  padding: 20px;
+  padding: 50px;
   align-items: center;
   justify-items: center;
+  line-height: 180%;
 }
 
 @media screen and (max-width: 1300px) {
