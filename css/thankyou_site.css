@@ -613,13 +613,6 @@
       background-color: var(--fill-color);
     }
     
-    #features h2 {
-      color: var(--base-color);
-      font-family: var(--base-font);
-      font-weight: 700;
-      font-size: 48px;
-      text-align: left;
-    }
   
     @media screen and (max-width: 1100px) {
       #features h2 {
@@ -674,13 +667,6 @@
       margin-bottom: 8px;
     }
     
-    #features .column a,
-    #features .column a:visited {
-      font-family: var(--base-font);
-      font-weight: 800;
-      text-decoration: none;
-    }
-  
     .statistics {
       display: flex;
       flex-direction: column;
@@ -2506,6 +2492,41 @@
     background-color: var(--fill-color);
   }
 
-  .thankyou-msg h1{
+  .thankyou-msg {
+  }
+
+  .thankyou-msg h1 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
     color: var(--base-color);
+    padding-bottom: 25px;
+  }
+
+  .thankyou-msg h2 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    color: #374150;
+    padding-bottom: 25px;
+  }
+
+  .thankyou-msg a {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #118ACB;
+  }
+
+  .thankyou-msg u{
+    color: #118ACB;
+    
+  }
+
+  .thankyou-msg p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #374150;
+    padding-bottom: 15px;
   }
