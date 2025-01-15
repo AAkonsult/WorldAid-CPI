@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    min-width: 500px;
   }
   
   h1,
@@ -119,7 +120,6 @@
       font-weight: 800;
       font-size: 36px;
       color: white;
-      margin-bottom: 20px;
     }
     
     h2 {
@@ -648,6 +648,7 @@
       font-size: 16px;
       line-height: 1.4em;
       align-content: center;
+      justify-items: center;
     }
     
     #features .column h3 {
@@ -657,15 +658,7 @@
       color: var(--base-color);
       margin-bottom: 8px;
     }
-  
-    #features .column p {
-      display: flex;
-      font-family: var(--base-font);
-      font-weight: 400;
-      font-size: 20px;
-      color: var(--base-color);
-      margin-bottom: 8px;
-    }
+
     
     .statistics {
       display: flex;
@@ -2457,6 +2450,8 @@
     border-radius: 12px;
     background-color: var(--table-bg-color);
     text-align: center;
+    margin-bottom: 20px;
+    max-width: 700px;
   }
 
   .table-info h1 {
@@ -2464,7 +2459,7 @@
     font-size: 32px;
     line-height: 48px;
     color: var(--base-color);
-    padding-top: 50px;
+    padding-top: 20px;
   }
 
   
@@ -2486,13 +2481,16 @@
     font-size: 20px;
     line-height: 30px;
     color: var(--base-color);
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 34px;
+    padding-right: 34px;
+    border-radius: 6px;
   }
 
   .table-row.odd {
     background-color: var(--fill-color);
-  }
-
-  .thankyou-msg {
   }
 
   .thankyou-msg h1 {
@@ -2530,3 +2528,19 @@
     color: #374150;
     padding-bottom: 15px;
   }
+
+  @media screen and (max-width: 1100px) {
+    .thankyou-msg {
+      text-align: center;
+    
+    }
+
+    #invoice {
+      order: 2;
+    }
+    #message {
+      order: 1;
+    }
+  }
+
+  
