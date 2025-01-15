@@ -2462,6 +2462,8 @@
   .table-img {
     margin: 0 0;
     padding: 0 0;
+    object-fit: fill;
+    justify-self: center;
   }
 
   .table-info {
@@ -2502,4 +2504,8 @@
 
   .table-row.odd {
     background-color: var(--fill-color);
+  }
+
+  .thankyou-msg h1{
+    color: var(--base-color);
   }
