@@ -79,9 +79,8 @@
   
   :root {
     --text-color: #FFFFFF;
-    --text-color2: #118ACB;
+    --table-bg-color: #F3F9FF;
     --base-color: #024586;
-    --base-color2: #F3F9FF;
     --button-color: #00B8A6;
     --button-hover: #00b8a6a4;
     --fill-color: #FFFFFF;
@@ -144,7 +143,7 @@
     a:hover {
       color: #00B8A6;
     }
-    
+  
     .inner {
       margin: 0 auto;
       padding: 0 200px;
@@ -177,7 +176,13 @@
     .flex-center {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap-reverse;
+    }
+  
+    @media screen and (max-width: 1400px) {
+      .flex-center {
+        flex-wrap: wrap-reverse;
+      }
+      
     }
     
     /* Header block */
@@ -194,6 +199,7 @@
       background: var(--base-color);
       position: relative;
       padding-top: 30px;
+      padding-bottom: 30px;
       z-index: 100;
     }
     
@@ -224,7 +230,7 @@
     @media screen and (max-width: 1300px) {
       header .flex-between {
         flex-wrap: wrap;
-        justify-content: center;
+        /* justify-content: center; */
       }
     }
     
@@ -303,7 +309,7 @@
         justify-content: center;
       }
     }
-
+  
     @media screen and (max-width: 780px) {
       header .flex-between{
         flex-wrap: nowrap;
@@ -316,95 +322,97 @@
     
     #hamburger {
       fill: var(--fill-color);
-      width: 38px;      height: 38px;
+      width: 38px;
+      height: 38px;
       display: none;
       cursor: pointer;
       transition: all 0.3s;
-      justify-self: center;
     }
     
     #hamburger:hover {
       fill: #00B8A6;
     }
     
-      /* Dropdown Button */
-.hamburger-dropbtn {
-  background-color: transparent;
-  color: var(--fill-color);
-  padding: 16px 0;
-  font-weight: 600;
-  font-size: 18px;
-  min-width: fit-content;
-  border: none;
-  font-family: var(--base-font);
-  transition: all 0.3s;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  text-align: center;
-  z-index: 500;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.hamburger-dropdown {
-  position: relative;
-  display: inline-block;
-  transition: all 0.3s;
-  z-index: 500;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.hamburger-content {
-  display: none;
-  position: absolute;
-  background-color: var(--base-color);
-  min-width:max-content;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
-  transition: all 0.3s;
-  border-radius: 20px;
-  right: -10%;
-  z-index: 700;
-  border: 1px solid white;
-  justify-items: end;
-}
-
-/* Links inside the dropdown */
-.hamburger-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: all 0.3s;
-  z-index: 600;
-  width: 100%;
-  text-align: right;
-}
-
-@media screen and (max-width: 780px) {
-  #hamburger {
-    display: block;
-
+    /* Dropdown Button */
+    .hamburger-dropbtn {
+      background-color: transparent;
+      color: var(--fill-color);
+      padding: 16px 0;
+      font-weight: 600;
+      font-size: 18px;
+      min-width: fit-content;
+      border: none;
+      font-family: var(--base-font);
+      transition: all 0.3s;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      text-align: center;
+      z-index: 500;
+    }
     
-  }
-
-  /* Change color of dropdown links on hover */
-  .hamburger-content a:hover {background-color: var(--fill-color); transition: all 0.3s;}
-
-  .hamburger-content a:hover:first-child {
-    border-top-left-radius: 17px;
-    border-top-right-radius: 17px;
-  }
-
-  .hamburger-content a:hover:last-child {
-    border-bottom-left-radius: 17px;
-    border-bottom-right-radius: 17px;
-  }
-
-  /* Show the dropdown menu on hover */
-  .hamburger-dropdown:hover .hamburger-content {display: block; transition: all 0.3s; z-index: inherit;}
-
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .hamburger-dropdown:hover .hamburger-dropbtn {background-color: transparent; color: #00B8A6; transition: all 0.3s;}
-}
+    /* The container <div> - needed to position the dropdown content */
+    .hamburger-dropdown {
+      position: relative;
+      display: inline-block;
+      transition: all 0.3s;
+      z-index: 500;
+    }
+    
+    /* Dropdown Content (Hidden by Default) */
+    .hamburger-content {
+      display: none;
+      position: absolute;
+      background-color: var(--base-color);
+      min-width:max-content;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
+      transition: all 0.3s;
+      border-radius: 20px;
+      right: -10%;
+      z-index: 700;
+      border: 1px solid white;
+      justify-items: end;
+    }
+    
+    /* Links inside the dropdown */
+    .hamburger-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: all 0.3s;
+      z-index: 600;
+      width: 100%;
+      text-align: right;
+    }
+    
+    
+    
+    @media screen and (max-width: 780px) {
+      #hamburger {
+        display: block;
+    
+        
+      }
+  
+      .hamburger-content a:hover:first-child {
+        border-top-left-radius: 17px;
+        border-top-right-radius: 17px;
+      }
+    
+      .hamburger-content a:hover:last-child {
+        border-bottom-left-radius: 17px;
+        border-bottom-right-radius: 17px;
+      }
+    
+      /* Change color of dropdown links on hover */
+      .hamburger-content a:hover {background-color: var(--fill-color); transition: all 0.3s;}
+    
+      /* Show the dropdown menu on hover */
+      .hamburger-dropdown:hover .hamburger-content {display: block; transition: all 0.3s; z-index: inherit;}
+    
+      /* Change the background color of the dropdown button when the dropdown content is shown */
+      .hamburger-dropdown:hover .hamburger-dropbtn {background-color: transparent; color: #00B8A6; transition: all 0.3s;}
+    }
     
     /* Dropdown Button */
     .dropbtn {
@@ -458,7 +466,7 @@
     
     /* Change color of dropdown links on hover */
     .dropdown-content a:hover {background-color: var(--fill-color); transition: all 0.3s;}
-
+  
     .dropdown-content a:hover:first-child {
       border-top-left-radius: 17px;
       border-top-right-radius: 17px;
@@ -493,146 +501,16 @@
       background: var(--button-hover);
       color: var(--fill-color) !important;
     }
-
-    /* Banner info block */
-    #banner-info {
-      background-color: var(--base-color);
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 30px;
-      padding-top: 50px;
-      justify-content: space-evenly;
-    }
-
-    #banner-content {
-      max-width: 600px;
-      align-self: center;
-    }
-
-    @media screen and (max-width: 1100px) {
-      #banner-info {
-        flex-wrap: wrap;
-      }
-
-      #banner-content {
-        text-align: center;
-      }
-      
-    }
-
-
-    #banner-content p {
-      font-size: 48px;
-      font-weight: 400;
-      font-family: var(--base-font);
-      color: var(--fill-color);
-    }
-
-    #banner-content h1 {
-      font-size: 48px;
-      font-weight: 700;
-      font-family: var(--base-font);
-      color: var(--fill-color);
-    }
-
-    #banner-img {
-      width: 517px;
-      height: 414px;
-      margin: 20px;
-
-    }
-
-    @media screen and (max-width: 600px) {
-
-      #banner-content p {
-        font-size: 32px;
-        text-align: center;
-      }
-  
-      #banner-content h1 {
-        font-size: 32px;
-      } 
-
-      #banner-img {
-        width: 348.37px;
-        height: 278px;
-      }
-    }
-
-    /* Countdown block */
-    #countdown {
-      background-color: var(--base-color2);
-      display: grid;
-      grid-template-rows: auto auto;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      font-family: var(--base-font);
-      text-align: center;
-    }
     
-    #countdown-info {
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      order: 1;
-    }
-
-    #countdown-info h2 {
-      font-size: 36px;
-      font-weight: 700;
-      font-family: var(--base-font);
-      color: var(--base-color);
-    }
-
-    #countdown-timer {
-      display: flex;
-      flex-wrap: nowrap;
-      font-family: var(--base-font);
-      max-width: 609px;
-      order: 2;
-      width: 100%;
-    }
-
-    #countdown-timer ul {
-      display: grid;
-      grid-template-columns: 20% 6% 20% 6% 20% 6% 20%;
-      width: 100%;
-    }
-
-    @media screen and (max-width: 480px) {
-      #countdown-timer {
-        max-width: 430px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-      
-    }
-
-    #countdown-timer li{
-
-      display: inline-block;
-      font-size: 16px;
-      list-style-type: none;
-      padding-left: 10px;
-      padding-right: 10px;
-      text-align: left;
-      color: var(--base-color);
-    }
-
-    #countdown-timer li span {
-      display: block;
-      font-size: 48px;
-      color: var(--text-color2);
-    }
-
-    #countdown-timer li.colon {
-      position: relative;
-      font-size: 40px;
-      color: var(--base-color);
-    }
-
     /* Main body block */
+    #main-body {
+      padding-top: 50px;
+      padding-bottom: 70px;
+      border-bottom: 1px solid #D1D1D1;
+      background-color: var(--base-color);
+      height: fit-content;
+      align-items: center;
+    }
     
     #main-body p {
       margin-bottom: 20px;
@@ -644,69 +522,58 @@
     }
     
     #main-body #content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-top: 50px;
-      padding-bottom: 70px;
       width: 50%;
-      background-color: var(--text-color);
-      color: var(--base-color);
-    }
-
-    #main-body #content #content-inner {
-      max-width: 530px;
+      padding: 100px;
+      color: white;
     }
   
     #main-body #content h1 {
       width: 100%;
       font-family: var(--base-font);
-      font-size: 64px;
+      font-size: 48px;
       font-weight: 700;
-      color: var(--base-color);
-    }
-  
-    
-  
-    #main-body #content p {
-      width: fit-content;
-      font-family: var(--base-font);
-      font-size: 24px;
-      font-weight: 400;
     }
   
     @media screen and (max-width: 600px) {
       #main-body #content h1 {
-        font-size: 36px;
+        font-size: 24px;
       }
-
+    }
+  
+    #main-body #content p {
+      width: fit-content;
+      font-family: var(--base-font);
+      font-size: 20px;
+      font-weight: 400;
+    }
+  
+    @media screen and (max-width) {
       #main-body #content p {
-        font-size: 20px;
+        font-size: 12px;
     
       }
     }
     
     #main-body #donate {
-      display: flex;
-      width: 50%;
-      padding-top: 50px;
-      padding-bottom: 70px;
       position: relative;
       z-index: 10;
-      padding-bottom: 20px;
-      background-color: var(--fill-color);
-      justify-content: center;
+      padding: 20px;
+      justify-items: center;
+      align-items: center;
+      width: 50%;
     }
   
     
     #main-body #donate .form {
         background: var(--base-color);
+        border-radius: 40px;
+        box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.1);
         position: relative;
+        border: 3px solid #F3F9FF;
         max-width: 800px;
         padding: 30px 30px;
-        border-radius: 40px;
-        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
         width: 100%;
+        
         
     }
     
@@ -716,11 +583,6 @@
       }
     }
     
-    @media screen and (max-width: 1050px) {
-      #main-body #donate {
-        padding-left: 0;
-      }
-    }
     
     @media screen and (max-width: 1400px) {
       #main-body.flex-between {
@@ -729,7 +591,6 @@
     
       #main-body #content {
         width: 100%;
-        padding: 50px 20px;
         order: 1;
         padding-top: 50px;
         margin: 0 auto;
@@ -737,7 +598,6 @@
     
       #main-body #donate {
         width: 100%;
-        padding-left: 0;
         margin-top: 0px;
         order: 2;
         display: flex;
@@ -748,7 +608,9 @@
     
     /*Features block */
     #features {
-      background-color: var(--base-color2);
+      padding-top: 50px;
+      padding-bottom: 70px;
+      background-color: var(--fill-color);
     }
     
     #features h2 {
@@ -759,7 +621,7 @@
       text-align: left;
     }
   
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 1100px) {
       #features h2 {
         text-align: center;
         font-size: 24px;
@@ -767,36 +629,32 @@
     }
     
     #features #columns {
-      
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
+      margin-top: 50px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
       gap: 30px 50px;
     }
     
-    
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1000px) {
       #features #columns {
-        grid-template-columns: 1fr;
         gap: 30px 50px;
       }
     }
     
+    @media screen and (max-width: 1100px) {
+      #features #columns {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     #features .column {
-      width: 100%;
-      max-width: 400px;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
       font-size: 16px;
       line-height: 1.4em;
-      justify-self: center;
-    }
-
-    #features .column h1{
-      color: var(--text-color2);
-      font-weight: 700;
-      font-size: 48;
+      align-content: center;
     }
     
     #features .column h3 {
@@ -808,7 +666,7 @@
     }
   
     #features .column p {
-      display:inline;
+      display: flex;
       font-family: var(--base-font);
       font-weight: 400;
       font-size: 20px;
@@ -831,6 +689,11 @@
       align-items: center;
     }
   
+    @media screen and (max-width:1100px){
+      .statistics {
+        align-items: center;
+      }
+    }
   
     #features .statistics .impact-description {
       width: 100%;
@@ -936,62 +799,12 @@
       }
     }
   
-    /* Info card block */
-
-    
-
-    #last-info-card {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 80px;
-      padding-top: 50px;
-      align-items: center;
-      justify-content: space-evenly;
+    .piechart { 
+      margin: 0 auto; 
+      display: flex; 
+      justify-content: center
     }
     
-    @media screen and (max-width: 1100px) {
-      #last-info-card {
-        flex-wrap: wrap;
-      }
-    }
-
-    #last-info-card h1 {
-      color: var(--base-color);
-      font-size: 48px;
-      font-weight: 700;
-      max-width: 600px;
-    }
-
-    #last-info-card p {
-      color: var(--base-color);
-      font-size: 24px;
-      font-weight: 400;
-      max-width: 600px;
-    }
-
-    #info-card-img {
-      width: 402px;
-      height: 509px;
-      padding: 20px;;
-    }
-
-    @media screen and (max-width: 600px) {
-
-      #last-info-card p {
-        font-size: 20px;
-        text-align: center;
-      }
-  
-      #last-info-card h1 {
-        font-size: 36px;
-      } 
-
-      #info-card-img {
-        width: 358px;
-        height: 453.29px;
-      }
-    }
-
     /* Footer block */
     footer {
       position: relative;
@@ -1276,7 +1089,7 @@
   /* Form block */
   #demo-wrapper {
     width: 100%;
-    max-width: 70%;
+    max-width: 600px;
     margin: 0 auto;
     padding: 0;
     position: relative;
@@ -1291,7 +1104,7 @@
     font-family: var(--base-font);
     font-weight: 800;
     font-size: 30px;
-    color: var(--text-color2);
+    color: #118ACB;
     margin-bottom: 0;
   }
   
@@ -1338,11 +1151,11 @@
   }
   
   #demo-wrapper #amount .frequency-options {
-    padding-top: 30px;
+    padding-top: 10px;
     /* border-bottom: 1px solid #D1D1D1; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
   }
   
   #demo-wrapper #amount #current_amount {
@@ -1376,7 +1189,7 @@
   
   #demo-wrapper #amount .frequency-options .choice {
     width: 100%;
-    min-width: 129px;
+    max-width: 150px;
     position: relative;
   }
   
@@ -1405,35 +1218,6 @@
     color: var(--fill-color);
     position: relative
   }
-
-  #demo-wrapper #amount .frequency-box {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding-left: 25%;
-  }
-
-  #demo-wrapper #amount .impact-image {
-    margin-left: -6%; 
-  }
-  
-  @media screen and (max-width: 600px) {
-    #demo-wrapper #amount .impact-image {
-      position: absolute;
-      right: -25%;
-    }
-  
-    #demo-wrapper #amount .frequency-options {
-      padding-top: 30px;
-      padding-right: 30%;
-    }
-  
-    
-    #demo-wrapper #amount .impact-img {
-      width: 75px;
-    }
-  }
-  
   
   .amount-rate {
     width: 100%;
@@ -1922,7 +1706,7 @@
     outline: 0;
     height: auto !important;
     background: var(--fill-color);
-    color: var(--base-color) !important;
+    color: var(--text-color) !important;
     background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
     background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
     background-size: 5px 5px, 5px 5px, 1px 1.5em;
@@ -2328,7 +2112,7 @@
   }
   
   .single-event-intro .button {
-    background: var(--text-color2) !important;
+    background: #118ACB !important;
   }
   
   .event-detail-container {
@@ -2336,7 +2120,7 @@
   }
   
   .event-detail-container h2 {
-    color: var(--text-color2);
+    color: #118ACB;
     font-weight: 600;
   }
   
@@ -2361,7 +2145,7 @@
   }
   
   .event-detail .button {
-    background-color: var(--text-color2) !important;
+    background-color: #118ACB !important;
   }
   
   .upcoming-events {
@@ -2507,7 +2291,7 @@
     width: 300px;
     margin: 10px 0;
     padding: 10px 20px;
-    background: var(--text-color2);
+    background: #118acb;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -2551,7 +2335,7 @@
   }
   
   #newsletter button {
-    background: var(--text-color2);
+    background: #118acb;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -2576,7 +2360,7 @@
   
   #stages .stage.active {
     font-weight: bold;
-    color: var(--text-color2);
+    color: #118acb;
   }
   
   .block-wrapper {
@@ -2601,7 +2385,7 @@
   .amount-card {
     position: relative;
     display: flex;
-    height: fit-content;
+    height: 150px;
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -2626,6 +2410,7 @@
     height: 150px;
     padding: 10px;
     flex-shrink: 0;
+    background: var(--button-color);
     overflow: hidden;
   }
   
@@ -2638,8 +2423,9 @@
   
   .amount-content {
     position: relative;
-    padding: 10px;
+    padding: 1.5rem;
     display: block;
+    background: var(--button-color);
     text-align: left;
     z-index: 2;
   }
@@ -2647,8 +2433,8 @@
   .amount-price {
     font-family: var(--base-font);
     font-weight: 800;
-    font-size: 2.5rem;
-    color: var(--base-color);
+    font-size: 1.75rem;
+    color: var(--text-color);
     display: inline;
     margin-right: 0.5rem;
   }
@@ -2656,12 +2442,12 @@
   .amount-description {
     font-family: var(--base-font);
     font-weight: 400;
-    font-size: 1.25rem;
-    color: var(--base-color);
+    font-size: 1rem;
+    color: var(--text-color);
     display: inline;
     text-align: left;
   }
-
+  
   @media screen and (max-width: 1500px) {
     .amount-price {
       font-size: 2.5rem;
@@ -2669,6 +2455,51 @@
     
     .amount-description {
       font-size: 1rem;
-
+  
     }
+  }
+
+  .table-img {
+    margin: 0 0;
+    padding: 0 0;
+  }
+
+  .table-info {
+    border: 1px solid var(--base-color);
+    border-radius: 12px;
+    background-color: var(--table-bg-color);
+    text-align: center;
+  }
+
+  .table-info h1 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    color: var(--base-color);
+    padding-top: 50px;
+  }
+
+  
+
+  .table-content  {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+  }
+
+  .table-row p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--base-color);
+  }
+
+  .table-row.odd {
+    background-color: var(--fill-color);
   }

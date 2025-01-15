@@ -19,7 +19,7 @@ function validateEmail(string) {
         mm = String(today.getMonth() + 1).padStart(2, "0"),
         yyyy = today.getFullYear(), //Change year value if needed
         nextYear = yyyy + 1, 
-        dayMonth = "1/11/", //Change date if needed (month/day)
+        dayMonth = "1/18/", //Change date if needed (month/day)
         deadline = dayMonth + yyyy;
     
     today = mm + "/" + dd + "/" + yyyy;
