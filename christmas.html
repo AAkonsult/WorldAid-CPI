@@ -265,13 +265,13 @@
                                         <div class="frequency">
                                             <h4>I’d like to make this donation</h4>
                                             <div class="frequency-options">
-                                                <!-- <div class="choice">
+                                                <div class="choice">
                                                     <input type="radio" name="PayFrequency" id="frequency1" value="One-off"
                                                         x-model="frequency">
                                                     <label for="frequency1">
                                                         <span>Once only</span>
                                                     </label>
-                                                </div> -->
+                                                </div>
                                                 <div class="choice">
                                                     <input type="radio" name="PayFrequency" id="frequency2"
                                                         value="Monthly" x-model="frequency">
@@ -281,7 +281,6 @@
                                                 </div>
                                             </div>
                                             <p>&nbsp</p>
-                                            <h4 id="current_amount">Your Current Donation:</h4>
                                         </div>
 
                                         <div class="amount">
@@ -292,30 +291,35 @@
                                             <div class="amounts">
                                                 <template x-if="frequency === 'Monthly'">
                                                     <div>
-                                                        <div class="amount-rate">
-                                                            <div class="rate-options">
+                                                        <div class="amount-donation-price">
+                                                            <div class="donation-price-options">
                                                                 <div class="choice">
-                                                                    <input type="radio" name="rate" id="rate1"
-                                                                        value="1.028" x-model="rate">
-                                                                    <div class="rate-card">+ 2.8%</div>
+                                                                    <input type="radio" name="donation-price" id="donation-price1"
+                                                                        value="20" x-model="price">
+                                                                    <div class="donation-price-card">$20</div>
                                                                 </div>
                                                                 <div class="choice">
-                                                                    <input type="radio" name="rate" id="rate2"
-                                                                        value="1.035" x-model="rate">
-                                                                    <div class="rate-card">+ 3.5%</div>
+                                                                    <input type="radio" name="donation-price" id="donation-price2"
+                                                                        value="15" x-model="price">
+                                                                    <div class="donation-price-card">$15</div>
                                                                 </div>
                                                                 <div class="choice">
-                                                                    <input type="radio" name="rate" id="rate3"
-                                                                        value="1.05" x-model="rate">
-                                                                    <div class="rate-card">+ 5.0%</div>
+                                                                    <input type="radio" name="donation-price" id="donation-price3"
+                                                                        value="10" x-model="price">
+                                                                    <div class="donation-price-card">$10</div>
+                                                                </div>
+                                                                <div class="choice">
+                                                                    <input type="radio" name="donation-price" id="donation-price4"
+                                                                        value="5" x-model="price">
+                                                                    <div class="donation-price-card">$5</div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="amount-card" role="button" tabindex="0"
                                                             x-on:focus="total = amount">
                                                             <div class="amount-image">
-                                                                <img :src="changeForRate(rate)"
-                                                                    :alt="`$${amount} Monthly Donation with ${(parseFloat(rate)-1)*100}% Increase`">
+                                                                <img :src="changeForPrice(price)"
+                                                                    :alt="`$${amount} Donation`">
                                                             </div>
                                                             <div class="amount-content">
                                                                 <input type="radio" name="donation-amount"

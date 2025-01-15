@@ -598,7 +598,7 @@ a.button:hover {
 
 
 #main-body #donate .form {
-  background: var(--base-color);
+  background: var(--fill-color);
   border-radius: 40px;
   box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -1191,7 +1191,7 @@ footer #footer-bg:after {
   font-family: var(--base-font);
   font-weight: 600;
   /* font-size: 20px; */
-  color: var(--text-color);
+  color: var(--button-color);
   margin-bottom: 5px
 }
 
@@ -1291,26 +1291,26 @@ footer #footer-bg:after {
   position: relative
 }
 
-.amount-rate {
+.amount-donation-price {
   width: 100%;
-  margin-bottom: 20px;
   height: 100px;
 }
 
-.amount-rate .rate-options {
+.amount-donation-price .donation-price-options {
   display: flex;
   justify-content: space-between;
-  gap: 1px;
   height: 100%;
 }
 
-.amount-rate .choice {
+.amount-donation-price .choice {
   flex: 1;
   position: relative;
   height: 100%;
+  padding: 0 !important;
+  border: 1px solid var(--button-color);
 }
 
-.amount-rate input[type=radio] {
+.amount-donation-price input[type=radio] {
   position: absolute;
   left: 0;
   right: 0;
@@ -1324,7 +1324,7 @@ footer #footer-bg:after {
   z-index: 1;
 }
 
-.amount-rate .rate-card {
+.amount-donation-price .donation-price-card {
   position: relative;
   display: flex;
   justify-content: center;
@@ -1332,27 +1332,25 @@ footer #footer-bg:after {
   width: 100%;
   height: 100%;
   background-color: var(--fill-color);
-  border-radius: 5px;
-  border: 1px solid var(--bar-grey);
-  color: var(--base-color);
+  color: var(--button-color);
   font-family: var(--base-font);
   font-size: 24px;
   transition: all 0.3s;
   z-index: 0;
 }
 
-.amount-rate input[type=radio] {
+.amount-donation-price input[type=radio] {
   position: absolute;
   opacity: 0;
 }
 
-.amount-rate input[type="radio"]:checked+.rate-card {
+.amount-donation-price input[type="radio"]:checked+.donation-price-card {
   background: var(--button-color);
   color: var(--fill-color);
   border: none;
 }
 
-.amount-rate .rate-card:hover {
+.amount-donation-price .donation-price-card:hover {
   background: var(--button-hover);
   color: var(--fill-color);
   border: none;
@@ -1390,6 +1388,7 @@ footer #footer-bg:after {
   justify-content: center;
   /* border: 1px solid #D1D1D1; */
   border-radius: 50px;
+  border: 1px solid var(--button-color);
   background-color: var(--fill-color);
   cursor: pointer;
   position: relative;
@@ -1446,7 +1445,7 @@ footer #footer-bg:after {
   display: flex;
   align-items: center;
   padding: 0 10px;
-  color: var(--base-color);
+  color: var(--button-color);
   justify-content: flex-start;
 }
 
@@ -1460,7 +1459,7 @@ footer #footer-bg:after {
   font-family: var(--base-font);
   font-weight: 600;
   font-size: 20px;
-  color: var(--base-color);
+  color: var(--button-color);
   height: auto !important
 }
 
@@ -1471,57 +1470,57 @@ input::-webkit-inner-spin-button {
 }
 
 #demo-wrapper #amount .amounts .choice.other label input:focus {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label input:hover {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label input::-moz-placeholder {
   opacity: 1;
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label input::placeholder {
   opacity: 1;
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label:hover {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label:hover span {
   opacity: 1;
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label:hover input::placeholder {
   opacity: 1;
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked+label span {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked+label input {
-  color: var(--base-color) !important
+  color: var(--button-color) !important
 }
 
 #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked+label input::placeholder {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::placeholder {
   opacity: 1;
-  color: var(--base-color) !important
+  color: var(--button-color) !important
 }
 
 #demo-wrapper #amount .amounts .choice.other input[type=radio]:checked::placeholder {
   opacity: 1;
-  color: var(--base-color) !important;
+  color: var(--button-color) !important;
 }
 
 #demo-wrapper #amount .descriptions {
@@ -1881,7 +1880,7 @@ input:-webkit-autofill:focus {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--base-color);
+  background: var(--botton-color);
   margin-bottom: 6px;
   border: none;
 }
@@ -1895,11 +1894,11 @@ input:-webkit-autofill:focus {
 }
 
 #demo-wrapper .stepper-item.active .step-counter {
-  background-color: var(--base-color);
+  background-color: var(--botton-color);
 }
 
 #demo-wrapper .stepper-item.completed .step-counter {
-  background-color: var(--base-color);
+  background-color: var(--botton-color);
 }
 
 #demo-wrapper .stepper-item.completed::after {
@@ -2475,17 +2474,9 @@ input:-webkit-autofill:focus {
   display: flex;
   height: 150px;
   background: #fff;
-  border-radius: 8px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  margin: 0.5rem 0;
   z-index: 1;
-}
-
-.amount-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--button-color);
 }
 
 .amount-card:focus {
@@ -2498,7 +2489,7 @@ input:-webkit-autofill:focus {
   height: 150px;
   padding: 10px;
   flex-shrink: 0;
-  background: var(--button-color);
+  background: var(--fill-color);
   overflow: hidden;
 }
 
@@ -2513,7 +2504,7 @@ input:-webkit-autofill:focus {
   position: relative;
   padding: 1.5rem;
   display: block;
-  background: var(--button-color);
+  background: var(--fill-color);
   text-align: left;
   z-index: 2;
 }
@@ -2522,7 +2513,7 @@ input:-webkit-autofill:focus {
   font-family: var(--base-font);
   font-weight: 800;
   font-size: 1.75rem;
-  color: var(--text-color);
+  color: var(--button-color);
   display: inline;
   margin-right: 0.5rem;
 }
@@ -2531,7 +2522,7 @@ input:-webkit-autofill:focus {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 1rem;
-  color: var(--text-color);
+  color: var(--button-color);
   display: inline;
   text-align: left;
 }
