@@ -262,7 +262,7 @@ header #banner img {
 .menu ul a,
 .menu ul a:visited {
   font-family: var(--base-font);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
   color: var(--fill-color);
   text-decoration: none;
@@ -277,7 +277,7 @@ header #banner img {
 .menu ul a:visited.button {
   font-family: var(--base-font);
   background: var(--button-color2);
-  font-weight: 800;
+  font-weight: 400;
   font-size: 18px;
 }
 
@@ -340,7 +340,7 @@ header #banner img {
   background-color: transparent;
   color: var(--fill-color);
   padding: 16px 0;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
   min-width: fit-content;
   border: none;
@@ -432,7 +432,7 @@ header #banner img {
   background-color: var(--base-color);
   color: var(--fill-color);
   padding: 16px;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
   min-width: fit-content;
   border: none;
