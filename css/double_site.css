@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    min-width: 500px;
   }
   
   h1,
@@ -260,7 +261,7 @@
     .menu ul a,
     .menu ul a:visited {
       font-family: var(--base-font);
-      font-weight: 600;
+      font-weight: 400;
       font-size: 18px;
       color: var(--fill-color);
       text-decoration: none;
@@ -270,7 +271,7 @@
     .menu ul a.button,
     .menu ul a:visited.button {
       font-family: var(--base-font);
-      font-weight: 800;
+      font-weight: 400;
       font-size: 18px;
     }
     
@@ -332,7 +333,7 @@
   background-color: transparent;
   color: var(--fill-color);
   padding: 16px 0;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
   min-width: fit-content;
   border: none;
@@ -411,7 +412,7 @@
       background-color: var(--base-color);
       color: var(--fill-color);
       padding: 16px;
-      font-weight: 600;
+      font-weight: 400;
       font-size: 18px;
       min-width: fit-content;
       border: none;
@@ -522,10 +523,11 @@
 
 
     #banner-content p {
-      font-size: 48px;
+      font-size: 36px;
       font-weight: 400;
       font-family: var(--base-font);
       color: var(--fill-color);
+      line-height: 140%;
     }
 
     #banner-content h1 {
@@ -564,8 +566,8 @@
       background-color: var(--base-color2);
       display: grid;
       grid-template-rows: auto auto;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding-top: 52px;
+      padding-bottom: 52px;
       font-family: var(--base-font);
       text-align: center;
     }
@@ -583,6 +585,8 @@
       font-weight: 700;
       font-family: var(--base-font);
       color: var(--base-color);
+      line-height: 140%;
+      margin-bottom: 0px;
     }
 
     #countdown-timer {
@@ -656,6 +660,11 @@
 
     #main-body #content #content-inner {
       max-width: 530px;
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px 20px;
     }
   
     #main-body #content h1 {
@@ -749,6 +758,8 @@
     /*Features block */
     #features {
       background-color: var(--base-color2);
+      padding-top: 25px;
+      padding-bottom: 25px;
     }
     
     #features h2 {
@@ -793,10 +804,14 @@
       justify-self: center;
     }
 
+    #features .column .icon {
+      margin-bottom: 20px;
+    }
+
     #features .column h1{
       color: var(--text-color2);
       font-weight: 700;
-      font-size: 48;
+      font-size: 48px;
     }
     
     #features .column h3 {
@@ -813,7 +828,7 @@
       font-weight: 400;
       font-size: 20px;
       color: var(--base-color);
-      margin-bottom: 8px;
+      margin-bottom: 20px;
     }
     
     #features .column a,
@@ -967,6 +982,7 @@
       font-size: 24px;
       font-weight: 400;
       max-width: 600px;
+      line-height: 140%;
     }
 
     #info-card-img {
@@ -1276,7 +1292,7 @@
   /* Form block */
   #demo-wrapper {
     width: 100%;
-    max-width: 70%;
+    max-width: 86%;
     margin: 0 auto;
     padding: 0;
     position: relative;
@@ -1286,7 +1302,14 @@
     /* Transitions */
     /* Loading animation */
   }
+
+  @media screen and (max-width: 600px) {
+    #demo-wrapper {
+      max-width: 100%;
+    }
+  }
   
+
   #demo-wrapper h2 {
     font-family: var(--base-font);
     font-weight: 800;
@@ -1410,27 +1433,30 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-left: 25%;
   }
 
   #demo-wrapper #amount .impact-image {
-    margin-left: -6%; 
+    position: absolute;
+    left: 70%;
+    top: 0%;
   }
   
   @media screen and (max-width: 600px) {
     #demo-wrapper #amount .impact-image {
-      position: absolute;
-      right: -25%;
-    }
-  
-    #demo-wrapper #amount .frequency-options {
-      padding-top: 30px;
-      padding-right: 30%;
-    }
-  
-    
-    #demo-wrapper #amount .impact-img {
       width: 75px;
+      left: 75%;
+    }
+  }
+
+  @media screen and (min-width: 1441px) {
+    #demo-wrapper #amount .impact-image {
+      left: 75%
+    }
+  }
+
+  @media screen and (min-width: 1800px) {
+    #demo-wrapper #amount .impact-image {
+      left: 70%
     }
   }
   
@@ -1561,7 +1587,7 @@
   #demo-wrapper #amount .amounts .choice.other label {
     color: var(--bar-grey);
     font-family: var(--base-font);
-    font-weight: 600;
+    font-weight: 400;
     font-size: 20px;
     justify-content: flex-start;
     padding-left: 20px;
@@ -1569,7 +1595,7 @@
   
   #demo-wrapper #amount .amounts .choice.other label span {
     font-family: var(--base-font);
-    font-weight: 600;
+    font-weight: 400;
     font-size: 20px;
     display: flex;
     align-items: center;
@@ -1586,7 +1612,7 @@
     outline: 0;
     margin-left: 3px;
     font-family: var(--base-font);
-    font-weight: 600;
+    font-weight: 400;
     font-size: 20px;
     color: var(--base-color);
     height: auto !important
@@ -2609,16 +2635,21 @@
     cursor: pointer;
     margin: 0.5rem 0;
     z-index: 1;
+    color: var(--base-color);
   }
   
   .amount-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: var(--button-color);
+    color: var(--text-color);
   }
   
   .amount-card:focus {
     outline: 1px solid var(--text-color);
     outline-offset: 2px;
+    background:var(--button-color);
+    color: var(--text-color) !important;
   }
   
   .amount-image {
@@ -2648,7 +2679,7 @@
     font-family: var(--base-font);
     font-weight: 800;
     font-size: 2.5rem;
-    color: var(--base-color);
+    color: inherit;
     display: inline;
     margin-right: 0.5rem;
   }
@@ -2656,10 +2687,11 @@
   .amount-description {
     font-family: var(--base-font);
     font-weight: 400;
-    font-size: 1.25rem;
-    color: var(--base-color);
+    font-size: 1.15rem;
+    color: inherit;
     display: inline;
     text-align: left;
+    line-height: 140%;
   }
 
   @media screen and (max-width: 1500px) {

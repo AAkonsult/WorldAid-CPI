@@ -23,7 +23,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.4.1/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="css/thankyou_site.css" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="js/cpi-scripts.js"></script>
+    
     
 </head>
 
@@ -576,7 +576,7 @@
     </div> -->
     <div id="features" class="inner flex-center">
         <div id="columns">
-            <div class="column">
+            <div id="invoice" class="column">
                     <img class ='table-img' src="images/thankyou.png">
                 <div class="table-info">
                     <h1>
@@ -587,45 +587,42 @@
                             <p>
                                 Amount
                             </p>
-                            <p>
-                                test
+                            <p id="donationAmount">
+                                0
                             </p>
                         </div>
                         <div class="table-row ">
                             <p>
                                 Tax Amount
                             </p>
-                            <p>
-                                test
+                            <p id="taxAmount">
+                                0
                             </p>
                         </div>
                         <div class="table-row odd">
                             <p>
                                 Total Amount
                             </p>
-                            <p>
-                                test
+                            <p id="totalAmount">
+                                0
                             </p>
                         </div>
                         <div class="table-row">
                             <p>
                                 Ref No.
                             </p>
-                            <p>
-                                test
+                            <p id="txnNo">
+                                0
                             </p>
                         </div>
                     </div>
                     
                 </div>
             </div>
-            <div class="column">
+            <div id="message" class="column">
                 <div class="thankyou-msg">
-                    <h1>
-                        Thank you,
-                    </h1>
-                    <h1>
-                        [Firstname]!
+                    <h1 id="firstName">
+                        Thank you!
                     </h1>
                     <h2>
                         Your donation will help change people's lives. <u><a href="index.html">Back to site</a></u>
@@ -725,6 +722,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/thankyou-scripts.js"></script>
 </body>
 
 </html>
