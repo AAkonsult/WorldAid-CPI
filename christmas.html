@@ -103,10 +103,12 @@
     </header>
     <div id="main-body" class="inner flex-center" x-data="form">
         <div id="content">
-            <h1>Make a Child Smile</h1>
-            <h1>This Christmas</h1>
-            <p>Gift the joy of toys to children who need it most. Your kindness will bring happiness to their Christmas
-                day.</p>
+            <div class="steps-header">
+                <h1 class="steps-header-h1">Make a Child Smile This Christmas</h1>
+                <p class="steps-header-p">Gift the joy of toys to children who need it most. Your kindness will bring happiness to their
+                    Christmas
+                    day.</p>
+            </div>
             <p>&nbsp;</p>
             <div class="steps-blocks">
                 <div class="step-block">
@@ -276,14 +278,15 @@
                                                     <input type="radio" name="PayFrequency" id="frequency2"
                                                         value="Monthly" x-model="frequency">
                                                     <label for="frequency2">
-                                                        <span>Monthly 💖</span>
+                                                        <span>Monthly</span>
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="amount">
-                                            <h4 style="margin: 10px 0 20px 0; font-size: 16px;">Please select a donation amount</h4>
+                                            <h4 style="margin: 10px 0 20px 0; font-size: 16px;">Please select a donation
+                                                amount</h4>
                                             <!-- <p x-text="amount"></p>
                                             <p x-text="choice"></p>
                                             <p x-text="frequency"></p> -->
@@ -328,7 +331,8 @@
                                                                         <div class="amount-description">$</div>
                                                                         <div class="amount-price" x-text="amount"></div>
                                                                     </div>
-                                                                    <div id="amount-desc-headline" class="amount-description">
+                                                                    <div id="amount-desc-headline"
+                                                                        class="amount-description">
                                                                         <b>A Special Surprise</b>
                                                                     </div>
                                                                     <div id="amount-desc" class="amount-description">
@@ -442,7 +446,8 @@
                                                                         <div class="amount-description">$</div>
                                                                         <div class="amount-price" x-text="amount"></div>
                                                                     </div>
-                                                                    <div id="amount-desc-headline" class="amount-description">
+                                                                    <div id="amount-desc-headline"
+                                                                        class="amount-description">
                                                                         <b>A Special Surprise</b>
                                                                     </div>
                                                                     <div id="amount-desc" class="amount-description">
@@ -465,7 +470,7 @@
                                                         </div>
                                                     </div>
                                                 </template>
-                                                
+
                                                 <!-- <template x-if="frequency === 'One-off'">
                                                     <div>
                                                         <div class="amount-card" role="button" tabindex="0"
@@ -712,7 +717,7 @@
                 with pure joy, and she hasn’t let go of her bear since. 'It’s my best friend,' she says with a smile.
                 Your gift can create moments like this, spreading joy and hope where it’s needed most.</p>
             <p>&nbsp;</p>
-            <a href="#donate" class="button">Gift Now</a>
+            <a href="#donate" id="second-banner-button" class="button">Gift Now</a>
         </div>
     </div>
     <div id="countdown" class="inner flex-center">

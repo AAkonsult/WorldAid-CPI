@@ -229,7 +229,6 @@ header #banner img {
 
 @media screen and (max-width: 1000px) {
   header {
-    height: 200px;
     background: var(--base-color);
   }
 
@@ -631,7 +630,6 @@ a.button:hover {
     width: 100%;
     padding-right: 0;
     order: 1;
-    padding-top: 50px;
     margin: 0 auto;
   }
 
@@ -644,6 +642,16 @@ a.button:hover {
     justify-content: center;
 
   }
+}
+
+/* Step Header */
+#main-body .steps-header {
+  width: 512px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
 }
 
 /* Step Blocks */
@@ -692,6 +700,37 @@ a.button:hover {
   font-weight: 400;
 }
 
+@media screen and (max-width: 600px) {
+  #main-body .steps-header {
+    width: 100%;
+  }
+
+  #main-body .steps-header-h1 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    text-align: center;
+  }
+
+  #main-body .steps-header-p {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    text-align: center;
+  }
+
+  #main-body .steps-blocks .step-block {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #main-body .steps-blocks .step-block .block-title #block-h1 {
+    font-size: 24px;
+  }
+
+  #main-body .steps-blocks .step-block #block-p {
+    font-size: 16px;
+  }
+}
+
 /* Second banner info block */
 #second-banner-info {
   background-color: var(--fill-color);
@@ -699,7 +738,6 @@ a.button:hover {
   flex-wrap: nowrap;
   padding-bottom: 30px;
   padding-top: 50px;
-  justify-content: space-evenly;
 }
 
 #second-banner-content {
@@ -754,11 +792,17 @@ a.button:hover {
   #second-banner-content p {
     font-size: 20px;
     text-align: left;
+    line-height: 30px;
   }
 
   #second-banner-img {
-    width: 348.37px;
-    height: 278px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  #second-banner-button {
+    width: 100%;
   }
 }
 
@@ -821,11 +865,22 @@ a.button:hover {
   width: 100%;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
+  #countdown-info h2 {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  #countdown-info p {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
   #countdown-timer {
-    max-width: 430px;
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 100%;
+    padding: 0 !important;
   }
 }
 
@@ -833,8 +888,8 @@ a.button:hover {
   display: inline-block;
   font-size: 16px;
   list-style-type: none;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
   text-align: left;
   color: var(--fill-color);
 }
@@ -2497,6 +2552,7 @@ input:-webkit-autofill:focus {
 }
 
 .amount-image {
+  width: 50%;
   padding: 10px;
   flex-shrink: 0;
   background: var(--fill-color);
@@ -2524,6 +2580,7 @@ input:-webkit-autofill:focus {
 }
 
 .amount-content {
+  width: 50%;
   position: relative;
   display: block;
   background: var(--fill-color);
