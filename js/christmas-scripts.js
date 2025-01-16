@@ -179,22 +179,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         changeForPrice(price) {
-            const priceMap = {
-                '1.028': 'images/8aff547d8f1d5a2c539af7cf4d5b87d3.jpeg',
-                '1.035': 'images/abd18fa7e78683fab9f1e92226c1d533.jpeg',
-                '1.05': 'images/5b8e5c05f680809f643bcca0725e7618.jpeg'
-            };
-
-            if (price == 1.028) {
-                document.getElementById("amount-desc").innerHTML = "- Offers emergency relief to a disaster-stricken community, providing food, shelter, and medical aid."
-            }
-            else if (price == 1.035) {
-                document.getElementById("amount-desc").innerHTML = "- Supplies clean drinking water to a family for a year, preventing waterborne illnesses."
-            }
-            else if (price == 1.05) {
-                document.getElementById("amount-desc").innerHTML = "- Provides vital vaccines for several children, protecting them from deadly diseases in impoverished areas."
-            }
-            return priceMap[price] || 'images/5b8e5c05f680809f643bcca0725e7618.jpeg';
+            return 'images/christmas_child.png';
         },
 
         get isMonthly() {
@@ -231,7 +216,7 @@ document.addEventListener('alpine:init', () => {
                 document.getElementById("stg3complete").style.display = "none";
                 document.getElementById("stg3future").style.display = "block";
             }
-            if (nextStage == 2 && this._max > 2) {
+            if (nextStage == 2) {
                 document.getElementById("stg1current").style.display = "none";
                 document.getElementById("stg1complete").style.display = "block";
                 document.getElementById("stg1future").style.display = "none";
