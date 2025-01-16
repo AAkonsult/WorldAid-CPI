@@ -103,10 +103,12 @@
     </header>
     <div id="main-body" class="inner flex-center" x-data="form">
         <div id="content">
-            <h1>Make a Child Smile</h1>
-            <h1>This Christmas</h1>
-            <p>Gift the joy of toys to children who need it most. Your kindness will bring happiness to their Christmas
-                day.</p>
+            <div class="steps-header">
+                <h1 class="steps-header-h1">Make a Child Smile This Christmas</h1>
+                <p class="steps-header-p">Gift the joy of toys to children who need it most. Your kindness will bring happiness to their
+                    Christmas
+                    day.</p>
+            </div>
             <p>&nbsp;</p>
             <div class="steps-blocks">
                 <div class="step-block">
@@ -243,7 +245,7 @@
                         <div x-ref="wrapper" class="block-wrapper">
 
                             <form x-ref="donationIntroForm"
-                                action="https://aakonsult-e-dev-ed.develop.my.salesforce-sites.com/AAkPay__CheckoutM?"
+                                action="https://aakonsult-c-dev-ed.develop.my.salesforce-sites.com/AAkPay__CheckoutM?"
                                 method="GET" target="donationform" @submit.prevent="submitToForm">
 
                                 <!-- Amount Block -->
@@ -263,70 +265,80 @@
 
                                     <div class="form-content">
                                         <div class="frequency">
-                                            <h4>I’d like to make this donation</h4>
+                                            <h4 style="font-size: 16px;">I’d like to make this donation</h4>
                                             <div class="frequency-options">
-                                                <!-- <div class="choice">
-                                                    <input type="radio" name="PayFrequency" id="frequency1" value="One-off"
-                                                        x-model="frequency">
+                                                <div class="choice">
+                                                    <input type="radio" name="PayFrequency" id="frequency1"
+                                                        value="One-off" x-model="frequency">
                                                     <label for="frequency1">
                                                         <span>Once only</span>
                                                     </label>
-                                                </div> -->
+                                                </div>
                                                 <div class="choice">
                                                     <input type="radio" name="PayFrequency" id="frequency2"
                                                         value="Monthly" x-model="frequency">
                                                     <label for="frequency2">
-                                                        <span>Monthly 💖</span>
+                                                        <span>Monthly</span>
                                                     </label>
                                                 </div>
                                             </div>
-                                            <p>&nbsp</p>
-                                            <h4 id="current_amount">Your Current Donation:</h4>
                                         </div>
 
                                         <div class="amount">
-                                            <h4>Please select a donation amount</h4>
+                                            <h4 style="margin: 10px 0 20px 0; font-size: 16px;">Please select a donation
+                                                amount</h4>
                                             <!-- <p x-text="amount"></p>
                                             <p x-text="choice"></p>
                                             <p x-text="frequency"></p> -->
                                             <div class="amounts">
                                                 <template x-if="frequency === 'Monthly'">
                                                     <div>
-                                                        <div class="amount-rate">
-                                                            <div class="rate-options">
+                                                        <div class="amount-donation-price">
+                                                            <div class="donation-price-options">
                                                                 <div class="choice">
-                                                                    <input type="radio" name="rate" id="rate1"
-                                                                        value="1.028" x-model="rate">
-                                                                    <div class="rate-card">+ 2.8%</div>
+                                                                    <input type="radio" name="donation-price"
+                                                                        id="donation-price1" value="20" x-model="price">
+                                                                    <div class="donation-price-card">$20</div>
                                                                 </div>
                                                                 <div class="choice">
-                                                                    <input type="radio" name="rate" id="rate2"
-                                                                        value="1.035" x-model="rate">
-                                                                    <div class="rate-card">+ 3.5%</div>
+                                                                    <input type="radio" name="donation-price"
+                                                                        id="donation-price2" value="15" x-model="price">
+                                                                    <div class="donation-price-card">$15</div>
                                                                 </div>
                                                                 <div class="choice">
-                                                                    <input type="radio" name="rate" id="rate3"
-                                                                        value="1.05" x-model="rate">
-                                                                    <div class="rate-card">+ 5.0%</div>
+                                                                    <input type="radio" name="donation-price"
+                                                                        id="donation-price3" value="10" x-model="price">
+                                                                    <div class="donation-price-card">$10</div>
+                                                                </div>
+                                                                <div class="choice">
+                                                                    <input type="radio" name="donation-price"
+                                                                        id="donation-price4" value="5" x-model="price">
+                                                                    <div class="donation-price-card">$5</div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="amount-card" role="button" tabindex="0"
-                                                            x-on:focus="total = amount">
+                                                        <div class="amount-card" x-on:focus="total = amount">
                                                             <div class="amount-image">
-                                                                <img :src="changeForRate(rate)"
-                                                                    :alt="`$${amount} Monthly Donation with ${(parseFloat(rate)-1)*100}% Increase`">
+                                                                <img :src="changeForPrice(price)"
+                                                                    :alt="`$${amount} Donation`">
                                                             </div>
                                                             <div class="amount-content">
                                                                 <input type="radio" name="donation-amount"
                                                                     id="donation1" x-model="amount"
                                                                     class="hidden-radio">
-                                                                <div class="amount-description">$</div>
-                                                                <div class="amount-price" x-text="amount"></div>
-                                                                <div id="amount-desc" class="amount-description">-
-                                                                    Provides
-                                                                    vital vaccines for several children, protecting them
-                                                                    from deadly diseases in impoverished areas.</div>
+                                                                <div id="amount-price-description">
+                                                                    <div>
+                                                                        <div class="amount-description">$</div>
+                                                                        <div class="amount-price" x-text="amount"></div>
+                                                                    </div>
+                                                                    <div id="amount-desc-headline"
+                                                                        class="amount-description">
+                                                                        <b>A Special Surprise</b>
+                                                                    </div>
+                                                                    <div id="amount-desc" class="amount-description">
+                                                                        Your gift will provide one toy,
+                                                                        filling a child’s day with smiles and joy.</div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <!-- <div class="amount-card" role="button" tabindex="0"
@@ -380,6 +392,71 @@
                                                         <div class="choice other">
                                                             <!-- <input type="radio" name="donation-amount" id="donation5"
                                                                 value="other" x-model="amount"> -->
+                                                            <label for="donation5">
+                                                                <span>$<input type="number" placeholder="Other amount"
+                                                                        value="" size="20" name="donation-choice"
+                                                                        autocomplete="off" x-ref="choice"
+                                                                        x-model="choice""></span>
+                                                            </label>
+                                                            <span x-show=" _errors.amount" class="amount-error">Please
+                                                                    provide an amount larger than your current one or
+                                                                    contact WorldAid if you wish to lower your donation
+                                                                    amount.</span>
+                                                        </div>
+                                                    </div>
+                                                </template>
+
+                                                <template x-if="frequency === 'One-off'">
+                                                    <div>
+                                                        <div class="amount-donation-price">
+                                                            <div class="donation-price-options">
+                                                                <div class="choice">
+                                                                    <input type="radio" name="donation-price"
+                                                                        id="donation-price1" value="20" x-model="price">
+                                                                    <div class="donation-price-card">$20</div>
+                                                                </div>
+                                                                <div class="choice">
+                                                                    <input type="radio" name="donation-price"
+                                                                        id="donation-price2" value="15" x-model="price">
+                                                                    <div class="donation-price-card">$15</div>
+                                                                </div>
+                                                                <div class="choice">
+                                                                    <input type="radio" name="donation-price"
+                                                                        id="donation-price3" value="10" x-model="price">
+                                                                    <div class="donation-price-card">$10</div>
+                                                                </div>
+                                                                <div class="choice">
+                                                                    <input type="radio" name="donation-price"
+                                                                        id="donation-price4" value="5" x-model="price">
+                                                                    <div class="donation-price-card">$5</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="amount-card" x-on:focus="total = amount">
+                                                            <div class="amount-image">
+                                                                <img :src="changeForPrice(price)"
+                                                                    :alt="`$${amount} Donation`">
+                                                            </div>
+                                                            <div class="amount-content">
+                                                                <input type="radio" name="donation-amount"
+                                                                    id="donation1" x-model="amount"
+                                                                    class="hidden-radio">
+                                                                <div id="amount-price-description">
+                                                                    <div>
+                                                                        <div class="amount-description">$</div>
+                                                                        <div class="amount-price" x-text="amount"></div>
+                                                                    </div>
+                                                                    <div id="amount-desc-headline"
+                                                                        class="amount-description">
+                                                                        <b>A Special Surprise</b>
+                                                                    </div>
+                                                                    <div id="amount-desc" class="amount-description">
+                                                                        Your gift will provide one toy,
+                                                                        filling a child’s day with smiles and joy.</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="choice other">
                                                             <label for="donation5">
                                                                 <span>$<input type="number" placeholder="Other amount"
                                                                         value="" size="20" name="donation-choice"
@@ -478,8 +555,8 @@
                                         </div>
 
                                         <div class="button full field">
-                                            <input type="hidden" name="payMSetting" value="a0ZQE000000wQBr2AM">
-                                            <input type="hidden" name="payMType" value="a0bQE000000WExWYAW">
+                                            <input type="hidden" name="payMSetting" value="a0ZWU000000Yuqz2AC">
+                                            <input type="hidden" name="payMType" value="a0bWU000002SI45YAG">
                                             <input type="hidden" name="hidePaymentOverview" value="true">
                                             <input type="hidden" name="hidePaymentNote" value="true">
                                             <input type="hidden" name="hideprogressbar" value="true">
@@ -640,7 +717,7 @@
                 with pure joy, and she hasn’t let go of her bear since. 'It’s my best friend,' she says with a smile.
                 Your gift can create moments like this, spreading joy and hope where it’s needed most.</p>
             <p>&nbsp;</p>
-            <a href="#donate" class="button">Gift Now</a>
+            <a href="#donate" id="second-banner-button" class="button">Gift Now</a>
         </div>
     </div>
     <div id="countdown" class="inner flex-center">

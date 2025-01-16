@@ -229,7 +229,6 @@ header #banner img {
 
 @media screen and (max-width: 1000px) {
   header {
-    height: 200px;
     background: var(--base-color);
   }
 
@@ -583,7 +582,7 @@ a.button:hover {
 #main-body #donate-img {
   width: 100%;
   height: 100%;
-  margin-bottom: -20px;
+  margin-bottom: -15px;
   position: relative;
   z-index: 3;
 }
@@ -598,7 +597,7 @@ a.button:hover {
 
 
 #main-body #donate .form {
-  background: var(--base-color);
+  background: var(--fill-color);
   border-radius: 40px;
   box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -631,7 +630,6 @@ a.button:hover {
     width: 100%;
     padding-right: 0;
     order: 1;
-    padding-top: 50px;
     margin: 0 auto;
   }
 
@@ -644,6 +642,16 @@ a.button:hover {
     justify-content: center;
 
   }
+}
+
+/* Step Header */
+#main-body .steps-header {
+  width: 512px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
 }
 
 /* Step Blocks */
@@ -692,6 +700,37 @@ a.button:hover {
   font-weight: 400;
 }
 
+@media screen and (max-width: 600px) {
+  #main-body .steps-header {
+    width: 100%;
+  }
+
+  #main-body .steps-header-h1 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    text-align: center;
+  }
+
+  #main-body .steps-header-p {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    text-align: center;
+  }
+
+  #main-body .steps-blocks .step-block {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #main-body .steps-blocks .step-block .block-title #block-h1 {
+    font-size: 24px;
+  }
+
+  #main-body .steps-blocks .step-block #block-p {
+    font-size: 16px;
+  }
+}
+
 /* Second banner info block */
 #second-banner-info {
   background-color: var(--fill-color);
@@ -699,7 +738,6 @@ a.button:hover {
   flex-wrap: nowrap;
   padding-bottom: 30px;
   padding-top: 50px;
-  justify-content: space-evenly;
 }
 
 #second-banner-content {
@@ -754,11 +792,17 @@ a.button:hover {
   #second-banner-content p {
     font-size: 20px;
     text-align: left;
+    line-height: 30px;
   }
 
   #second-banner-img {
-    width: 348.37px;
-    height: 278px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  #second-banner-button {
+    width: 100%;
   }
 }
 
@@ -821,11 +865,22 @@ a.button:hover {
   width: 100%;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
+  #countdown-info h2 {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  #countdown-info p {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
   #countdown-timer {
-    max-width: 430px;
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 100%;
+    padding: 0 !important;
   }
 }
 
@@ -833,8 +888,8 @@ a.button:hover {
   display: inline-block;
   font-size: 16px;
   list-style-type: none;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
   text-align: left;
   color: var(--fill-color);
 }
@@ -1191,7 +1246,7 @@ footer #footer-bg:after {
   font-family: var(--base-font);
   font-weight: 600;
   /* font-size: 20px; */
-  color: var(--text-color);
+  color: var(--button-color);
   margin-bottom: 5px
 }
 
@@ -1203,8 +1258,8 @@ footer #footer-bg:after {
 
 #demo-wrapper #amount button {
   font-family: var(--base-font);
-  font-weight: 800;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 16px;
   transition: all .3s;
   background: var(--button-color);
   border: 0;
@@ -1265,6 +1320,10 @@ footer #footer-bg:after {
   position: relative;
 }
 
+#demo-wrapper #amount .frequency-options .choice span{
+  font-size: 16px;
+}
+
 #demo-wrapper #amount .frequency-options .choice:first-child label {
   border-bottom-left-radius: 50px;
   border-top-left-radius: 50px;
@@ -1291,26 +1350,28 @@ footer #footer-bg:after {
   position: relative
 }
 
-.amount-rate {
+.amount-donation-price {
   width: 100%;
-  margin-bottom: 20px;
-  height: 100px;
+  height: 62px;
+  box-sizing: border-box;
 }
 
-.amount-rate .rate-options {
+.amount-donation-price .donation-price-options {
   display: flex;
   justify-content: space-between;
-  gap: 1px;
   height: 100%;
+  gap: 0;
 }
 
-.amount-rate .choice {
+.amount-donation-price .choice {
   flex: 1;
   position: relative;
   height: 100%;
+  padding: 0 !important;
+  border: none;
 }
 
-.amount-rate input[type=radio] {
+.amount-donation-price input[type=radio] {
   position: absolute;
   left: 0;
   right: 0;
@@ -1324,7 +1385,7 @@ footer #footer-bg:after {
   z-index: 1;
 }
 
-.amount-rate .rate-card {
+.amount-donation-price .donation-price-card {
   position: relative;
   display: flex;
   justify-content: center;
@@ -1332,27 +1393,33 @@ footer #footer-bg:after {
   width: 100%;
   height: 100%;
   background-color: var(--fill-color);
-  border-radius: 5px;
-  border: 1px solid var(--bar-grey);
-  color: var(--base-color);
+  color: var(--button-color);
   font-family: var(--base-font);
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: 500;
   transition: all 0.3s;
   z-index: 0;
+  border-right: none;
+  border-top: 1px solid var(--button-color);
+  border-left: 1px solid var(--button-color);
 }
 
-.amount-rate input[type=radio] {
+.amount-donation-price .choice:last-child .donation-price-card {
+  border-right: 1px solid var(--button-color);
+}
+
+.amount-donation-price input[type=radio] {
   position: absolute;
   opacity: 0;
 }
 
-.amount-rate input[type="radio"]:checked+.rate-card {
+.amount-donation-price input[type="radio"]:checked+.donation-price-card {
   background: var(--button-color);
   color: var(--fill-color);
   border: none;
 }
 
-.amount-rate .rate-card:hover {
+.amount-donation-price .donation-price-card:hover {
   background: var(--button-hover);
   color: var(--fill-color);
   border: none;
@@ -1388,8 +1455,7 @@ footer #footer-bg:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid #D1D1D1; */
-  border-radius: 50px;
+  border: 1px solid var(--button-color);
   background-color: var(--fill-color);
   cursor: pointer;
   position: relative;
@@ -1405,7 +1471,7 @@ footer #footer-bg:after {
 
 #demo-wrapper #amount .amount label:hover {
   background: var(--text-color);
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--button-color);
   color: var(--fill-color);
 }
 
@@ -1441,12 +1507,12 @@ footer #footer-bg:after {
 
 #demo-wrapper #amount .amounts .choice.other label span {
   font-family: var(--base-font);
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 16px;
   display: flex;
   align-items: center;
   padding: 0 10px;
-  color: var(--base-color);
+  color: var(--button-color);
   justify-content: flex-start;
 }
 
@@ -1458,9 +1524,9 @@ footer #footer-bg:after {
   outline: 0;
   margin-left: 3px;
   font-family: var(--base-font);
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--base-color);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--button-color);
   height: auto !important
 }
 
@@ -1471,57 +1537,57 @@ input::-webkit-inner-spin-button {
 }
 
 #demo-wrapper #amount .amounts .choice.other label input:focus {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label input:hover {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label input::-moz-placeholder {
   opacity: 1;
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label input::placeholder {
   opacity: 1;
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label:hover {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label:hover span {
   opacity: 1;
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other label:hover input::placeholder {
   opacity: 1;
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked+label span {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked+label input {
-  color: var(--base-color) !important
+  color: var(--button-color) !important
 }
 
 #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked+label input::placeholder {
-  color: var(--base-color);
+  color: var(--button-color);
 }
 
 e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::placeholder {
   opacity: 1;
-  color: var(--base-color) !important
+  color: var(--button-color) !important
 }
 
 #demo-wrapper #amount .amounts .choice.other input[type=radio]:checked::placeholder {
   opacity: 1;
-  color: var(--base-color) !important;
+  color: var(--button-color) !important;
 }
 
 #demo-wrapper #amount .descriptions {
@@ -1574,20 +1640,20 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 
 #demo-wrapper .error {
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--button-color);
   font-size: 12px;
 }
 
 #demo-wrapper .amount-error {
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--button-color);
   font-size: 16px;
   margin-top: 20px;
 }
 
 /* Contact details block */
 #demo-wrapper #your-details {
-  background: var(--base-color);
+  background: var(--fill-color);
   text-align: left !important;
 }
 
@@ -1624,7 +1690,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
   background-color: var(--fill-color);
   cursor: pointer;
   position: relative;
-  color: var(--base-color);
+  color: var(--button-color);
   font-family: var (--base-font);
   font-weight: 500;
   font-size: 16px;
@@ -1634,7 +1700,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 #demo-wrapper #your-details .donor-options label:hover {
   background: var(--button-hover);
   border: 1px solid var(--button-hover);
-  color: var (--fill-color);
+  color: var(--fill-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -1691,7 +1757,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 
 #demo-wrapper #your-details .fields .field label {
   display: block;
-  color: var(--text-color);
+  color: var(--button-color);
   font-family: var(--base-font);
   font-weight: 500;
   font-size: 16px;
@@ -1737,7 +1803,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 
 #demo-wrapper #your-details .fields .field.required label:after {
   content: "*";
-  color: var(--text-color);
+  color: var(--button-color);
   font-size: 14px;
   top: 0px;
   padding-left: 4px;
@@ -1752,14 +1818,14 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
   font-weight: 400;
   font-size: 16px;
   line-height: 18.96px;
-  border: var(--base-color);
+  border: 1px solid var(--button-color);
   outline: 0;
   height: auto !important;
-  color: var(--base-color) !important;
+  color: var(--button-color) !important;
 }
 
 #demo-wrapper #your-details input:focus {
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--button-color);
 }
 
 #demo-wrapper #your-details input.has-error {
@@ -1881,7 +1947,7 @@ input:-webkit-autofill:focus {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--base-color);
+  background: var(--botton-color);
   margin-bottom: 6px;
   border: none;
 }
@@ -1895,11 +1961,11 @@ input:-webkit-autofill:focus {
 }
 
 #demo-wrapper .stepper-item.active .step-counter {
-  background-color: var(--base-color);
+  background-color: var(--botton-color);
 }
 
 #demo-wrapper .stepper-item.completed .step-counter {
-  background-color: var(--base-color);
+  background-color: var(--botton-color);
 }
 
 #demo-wrapper .stepper-item.completed::after {
@@ -1997,7 +2063,7 @@ input:-webkit-autofill:focus {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #004282;
+  background: var(--button-color);
   animation: ldio-dfenqtjt94v 1s linear infinite;
 }
 
@@ -2473,19 +2539,11 @@ input:-webkit-autofill:focus {
 .amount-card {
   position: relative;
   display: flex;
-  height: 150px;
+  height: 262px;
   background: #fff;
-  border-radius: 8px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  margin: 0.5rem 0;
   z-index: 1;
-}
-
-.amount-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--button-color);
 }
 
 .amount-card:focus {
@@ -2494,11 +2552,10 @@ input:-webkit-autofill:focus {
 }
 
 .amount-image {
-  width: 150px;
-  height: 150px;
+  width: 50%;
   padding: 10px;
   flex-shrink: 0;
-  background: var(--button-color);
+  background: var(--fill-color);
   overflow: hidden;
 }
 
@@ -2509,20 +2566,33 @@ input:-webkit-autofill:focus {
   object-position: center;
 }
 
+#amount-price-description {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+#amount-desc-headline {
+  margin: 10px 0;
+  font-weight: 500;
+}
+
 .amount-content {
+  width: 50%;
   position: relative;
-  padding: 1.5rem;
   display: block;
-  background: var(--button-color);
+  background: var(--fill-color);
   text-align: left;
   z-index: 2;
 }
 
 .amount-price {
   font-family: var(--base-font);
-  font-weight: 800;
-  font-size: 1.75rem;
-  color: var(--text-color);
+  font-weight: 600;
+  font-size: 36px;
+  color: var(--button-color);
   display: inline;
   margin-right: 0.5rem;
 }
@@ -2530,8 +2600,8 @@ input:-webkit-autofill:focus {
 .amount-description {
   font-family: var(--base-font);
   font-weight: 400;
-  font-size: 1rem;
-  color: var(--text-color);
+  font-size: 14px;
+  color: var(--button-color);
   display: inline;
   text-align: left;
 }
