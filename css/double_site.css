@@ -660,6 +660,11 @@
 
     #main-body #content #content-inner {
       max-width: 530px;
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px 20px;
     }
   
     #main-body #content h1 {
