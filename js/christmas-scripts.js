@@ -179,7 +179,31 @@ document.addEventListener('alpine:init', () => {
         },
 
         changeForPrice(price) {
-            return 'images/christmas_child.png';
+            const priceMap = {
+                '20': 'images/onetoy.png',
+                '50': 'images/twotoy.png',
+                '100': 'images/boxtoy.png',
+                '150': 'images/grouptoy.png',
+            };
+
+            if (price == 20) {
+                document.getElementById("amount-desc-headline").innerHTML = "A Special Surprise";
+                document.getElementById("amount-desc").innerHTML = "Your gift will provide one toy, filling a child’s day with smiles and joy.";
+            }
+            else if (price == 50) {
+                document.getElementById("amount-desc-headline").innerHTML = "Joy For Two";
+                document.getElementById("amount-desc").innerHTML = "Double the happiness—your donation will bring toys to two children this Christmas.";
+            }
+            else if (price == 100) {
+                document.getElementById("amount-desc-headline").innerHTML = "A Festive Toy Box";
+                document.getElementById("amount-desc").innerHTML = "Your generosity will deliver a box of toys to brighten Christmas for a group of children.";
+            }
+            else if (price == 150) {
+                document.getElementById("amount-desc-headline").innerHTML = "A Holiday To Remember";
+                document.getElementById("amount-desc").innerHTML = "Make this Christmas unforgettable by supporting toys for an entire group of children in need.";
+            }
+
+            return priceMap[price] || images/onetoy.png;
         },
 
         get isMonthly() {
