@@ -676,7 +676,7 @@ a.button:hover {
   padding: 20px 0;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
  #main-body .steps-header {
     
     text-align: center;
@@ -891,7 +891,7 @@ a.button:hover {
 
 #countdown-timer ul {
   display: grid;
-  grid-template-columns: 20% 6% 20% 6% 20% 6% 20%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
 }
 
@@ -910,7 +910,7 @@ a.button:hover {
   
   #countdown-timer {
     width: 100%;
-    padding: 0 !important;
+    padding: 0 20px;
   }
 }
 
@@ -923,12 +923,17 @@ a.button:hover {
   text-align: left;
   color: var(--fill-color);
   justify-self: center;
+  margin-left: 0px;
 }
 
 #countdown-timer li span {
   display: block;
   font-size: 48px;
   color: var(--text-color2);
+}
+
+#countdown-timer li.num {
+  justify-self: left;
 }
 
 #countdown-timer li.colon {
