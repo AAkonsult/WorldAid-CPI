@@ -6,6 +6,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-appearance: none;
+    appearance: none;
   }
   
   html,
@@ -13,7 +14,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    min-width: 500px;
+    min-width: 460px;
   }
   
   h1,
@@ -40,19 +41,23 @@
   input,
   textarea {
     -webkit-appearance: none !important;
+    appearance: none !important;
     border-radius: 0;
   }
   
   input[type=checkbox] {
     -webkit-appearance: checkbox !important;
+    appearance: checkbox !important;
   }
   
   input[type=radio] {
     -webkit-appearance: radio !important;
+    appearance: radio !important;
   }
   
   button {
     -webkit-appearance: none !important;
+    appearance: none !important;
     padding: 0;
   }
   
@@ -600,8 +605,9 @@
 
     #countdown-timer ul {
       display: grid;
-      grid-template-columns: 20% 6% 20% 6% 20% 6% 20%;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       width: 100%;
+      justify-items: center;
     }
 
     @media screen and (max-width: 480px) {
@@ -618,16 +624,20 @@
       display: inline-block;
       font-size: 16px;
       list-style-type: none;
-      padding-left: 10px;
-      padding-right: 10px;
       text-align: left;
       color: var(--base-color);
+      margin-left: 0px;
+      justify-self: center;
     }
 
     #countdown-timer li span {
       display: block;
       font-size: 48px;
       color: var(--text-color2);
+    }
+
+    #countdown-timer li.num {
+      justify-self: left;
     }
 
     #countdown-timer li.colon {
@@ -1356,9 +1366,6 @@
     background: var(--button-hover);
   }
   
-  #demo-wrapper #amount .frequency {
-    /* padding-top: 40px */
-  }
   
   #demo-wrapper #amount .frequency-options {
     padding-top: 30px;
@@ -1512,9 +1519,6 @@
     border: none;
   }
   
-  #demo-wrapper #amount .amount {
-    /* padding-top: 40px; */
-  }
   
   #demo-wrapper #amount .amount .amounts {
     display: flex;
@@ -1923,6 +1927,7 @@
   @media screen and (max-width: 600px) {
     #demo-wrapper #your-details input {
       -webkit-appearance: none;
+      appearance: none;
       font-size: 16px;
     }
   

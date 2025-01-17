@@ -6,6 +6,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 html,
@@ -13,6 +14,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  min-width: 460px;
 }
 
 h1,
@@ -39,19 +41,23 @@ a img {
 input,
 textarea {
   -webkit-appearance: none !important;
+  appearance: none !important;
   border-radius: 0;
 }
 
 input[type=checkbox] {
   -webkit-appearance: checkbox !important;
+  appearance: checkbox !important;
 }
 
 input[type=radio] {
   -webkit-appearance: radio !important;
+  appearance: radio !important;
 }
 
 button {
   -webkit-appearance: none !important;
+  appearance: none !important;
   padding: 0;
 }
 
@@ -150,10 +156,27 @@ a:hover {
 }
 
 .inner {
-  width: 100%;
   margin: 0 auto;
   padding: 0 200px;
   position: relative;
+}
+
+@media screen and (max-width: 1439px) {
+  .inner {
+    padding: 0 100px;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  .inner {
+    padding: 0 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .inner {
+    padding: 0 20px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -550,6 +573,9 @@ a.button:hover {
   width: 50%;
   padding-right: 50px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #main-body #content h1 {
@@ -580,11 +606,25 @@ a.button:hover {
 }
 
 #main-body #donate-img {
-  width: 100%;
+  width: 60%;
   height: 100%;
-  margin-bottom: -15px;
+  margin-bottom: -20px;
   position: relative;
   z-index: 3;
+}
+
+@media screen and (max-width: 1400px) {
+  #main-body #donate-img {
+    width: 65%;
+  }
+}
+
+#main-body .donate-block{
+  width: 100%;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #main-body #donate {
@@ -593,7 +633,10 @@ a.button:hover {
   padding-bottom: 20px;
   justify-items: center;
   align-items: center;
+  width: 100%;
+  max-width: 80%;
 }
+
 
 
 #main-body #donate .form {
@@ -646,12 +689,20 @@ a.button:hover {
 
 /* Step Header */
 #main-body .steps-header {
-  width: 512px;
+  width: 100%;
+  max-width: 512px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+}
+
+@media screen and (max-width: 1400px) {
+ #main-body .steps-header {
+    
+    text-align: center;
+ }
 }
 
 /* Step Blocks */
@@ -662,10 +713,12 @@ a.button:hover {
   flex-direction: column;
   justify-content: space-between;
   gap: 25px;
+  align-items: center;
 }
 
 #main-body .steps-blocks .step-block {
-  width: 512px;
+  width: 100%;
+  max-width: 512px;
   height: 215px;
   background-color: var(--base-color2);
   display: flex;
@@ -821,12 +874,11 @@ a.button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
   order: 1;
 }
 
 #countdown-info h2 {
-  width: 950px;
+  width: 100%;
   font-size: 48px;
   font-weight: 700;
   font-family: var(--base-font);
@@ -861,7 +913,7 @@ a.button:hover {
 
 #countdown-timer ul {
   display: grid;
-  grid-template-columns: 20% 6% 20% 6% 20% 6% 20%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
 }
 
@@ -880,7 +932,7 @@ a.button:hover {
   
   #countdown-timer {
     width: 100%;
-    padding: 0 !important;
+    padding: 0 20px;
   }
 }
 
@@ -892,12 +944,18 @@ a.button:hover {
   padding-right: 10px; */
   text-align: left;
   color: var(--fill-color);
+  justify-self: center;
+  margin-left: 0px;
 }
 
 #countdown-timer li span {
   display: block;
   font-size: 48px;
   color: var(--text-color2);
+}
+
+#countdown-timer li.num {
+  justify-self: left;
 }
 
 #countdown-timer li.colon {
@@ -1273,10 +1331,6 @@ footer #footer-bg:after {
   background: var(--button-hover);
 }
 
-#demo-wrapper #amount .frequency {
-  /* padding-top: 40px */
-}
-
 #demo-wrapper #amount .frequency-options {
   padding-top: 10px;
   /* border-bottom: 1px solid #D1D1D1; */
@@ -1423,10 +1477,6 @@ footer #footer-bg:after {
   background: var(--button-hover);
   color: var(--fill-color);
   border: none;
-}
-
-#demo-wrapper #amount .amount {
-  /* padding-top: 40px; */
 }
 
 #demo-wrapper #amount .amount .amounts {
@@ -1835,6 +1885,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 @media screen and (max-width: 600px) {
   #demo-wrapper #your-details input {
     -webkit-appearance: none;
+    appearance: none;
     font-size: 16px;
   }
 
@@ -2576,7 +2627,7 @@ input:-webkit-autofill:focus {
 
 #amount-desc-headline {
   margin: 10px 0;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .amount-content {
