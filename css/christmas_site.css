@@ -6,6 +6,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 html,
@@ -40,19 +41,23 @@ a img {
 input,
 textarea {
   -webkit-appearance: none !important;
+  appearance: none !important;
   border-radius: 0;
 }
 
 input[type=checkbox] {
   -webkit-appearance: checkbox !important;
+  appearance: checkbox !important;
 }
 
 input[type=radio] {
   -webkit-appearance: radio !important;
+  appearance: radio !important;
 }
 
 button {
   -webkit-appearance: none !important;
+  appearance: none !important;
   padding: 0;
 }
 
@@ -601,11 +606,25 @@ a.button:hover {
 }
 
 #main-body #donate-img {
-  width: 100%;
+  width: 60%;
   height: 100%;
-  margin-bottom: -15px;
+  margin-bottom: -20px;
   position: relative;
   z-index: 3;
+}
+
+@media screen and (max-width: 1400px) {
+  #main-body #donate-img {
+    width: 65%;
+  }
+}
+
+#main-body .donate-block{
+  width: 100%;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #main-body #donate {
@@ -614,7 +633,10 @@ a.button:hover {
   padding-bottom: 20px;
   justify-items: center;
   align-items: center;
+  width: 100%;
+  max-width: 80%;
 }
+
 
 
 #main-body #donate .form {
@@ -1309,10 +1331,6 @@ footer #footer-bg:after {
   background: var(--button-hover);
 }
 
-#demo-wrapper #amount .frequency {
-  /* padding-top: 40px */
-}
-
 #demo-wrapper #amount .frequency-options {
   padding-top: 10px;
   /* border-bottom: 1px solid #D1D1D1; */
@@ -1459,10 +1477,6 @@ footer #footer-bg:after {
   background: var(--button-hover);
   color: var(--fill-color);
   border: none;
-}
-
-#demo-wrapper #amount .amount {
-  /* padding-top: 40px; */
 }
 
 #demo-wrapper #amount .amount .amounts {
@@ -1871,6 +1885,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 @media screen and (max-width: 600px) {
   #demo-wrapper #your-details input {
     -webkit-appearance: none;
+    appearance: none;
     font-size: 16px;
   }
 

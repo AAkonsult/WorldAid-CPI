@@ -6,6 +6,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-appearance: none;
+    appearance: none;
   }
   
   html,
@@ -40,19 +41,23 @@
   input,
   textarea {
     -webkit-appearance: none !important;
+    appearance: none !important;
     border-radius: 0;
   }
   
   input[type=checkbox] {
     -webkit-appearance: checkbox !important;
+    appearance: checkbox !important;
   }
   
   input[type=radio] {
     -webkit-appearance: radio !important;
+    appearance: radio !important;
   }
   
   button {
     -webkit-appearance: none !important;
+    appearance: none !important;
     padding: 0;
   }
   
@@ -1125,9 +1130,6 @@
     background: var(--button-hover);
   }
   
-  #demo-wrapper #amount .frequency {
-    /* padding-top: 40px */
-  }
   
   #demo-wrapper #amount .frequency-options {
     padding-top: 10px;
@@ -1247,10 +1249,6 @@
     background: var(--button-hover);
     color: var(--fill-color);
     border: none;
-  }
-  
-  #demo-wrapper #amount .amount {
-    /* padding-top: 40px; */
   }
   
   #demo-wrapper #amount .amount .amounts {
@@ -1660,6 +1658,7 @@
   @media screen and (max-width: 600px) {
     #demo-wrapper #your-details input {
       -webkit-appearance: none;
+      appearance: none;
       font-size: 16px;
     }
   
