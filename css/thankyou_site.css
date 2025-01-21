@@ -834,11 +834,11 @@
     footer #cta p {
       width: 75%;
       margin: 20px 0;
-      font-size: 12px;
+      font-size: 16px;
       text-align: left;
     }
     
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 700px) {
       footer #cta {
         padding-bottom: 80px;
         padding-left: 20px;
@@ -858,7 +858,7 @@
     }
   
     footer #cta .footer-about .footer-buttons{
-      width:100%;
+      width: fit-content;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-content: center;
@@ -882,6 +882,7 @@
   
   .footer-btn-right {
     align-content: center;
+    min-width: 200px;
   }
   
   
@@ -892,7 +893,7 @@
       gap: 30px 90px;
       padding-top: 20px;
       justify-content: center;
-      width: fit-content;
+      width: max-content;
     }
   
   footer #cta .footer-links .link-column {
