@@ -156,6 +156,7 @@ a:hover {
   margin: 0 auto;
   padding: 0 200px;
   position: relative;
+  gap: 20px;
 }
 
 @media screen and (max-width: 1439px) {
@@ -170,7 +171,7 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .inner {
     padding: 0 20px;
   }
@@ -184,7 +185,6 @@ a:hover {
 .flex-center {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap-reverse;
 }
 
 /* Header block */
@@ -310,18 +310,19 @@ header #banner img {
 }
 
 @media screen and (max-width: 780px) {
-  header .flex-between{
+  header .flex-between {
     flex-wrap: nowrap;
   }
 
-  .menu ul{
+  .menu ul {
     justify-content: end;
   }
 }
 
 #hamburger {
   fill: var(--fill-color);
-  width: 38px;      height: 38px;
+  width: 38px;
+  height: 38px;
   display: none;
   cursor: pointer;
   transition: all 0.3s;
@@ -332,83 +333,94 @@ header #banner img {
   fill: #00B8A6;
 }
 
-  /* Dropdown Button */
+/* Dropdown Button */
 .hamburger-dropbtn {
-background-color: transparent;
-color: var(--fill-color);
-padding: 16px 0;
-font-weight: 400;
-font-size: 18px;
-min-width: fit-content;
-border: none;
-font-family: var(--base-font);
-transition: all 0.3s;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-text-align: center;
-z-index: 500;
+  background-color: transparent;
+  color: var(--fill-color);
+  padding: 16px 0;
+  font-weight: 400;
+  font-size: 18px;
+  min-width: fit-content;
+  border: none;
+  font-family: var(--base-font);
+  transition: all 0.3s;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  z-index: 500;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .hamburger-dropdown {
-position: relative;
-display: inline-block;
-transition: all 0.3s;
-z-index: 500;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s;
+  z-index: 500;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .hamburger-content {
-display: none;
-position: absolute;
-background-color: var(--base-color);
-min-width:max-content;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
-transition: all 0.3s;
-border-radius: 20px;
-right: -10%;
-z-index: 700;
-border: 1px solid white;
-justify-items: end;
+  display: none;
+  position: absolute;
+  background-color: var(--base-color);
+  min-width: max-content;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0);
+  transition: all 0.3s;
+  border-radius: 20px;
+  right: -10%;
+  z-index: 700;
+  border: 1px solid white;
+  justify-items: end;
 }
 
 /* Links inside the dropdown */
 .hamburger-content a {
-color: black;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-transition: all 0.3s;
-z-index: 600;
-width: 100%;
-text-align: right;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s;
+  z-index: 600;
+  width: 100%;
+  text-align: right;
 }
 
 @media screen and (max-width: 780px) {
-#hamburger {
-display: block;
+  #hamburger {
+    display: block;
 
 
-}
+  }
 
-/* Change color of dropdown links on hover */
-.hamburger-content a:hover {background-color: var(--fill-color); transition: all 0.3s;}
+  /* Change color of dropdown links on hover */
+  .hamburger-content a:hover {
+    background-color: var(--fill-color);
+    transition: all 0.3s;
+  }
 
-.hamburger-content a:hover:first-child {
-border-top-left-radius: 17px;
-border-top-right-radius: 17px;
-}
+  .hamburger-content a:hover:first-child {
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+  }
 
-.hamburger-content a:hover:last-child {
-border-bottom-left-radius: 17px;
-border-bottom-right-radius: 17px;
-}
+  .hamburger-content a:hover:last-child {
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
+  }
 
-/* Show the dropdown menu on hover */
-.hamburger-dropdown:hover .hamburger-content {display: block; transition: all 0.3s; z-index: inherit;}
+  /* Show the dropdown menu on hover */
+  .hamburger-dropdown:hover .hamburger-content {
+    display: block;
+    transition: all 0.3s;
+    z-index: inherit;
+  }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.hamburger-dropdown:hover .hamburger-dropbtn {background-color: transparent; color: #00B8A6; transition: all 0.3s;}
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .hamburger-dropdown:hover .hamburger-dropbtn {
+    background-color: transparent;
+    color: #00B8A6;
+    transition: all 0.3s;
+  }
 }
 
 /* Dropdown Button */
@@ -441,12 +453,12 @@ border-bottom-right-radius: 17px;
   display: none;
   position: absolute;
   background-color: var(--base-color);
-  min-width:max-content;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
+  min-width: max-content;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0);
   z-index: 1;
   transition: all 0.3s;
   border-radius: 20px;
-  left: -50%;
+  left: -5%;
   z-index: 1000;
   border: 1px solid white;
 }
@@ -462,7 +474,10 @@ border-bottom-right-radius: 17px;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: var(--fill-color); transition: all 0.3s;}
+.dropdown-content a:hover {
+  background-color: var(--fill-color);
+  transition: all 0.3s;
+}
 
 .dropdown-content a:hover:first-child {
   border-top-left-radius: 17px;
@@ -475,15 +490,23 @@ border-bottom-right-radius: 17px;
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block; transition: all 0.3s; z-index: inherit;}
+.dropdown:hover .dropdown-content {
+  display: block;
+  transition: all 0.3s;
+  z-index: inherit;
+}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: var(--base-color); color: #00B8A6; transition: all 0.3s;}
+.dropdown:hover .dropbtn {
+  background-color: var(--base-color);
+  color: #00B8A6;
+  transition: all 0.3s;
+}
 
 a.button,
 a.button:visited {
   font-family: var(--base-font);
-  font-weight: 800;
+  font-weight: normal;
   font-size: 18px;
   text-decoration: none;
   display: inline-block;
@@ -597,6 +620,7 @@ a.button:hover {
   font-weight: 400;
   font-family: var(--base-font);
   color: var(--base-color);
+  line-height: 140%;
 }
 
 #second-banner-img {
@@ -685,8 +709,13 @@ a.button:hover {
 /* Main body block */
 #main-body {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  background-color: var(--base-color2);
+}
+
+@media  screen and (max-width: 1441px) { .flex-center{
+    flex-wrap: wrap;
+  }
+  
 }
 
 #main-body p {
@@ -1144,11 +1173,11 @@ footer #cta .cta-spacer {
 footer #cta p {
   width: 75%;
   margin: 20px 0;
-  font-size: 12px;
+  font-size: 16px;
   text-align: left;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   footer #cta {
     padding-bottom: 80px;
     padding-left: 20px;
@@ -1168,7 +1197,7 @@ footer #cta .footer-about {
 }
 
 footer #cta .footer-about .footer-buttons {
-  width: 100%;
+  width: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
@@ -1192,6 +1221,7 @@ footer #cta .footer-about .footer-buttons .footer-btn-right {
 
 .footer-btn-right {
   align-content: center;
+  min-width: 200px;
 }
 
 
@@ -1202,7 +1232,7 @@ footer #cta .footer-links {
   gap: 30px 100px;
   padding-top: 20px;
   justify-content: center;
-  width: fit-content;
+  width: max-content;
 }
 
 footer #cta .footer-links .link-column {
@@ -1215,7 +1245,7 @@ footer #cta .footer-links .link-column {
 
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1300px) {
   footer #cta .footer-links {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -2683,16 +2713,21 @@ input:-webkit-autofill:focus {
   cursor: pointer;
   margin: 0.5rem 0;
   z-index: 1;
+  color: var(--base-color);
 }
 
 .amount-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: var(--button-color);
+  color: var(--text-color) !important;
 }
 
 .amount-card:focus {
   outline: 1px solid var(--text-color);
   outline-offset: 2px;
+  background: var(--button-color);
+  color: var(--text-color) !important;
 }
 
 .amount-image {
@@ -2722,7 +2757,6 @@ input:-webkit-autofill:focus {
   font-family: var(--base-font);
   font-weight: 800;
   font-size: 1.75rem;
-  color: var(--base-color);
   display: inline;
   margin-right: 0.5rem;
 }
@@ -2731,7 +2765,6 @@ input:-webkit-autofill:focus {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 1rem;
-  color: var(--base-color);
   display: inline;
   text-align: left;
 }

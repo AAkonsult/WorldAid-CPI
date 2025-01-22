@@ -53,23 +53,21 @@
                                     23.1054 6.29289 23.2929C6.10536 23.4804 6 23.7348 6 24C6 24.2652 6.10536 24.5196 6.29289 24.7071C6.48043 24.8946 6.73478 25 7 25Z"/>
                                 </svg> 
                             </button>
-                            <div class="hamburger-content">
+                            <nav class="hamburger-content">
                                 <a href="index.html">Home</a>
-                                <a href="#">Making a difference</a>
                                 <a href="events.html">Events</a>
                                 <a href="#">Membership</a>
+                                <a href="#">P2P Fundraiser</a>
                                 <a href="#footer">Contact</a>
-                                <a href="virtual.html">Virtual Seat</a>
-                                <a href="#">CPI Campaign</a>
                                 <a href="doubledonation.html">Giving Day</a>
+                                <a href="virtual.html">Virtual Seat</a>
+                                <a href="#">Donation Education</a>
+                                <a href="#">CPI Campaign</a>
                                 <a href="christmas.html">Christmas</a>
-                            </div>
+                            </nav>
                         </div>
                         <li>
                             <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Making a difference</a>
                         </li>
                         <li>
                             <a href="events.html">Events</a>
@@ -78,17 +76,23 @@
                             <a href="#">Membership</a>
                         </li>
                         <li>
+                            <a href="#">P2P Fundraiser</a>
+                        </li>
+                        <li>
                             <a href="#footer">Contact</a>
                         </li>
                         <li>
                             <div class="dropdown">
-                                <button class="dropbtn">More</button>
-                                <div class="dropdown-content">
-                                    <a href="virtual.html">Virtual Seat</a>
-                                    <a href="#">CPI Campaign</a>
-                                    <a href="doubledonation.html">Giving Day</a>
-                                    <a href="christmas.html">Christmas</a>
-                                </div>
+                                <nav class="dropdown">
+                                    <button class="dropbtn">Campaigns</button>
+                                    <div class="dropdown-content">
+                                        <a href="doubledonation.html">Giving Day</a>
+                                        <a href="virtual.html">Virtual Seat</a>
+                                        <a href="#">Donation Education</a>
+                                        <a href="#">CPI Campaign</a>
+                                        <a href="christmas.html">Christmas</a>
+                                    </div>
+                                </nav>
                             </div>
                         </li>
                         <li>
@@ -565,7 +569,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <iframe id="donationform" name="donationform" width="700" height="1400" frameborder="0"
+                                <iframe id="donationform" name="donationform" width="700" height="900" frameborder="0"
                                     x-ref="donation-form" x-on:load="formLoaded"></iframe>
                             </div>
                         </div>
@@ -577,22 +581,20 @@
     <div id="features" class="inner flex-center">
         <div id="columns">
             <div class="column">
-                <div class="statistics">
-                    <h2>Impact</h2>
-                    <div class="impact-description">
-                        <p>
-                            Your support has already made a tremendous difference. Your
-                            adjusted gift helps us sustain vital programs and reach more
-                            children in need, even as costs rise.
-                        </p>
+                <div class="flex-center">
+                    <div class="statistics">
+                        <h2>Impact</h2>
+                        <div class="impact-description">
+                            <p>
+                                Your support has already made a tremendous difference. Your
+                                adjusted gift helps us sustain vital programs and reach more
+                                children in need, even as costs rise.
+                            </p>
+                        </div>
+                        <div class ="piechart" id="piechart"></div>
                     </div>
-                    
-                    
-                    
-                    <div class ="piechart" id="piechart"></div>
-                    
-                    
                 </div>
+                
             </div>
             <div class="column">
                 <div class="statistics">
@@ -661,8 +663,7 @@
                             <img src="images/logo.png" width="200">
                         </div>
                         <div class="about-desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <p>Make a difference where it counts, Through compassion & action. </p>
                         </div>
                         <div class="footer-buttons">
                             <div class="footer-btn-left">

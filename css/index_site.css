@@ -88,9 +88,8 @@ ul {
   --text-color2: #118ACB;
   --base-color: #024586;
   --base-color2: #F3F9FF;
+  --base-color3: #FFFFFF;
   --button-color: #00B8A6;
-  --button-hover: #00b8a6a4;
-  --fill-color: #FFFFFF;
   --bar-grey: #C8C8C8;
   --bar-grey2: #F1F1F1;
 }
@@ -116,7 +115,6 @@ body {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 16px;
-  color: #575757;
   margin-top: 0;
   height: 100%;
 }
@@ -125,7 +123,6 @@ h1 {
   font-family: var(--base-font);
   font-weight: 800;
   font-size: 36px;
-  color: white;
   margin-bottom: 20px;
 }
 
@@ -133,7 +130,6 @@ h2 {
   font-family: var(--base-font);
   font-weight: 600;
   font-size: 23px;
-  color: #004282;
   margin-bottom: 20px;
 }
 
@@ -149,13 +145,14 @@ a:visited {
 }
 
 a:hover {
-  color: #00B8A6;
+  color: var(--button-color);
 }
 
 .inner {
   margin: 0 auto;
   padding: 0 200px;
   position: relative;
+  gap: 20px;
 }
 
 @media screen and (max-width: 1439px) {
@@ -251,7 +248,7 @@ header #header {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 18px;
-  color: var(--fill-color);
+  color: var(--text-color);
   text-decoration: none;
   transition: all 0.3s;
 }
@@ -264,7 +261,7 @@ header #header {
 }
 
 .menu ul a:hover {
-  color: #00B8A6;
+  color: var(--button-color);
 }
 
 @media screen and (max-width: 768px) {
@@ -283,12 +280,9 @@ header #header {
 }
 
 @media screen and (max-width: 1050px) {
-
-
   .menu {
     width: 100%;
     text-align: center;
-
   }
 
   .menu ul {
@@ -307,7 +301,7 @@ header #header {
 }
 
 .hamburger {
-  fill: var(--fill-color);
+  fill: var(--base-color3);
   width: 38px;
   height: 38px;
   display: none;
@@ -317,13 +311,13 @@ header #header {
 }
 
 .hamburger:hover {
-  fill: #00B8A6;
+  fill: var(--button-color);
 }
 
 /* Dropdown Button */
 .hamburger-dropbtn {
   background-color: transparent;
-  color: var(--fill-color);
+  color: var(--base-color3);
   padding: 16px 0;
   font-weight: 400;
   font-size: 18px;
@@ -372,7 +366,6 @@ header #header {
   text-align: right;
 }
 
-
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
@@ -392,7 +385,7 @@ header #header {
 
   /* Change color of dropdown links on hover */
   .hamburger-content a:hover {
-    background-color: var(--fill-color);
+    background-color: var(--base-color3);
     transition: all 0.3s;
   }
 
@@ -407,7 +400,7 @@ header #header {
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .hamburger-dropdown:hover .hamburger-dropbtn {
     background-color: transparent;
-    color: #00B8A6;
+    color: var(--button-color);
     transition: all 0.3s;
   }
 }
@@ -415,7 +408,7 @@ header #header {
 /* Dropdown Button */
 .dropbtn {
   background-color: transparent;
-  color: var(--fill-color);
+  color: var(--base-color3);
   padding: 16px;
   font-weight: 400;
   font-size: 18px;
@@ -447,7 +440,7 @@ header #header {
   z-index: 1;
   transition: all 0.3s;
   border-radius: 20px;
-  left: -50%;
+  left: -5%;
   z-index: 1000;
   border: 1px solid white;
 }
@@ -464,7 +457,7 @@ header #header {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: var(--fill-color);
+  background-color: var(--base-color3);
   transition: all 0.3s;
 }
 
@@ -488,7 +481,7 @@ header #header {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: transparent;
-  color: #00B8A6;
+  color: var(--button-color);
   transition: all 0.3s;
 }
 
@@ -499,16 +492,16 @@ a.button:visited {
   font-size: 18px;
   text-decoration: none;
   display: inline-block;
-  color: var(--fill-color);
-  background: #00B8A6;
+  color: var(--base-color3);
+  background: var(--button-color);
   transition: all 0.3s;
   padding: 10px 40px;
   border-radius: 20px;
 }
 
 a.button:hover {
-  background: var(--button-hover);
-  color: var(--fill-color) !important;
+  background: var(--button-color);
+  color: var(--base-color3) !important;
 }
 
 /* Banner info block */
@@ -545,14 +538,14 @@ a.button:hover {
   font-size: 48px;
   font-weight: 400;
   font-family: var(--base-font);
-  color: var(--fill-color);
+  color: var(--base-color3);
 }
 
 .banner-content h1 {
   font-size: 48px;
   font-weight: 700;
   font-family: var(--base-font);
-  color: var(--fill-color);
+  color: var(--base-color3);
 }
 
 @media screen and (max-width: 1400px) {
@@ -622,8 +615,9 @@ a.button:hover {
 .main-body .content p {
   width: fit-content;
   font-family: var(--base-font);
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 150%;
 }
 
 /* Donation progress block */
@@ -634,13 +628,14 @@ a.button:hover {
   margin-top: 50px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
 
 }
 
 @media screen and (max-width: 1400px) {
   .progress-container {
     align-self: center;
-    max-width: 80%;
+    max-width: 100%;
   }
 
 }
@@ -667,7 +662,7 @@ a.button:hover {
 
 .progress-bar-container {
   width: 100%;
-  background-color: var(--fill-color);
+  background-color: var(--base-color3);
   border-radius: 15px;
   height: 12px;
   margin: 20px 0;
@@ -708,7 +703,7 @@ a.button:hover {
   padding-bottom: 70px;
   position: relative;
   z-index: 10;
-  background-color: var(--fill-color);
+  background-color: var(--base-color3);
   justify-content: center;
 }
 
@@ -827,9 +822,10 @@ a.button:hover {
   display: inline;
   font-family: var(--base-font);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   color: var(--base-color);
   margin-bottom: 8px;
+  line-height: 150%;
 }
 
 .features .column a,
@@ -873,6 +869,7 @@ a.button:hover {
   font-weight: 400;
   color: var(--base-color);
   max-width: 658px;
+  line-height: 140%;
 }
 
 @media screen and (max-width: 600px) {
@@ -951,10 +948,10 @@ a.button:hover {
   display: inline;
   font-family: var(--base-font);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   color: var(--base-color);
   margin-bottom: 8px;
-  line-height: 140%;
+  line-height: 150%;
 }
 
 .features2 .column a,
@@ -1018,21 +1015,24 @@ a.button:hover {
 }
 
 .uncolored {
-  background-color: var(--fill-color);
+  background-color: var(--base-color3);
 }
 
 .more-card h1 {
   font-size: 32px;
   font-weight: 700;
   color: var(--base-color);
+  padding-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 .more-card p {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--base-color);
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   max-width: 500px;
+  line-height: 150%;
 }
 
 @media screen and (max-width: 768px) {
@@ -1051,7 +1051,7 @@ a.button:hover {
 
 .more-card a.button {
   background: var(--base-color);
-  color: var(--fill-color);
+  color: var(--base-color3);
 }
 
 .more-card a.button:hover {
@@ -1059,60 +1059,7 @@ a.button:hover {
 }
 
 .more-card a:hover {
-  color: var(--button-hover);
-}
-
-#last-info-card {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-bottom: 80px;
-  padding-top: 50px;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-@media screen and (max-width: 1100px) {
-  #last-info-card {
-    flex-wrap: wrap;
-  }
-}
-
-#last-info-card h1 {
-  color: var(--base-color);
-  font-size: 48px;
-  font-weight: 700;
-  max-width: 600px;
-}
-
-#last-info-card p {
-  color: var(--base-color);
-  font-size: 24px;
-  font-weight: 400;
-  max-width: 600px;
-}
-
-#info-card-img {
-  width: 402px;
-  height: 509px;
-  padding: 20px;
-  ;
-}
-
-@media screen and (max-width: 600px) {
-
-  #last-info-card p {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  #last-info-card h1 {
-    font-size: 36px;
-  }
-
-  #info-card-img {
-    width: 358px;
-    height: 453.29px;
-  }
+  color: var(--button-color);
 }
 
 /* Footer block */
@@ -1124,7 +1071,7 @@ footer {
 }
 
 footer h4 {
-  color: #FFFFFF;
+  color: var(--text-color);
   font-family: var(--base-font);
   font-size: 16px;
   font-weight: 400;
@@ -1146,7 +1093,7 @@ footer .cta {
   font-family: var(--base-font);
   font-weight: 800;
   font-size: 36px;
-  color: var(--fill-color);
+  color: var(--base-color3);
   padding-bottom: 80px;
   position: relative;
   z-index: 200;
@@ -1184,7 +1131,7 @@ footer .cta .footer-about {
 }
 
 footer .cta .footer-about .footer-buttons {
-  width: 100%;
+  width: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
@@ -1208,6 +1155,7 @@ footer .cta .footer-about .footer-buttons .footer-btn-right {
 
 .footer-btn-right {
   align-content: center;
+  min-width: 200px;
 }
 
 
@@ -1218,7 +1166,7 @@ footer .cta .footer-links {
   gap: 30px 90px;
   padding-top: 20px;
   justify-content: center;
-  width: fit-content;
+  width: max-content;
 }
 
 footer .cta .footer-links .link-column {
@@ -1324,7 +1272,7 @@ footer .footer-menu .copyright {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 14px;
-  color: var(--fill-color);
+  color: var(--base-color3);
 }
 
 footer .footer-menu .copyright ul {
@@ -1344,12 +1292,12 @@ footer .footer-menu .copyright ul li {
 footer .footer-menu .copyright ul a,
 footer .footer-menu .copyright ul a:visited {
   text-decoration: none;
-  color: var(--fill-color);
+  color: var(--base-color3);
   transition: all 0.3s;
 }
 
 footer .footer-menu .copyright ul a:hover {
-  color: #00B8A6;
+  color: var(--button-color);
 }
 
 @media screen and (max-width: 950px) {
@@ -1422,7 +1370,7 @@ footer .footer-bg:after {
   font-family: var(--base-font);
   font-weight: 800;
   font-size: 30px;
-  color: #00B8A6;
+  color: var(--button-color);
 }
 
 .demo-wrapper h4 {
@@ -1449,7 +1397,7 @@ footer .footer-bg:after {
   border-radius: 50px;
   cursor: pointer;
   padding: 10px 70px;
-  color: var(--fill-color)
+  color: var(--base-color3)
 }
 
 .demo-wrapper #amount button:hover {
@@ -1477,7 +1425,7 @@ footer .footer-bg:after {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--base-color);
-  background-color: var(--fill-color);
+  background-color: var(--base-color3);
   cursor: pointer;
   position: relative;
   color: var(--base-color);
@@ -1490,7 +1438,7 @@ footer .footer-bg:after {
 .demo-wrapper #amount .frequency-options label:hover {
   background: var(--text-color2);
   border: 1px solid var(--text-color2);
-  color: var(--fill-color);
+  color: var(--base-color3);
 }
 
 .demo-wrapper #amount .frequency-options .choice {
@@ -1521,7 +1469,7 @@ footer .footer-bg:after {
 .demo-wrapper #amount .frequency-options input[type="radio"]:checked+label {
   background: var(--base-color);
   border: 1px solid var(--base-color);
-  color: var(--fill-color);
+  color: var(--base-color3);
   position: relative
 }
 
@@ -1568,7 +1516,7 @@ footer .footer-bg:after {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: var(--fill-color);
+  background-color: var(--base-color3);
   border-radius: 5px;
   border: 1px solid var(--bar-grey);
   color: var(--base-color);
@@ -1584,13 +1532,13 @@ footer .footer-bg:after {
 
 .amount-rate input[type="radio"]:checked+.rate-card {
   background: var(--button-color);
-  color: var(--fill-color);
+  color: var(--base-color3);
   border: none;
 }
 
 .amount-rate .rate-card:hover {
-  background: var(--button-hover);
-  color: var(--fill-color);
+  background: var(--button-color);
+  color: var(--base-color3);
   border: none;
 }
 
@@ -1621,7 +1569,7 @@ footer .footer-bg:after {
   justify-content: center;
   /* border: 1px solid #D1D1D1; */
   border-radius: 50px;
-  background-color: var(--fill-color);
+  background-color: var(--base-color3);
   cursor: pointer;
   position: relative;
   color: var(--bar-grey);
@@ -1637,7 +1585,7 @@ footer .footer-bg:after {
 .demo-wrapper #amount .amount label:hover {
   background: var(--text-color);
   border: 1px solid var(--text-color);
-  color: var(--fill-color);
+  color: var(--base-color3);
 }
 
 .demo-wrapper #amount .amount input[type=radio] {
@@ -1652,7 +1600,7 @@ footer .footer-bg:after {
 .demo-wrapper #amount .amount input[type="radio"]:checked+label {
   background: var(--text-color);
   border: 1px solid var(--text-color);
-  color: var(--fill-color)
+  color: var(--base-color3)
 }
 
 .demo-wrapper #amount .amounts .choice.other {
@@ -1672,7 +1620,7 @@ footer .footer-bg:after {
 
 .demo-wrapper #amount .amounts .choice.other label span {
   font-family: var(--base-font);
-  font-weight: 600;
+  font-weight: normal;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -1689,7 +1637,7 @@ footer .footer-bg:after {
   outline: 0;
   margin-left: 3px;
   font-family: var(--base-font);
-  font-weight: 600;
+  font-weight: normal;
   font-size: 20px;
   color: var(--base-color);
   height: auto !important
@@ -1847,7 +1795,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--base-color);
-  background-color: var(--fill-color);
+  background-color: var(--base-color3);
   cursor: pointer;
   position: relative;
   color: var(--base-color);
@@ -1860,7 +1808,7 @@ input::-webkit-inner-spin-button {
 .demo-wrapper #your-details .donor-options label:hover {
   background: var(--base-color);
   border: 1px solid var(--base-color);
-  color: var(--fill-color);
+  color: var(--base-color3);
 }
 
 @media screen and (max-width: 768px) {
@@ -1898,7 +1846,7 @@ input::-webkit-inner-spin-button {
 .demo-wrapper #your-details .donor-options input[type=radio]:checked+label {
   background: var(--base-color);
   border: 1px solid var(--base-color);
-  color: var(--fill-color);
+  color: var(--base-color3);
   position: relative;
 }
 
@@ -2004,7 +1952,7 @@ input::-webkit-inner-spin-button {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  border: 1px solid var(--fill-color);
+  border: 1px solid var(--base-color3);
   -webkit-text-fill-color: var(--base-color);
   -webkit-box-shadow: 0 0 0px 1000px #cfd6fa inset;
   transition: background-color 5000s ease-in-out 0s;
@@ -2013,14 +1961,14 @@ input:-webkit-autofill:focus {
 .demo-wrapper #your-details select {
   width: 100%;
   padding: 10px;
-  border: 1px solid var(--fill-color);
+  border: 1px solid var(--base-color3);
   border-radius: 50px;
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 16px;
   outline: 0;
   height: auto !important;
-  background: var(--fill-color);
+  background: var(--base-color3);
   color: var(--base-color) !important;
   background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
   background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
@@ -2045,7 +1993,7 @@ input:-webkit-autofill:focus {
   border-radius: 50px;
   cursor: pointer;
   line-height: 18.96px;
-  color: var(--fill-color);
+  color: var(--base-color3);
 }
 
 .demo-wrapper #your-details button:hover {
@@ -2170,7 +2118,7 @@ input:-webkit-autofill:focus {
 }
 
 .prog-complete-tick {
-  fill: var(--fill-color)
+  fill: var(--base-color3)
 }
 
 .demo-wrapper .enter {
@@ -2372,8 +2320,8 @@ input:-webkit-autofill:focus {
 }
 
 .amount-image {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   padding: 10px;
   flex-shrink: 0;
   overflow: hidden;
@@ -2406,10 +2354,11 @@ input:-webkit-autofill:focus {
 .amount-description {
   font-family: var(--base-font);
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 16px;
   color: var(--base-color);
   display: inline;
   text-align: left;
+  line-height: 160%;
 }
 
 @media screen and (max-width: 1500px) {

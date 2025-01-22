@@ -6,6 +6,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 html,
@@ -40,19 +41,23 @@ a img {
 input,
 textarea {
   -webkit-appearance: none !important;
+  appearance: none !important;
   border-radius: 0;
 }
 
 input[type=checkbox] {
   -webkit-appearance: checkbox !important;
+  appearance: checkbox !important;
 }
 
 input[type=radio] {
   -webkit-appearance: radio !important;
+  appearance: radio !important;
 }
 
 button {
   -webkit-appearance: none !important;
+  appearance: none !important;
   padding: 0;
 }
 
@@ -151,6 +156,7 @@ a:hover {
   margin: 0 auto;
   padding: 0 200px;
   position: relative;
+  gap: 20px;
 }
 
 @media screen and (max-width: 1439px) {
@@ -165,7 +171,7 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .inner {
     padding: 0 20px;
   }
@@ -455,7 +461,7 @@ header #banner img {
   z-index: 1;
   transition: all 0.3s;
   border-radius: 20px;
-  left: -50%;
+  left: -5%;
   z-index: 1000;
   border: 1px solid white;
 }
@@ -684,11 +690,11 @@ footer #cta .cta-spacer {
 footer #cta p {
   width: 75%;
   margin: 20px 0;
-  font-size: 12px;
+  font-size: 16px;
   text-align: left;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   footer #cta {
     padding-bottom: 80px;
     padding-left: 20px;
@@ -708,7 +714,7 @@ footer #cta .footer-about {
 }
 
 footer #cta .footer-about .footer-buttons {
-  width: 100%;
+  width: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
@@ -732,6 +738,7 @@ footer #cta .footer-about .footer-buttons .footer-btn-right {
 
 .footer-btn-right {
   align-content: center;
+  min-width: 200px;
 }
 
 
@@ -742,7 +749,7 @@ footer #cta .footer-links {
   gap: 30px 90px;
   padding-top: 20px;
   justify-content: center;
-  width: fit-content;
+  width: max-content;
 }
 
 footer #cta .footer-links .link-column {
@@ -987,10 +994,6 @@ footer #footer-bg:after {
   background: var(--button-hover);
 }
 
-#demo-wrapper #amount .frequency {
-  /* padding-top: 40px */
-}
-
 #demo-wrapper #amount .frequency-options {
   padding-top: 30px;
   /* border-bottom: 1px solid #D1D1D1; */
@@ -1141,10 +1144,6 @@ footer #footer-bg:after {
   background: var(--button-hover);
   color: var(--fill-color);
   border: none;
-}
-
-#demo-wrapper #amount .amount {
-  /* padding-top: 40px; */
 }
 
 #demo-wrapper #amount .amount .amounts {
@@ -1554,6 +1553,7 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 @media screen and (max-width: 600px) {
   #demo-wrapper #your-details input {
     -webkit-appearance: none;
+    appearance: none;
     font-size: 16px;
   }
 
