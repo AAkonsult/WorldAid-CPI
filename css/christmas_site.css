@@ -619,7 +619,7 @@ a.button:hover {
   }
 }
 
-#main-body .donate-block{
+#main-body .donate-block {
   width: 100%;
   justify-items: center;
   display: flex;
@@ -699,10 +699,10 @@ a.button:hover {
 }
 
 @media screen and (max-width: 1400px) {
- #main-body .steps-header {
-    
+  #main-body .steps-header {
+
     text-align: center;
- }
+  }
 }
 
 /* Step Blocks */
@@ -923,13 +923,13 @@ a.button:hover {
     font-size: 24px;
     font-weight: 700;
   }
-  
+
   #countdown-info p {
     width: 100%;
     font-size: 20px;
     font-weight: 400;
   }
-  
+
   #countdown-timer {
     width: 100%;
     padding: 0 20px;
@@ -1375,7 +1375,7 @@ footer #footer-bg:after {
   position: relative;
 }
 
-#demo-wrapper #amount .frequency-options .choice span{
+#demo-wrapper #amount .frequency-options .choice span {
   font-size: 16px;
 }
 
