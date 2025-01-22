@@ -447,7 +447,7 @@
       z-index: 1;
       transition: all 0.3s;
       border-radius: 20px;
-      left: -50%;
+      left: -5%;
       z-index: 1000;
       border: 1px solid white;
     }
@@ -670,10 +670,10 @@
 
     #main-body #content #content-inner {
       max-width: 530px;
-      display: grid;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       justify-items: center;
-      grid-template-rows: 1fr 1fr;
       gap: 20px 20px;
     }
   
@@ -683,6 +683,7 @@
       font-size: 64px;
       font-weight: 700;
       color: var(--base-color);
+      margin-bottom: 0px;
     }
   
     
@@ -839,6 +840,7 @@
       font-size: 20px;
       color: var(--base-color);
       margin-bottom: 20px;
+      line-height: 150%;
     }
     
     #features .column a,

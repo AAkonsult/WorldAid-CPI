@@ -447,7 +447,7 @@ header #header {
   z-index: 1;
   transition: all 0.3s;
   border-radius: 20px;
-  left: -50%;
+  left: -5%;
   z-index: 1000;
   border: 1px solid white;
 }
@@ -622,8 +622,9 @@ a.button:hover {
 .main-body .content p {
   width: fit-content;
   font-family: var(--base-font);
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 150%;
 }
 
 /* Donation progress block */
@@ -634,6 +635,7 @@ a.button:hover {
   margin-top: 50px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
 
 }
 
@@ -827,9 +829,10 @@ a.button:hover {
   display: inline;
   font-family: var(--base-font);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   color: var(--base-color);
   margin-bottom: 8px;
+  line-height: 150%;
 }
 
 .features .column a,
@@ -873,6 +876,7 @@ a.button:hover {
   font-weight: 400;
   color: var(--base-color);
   max-width: 658px;
+  line-height: 140%;
 }
 
 @media screen and (max-width: 600px) {
@@ -951,10 +955,10 @@ a.button:hover {
   display: inline;
   font-family: var(--base-font);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   color: var(--base-color);
   margin-bottom: 8px;
-  line-height: 140%;
+  line-height: 150%;
 }
 
 .features2 .column a,
@@ -1025,14 +1029,17 @@ a.button:hover {
   font-size: 32px;
   font-weight: 700;
   color: var(--base-color);
+  padding-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 .more-card p {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--base-color);
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   max-width: 500px;
+  line-height: 150%;
 }
 
 @media screen and (max-width: 768px) {
@@ -1673,7 +1680,7 @@ footer .footer-bg:after {
 
 .demo-wrapper #amount .amounts .choice.other label span {
   font-family: var(--base-font);
-  font-weight: 600;
+  font-weight: normal;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -1690,7 +1697,7 @@ footer .footer-bg:after {
   outline: 0;
   margin-left: 3px;
   font-family: var(--base-font);
-  font-weight: 600;
+  font-weight: normal;
   font-size: 20px;
   color: var(--base-color);
   height: auto !important
@@ -2373,8 +2380,8 @@ input:-webkit-autofill:focus {
 }
 
 .amount-image {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   padding: 10px;
   flex-shrink: 0;
   overflow: hidden;
@@ -2407,10 +2414,11 @@ input:-webkit-autofill:focus {
 .amount-description {
   font-family: var(--base-font);
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 16px;
   color: var(--base-color);
   display: inline;
   text-align: left;
+  line-height: 160%;
 }
 
 @media screen and (max-width: 1500px) {
