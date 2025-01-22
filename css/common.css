@@ -175,6 +175,12 @@
       padding: 0 20px;
     }
   }
+
+  @media screen and (max-width: 360px) {
+    .inner {
+      padding: 0 10px;
+    }
+  }
   
   .flex-between {
     display: flex;
