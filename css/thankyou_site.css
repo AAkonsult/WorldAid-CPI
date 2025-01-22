@@ -211,7 +211,7 @@ header #header {
 }
 
 @media screen and (max-width: 500px) {
-  header #header #logo img {
+  header #header .logo img {
     width: 100%;
     max-width: 200px;
     height: auto;
@@ -636,7 +636,7 @@ a.button:hover {
 }
 
 /*Features block */
-#features {
+.features {
   padding-top: 50px;
   padding-bottom: 70px;
   background-color: var(--fill-color);
@@ -644,13 +644,13 @@ a.button:hover {
 
 
 @media screen and (max-width: 1100px) {
-  #features h2 {
+  .features h2 {
     text-align: center;
     font-size: 24px;
   }
 }
 
-#features #columns {
+.features .columns {
   margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -659,18 +659,18 @@ a.button:hover {
 }
 
 @media screen and (max-width: 1000px) {
-  #features #columns {
+  .features .columns {
     gap: 30px 50px;
   }
 }
 
 @media screen and (max-width: 1100px) {
-  #features #columns {
+  .features .columns {
     grid-template-columns: 1fr;
   }
 }
 
-#features .column {
+.features .column {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
@@ -680,7 +680,7 @@ a.button:hover {
   justify-items: center;
 }
 
-#features .column h3 {
+.features .column h3 {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 20px;
@@ -703,7 +703,7 @@ a.button:hover {
   }
 }
 
-#features .statistics .impact-description {
+.features .statistics .impact-description {
   width: 100%;
   max-width: 500px;
   color: var(--base-color);
@@ -714,12 +714,12 @@ a.button:hover {
   text-align: left;
 }
 
-#features .statistics .impact-description p {
+.features .statistics .impact-description p {
   text-align: left;
 }
 
 @media screen and (max-width: 1000px) {
-  #features .statistics .impact-description p {
+  .features .statistics .impact-description p {
     text-align: center;
   }
 }
@@ -794,14 +794,14 @@ a.button:hover {
   }
 }
 
-#features .column .description {
+.features .column .description {
   font-family: var(--base-font);
   color: var(--base-color);
   font-size: 20px;
 }
 
 @media screen and (max-width: 800px) {
-  #features .column .description {
+  .features .column .description {
 
     font-size: 10px;
   }
@@ -837,7 +837,7 @@ footer button {
   font-size: 12px;
 }
 
-footer #cta {
+footer .cta {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: left;
@@ -851,11 +851,11 @@ footer #cta {
 
 }
 
-footer #cta .cta-spacer {
+footer .cta .cta-spacer {
   padding: 0 100px 0 0;
 }
 
-footer #cta p {
+footer .cta p {
   width: 75%;
   margin: 20px 0;
   font-size: 16px;
@@ -863,7 +863,7 @@ footer #cta p {
 }
 
 @media screen and (max-width: 700px) {
-  footer #cta {
+  footer .cta {
     padding-bottom: 80px;
     padding-left: 20px;
     padding-right: 20px;
@@ -874,14 +874,14 @@ footer #cta p {
   }
 }
 
-footer #cta .footer-about {
+footer .cta .footer-about {
   padding-right: 50px;
   display: flex;
   flex-direction: column;
   align-content: center;
 }
 
-footer #cta .footer-about .footer-buttons {
+footer .cta .footer-about .footer-buttons {
   width: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -890,12 +890,12 @@ footer #cta .footer-about .footer-buttons {
 }
 
 @media screen and (max-width: 1750px) {
-  footer #cta .footer-about .footer-buttons {
+  footer .cta .footer-about .footer-buttons {
     grid-template-columns: 1fr;
   }
 }
 
-footer #cta .footer-about .footer-buttons .footer-btn-right {
+footer .cta .footer-about .footer-buttons .footer-btn-right {
   position: relative;
   align-content: center;
 }
@@ -910,7 +910,7 @@ footer #cta .footer-about .footer-buttons .footer-btn-right {
 }
 
 
-footer #cta .footer-links {
+footer .cta .footer-links {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -920,7 +920,7 @@ footer #cta .footer-links {
   width: max-content;
 }
 
-footer #cta .footer-links .link-column {
+footer .cta .footer-links .link-column {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -931,7 +931,7 @@ footer #cta .footer-links .link-column {
 }
 
 @media screen and (max-width: 1300px) {
-  footer #cta .footer-links {
+  footer .cta .footer-links {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     font-size: 12px;
@@ -940,7 +940,7 @@ footer #cta .footer-links .link-column {
 
 
 
-footer #footer-bottom {
+footer .footer-bottom {
   flex-direction: column;
   position: relative;
   z-index: 200;
@@ -951,7 +951,7 @@ footer .company-name {
 }
 
 @media screen and (max-width: 950px) {
-  footer #footer-bottom .flex-between {
+  footer .footer-bottom .flex-between {
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -968,91 +968,91 @@ footer .logo {
   }
 }
 
-footer #footer-menu {
+footer .footer-menu {
   position: relative;
   z-index: 200;
 }
 
-footer #footer-menu .wrapper {
+footer .footer-menu .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 @media screen and (max-width: 950px) {
-  footer #footer-menu .wrapper {
+  footer .footer-menu .wrapper {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
   }
 }
 
-footer #footer-menu .wrapper .right {
+footer .footer-menu .wrapper .right {
   padding-left: 30px;
 }
 
 @media screen and (max-width: 500px) {
-  footer #footer-menu .wrapper .right {
+  footer .footer-menu .wrapper .right {
     padding-left: 10px;
   }
 }
 
-footer #footer-menu .menu {
+footer .footer-menu .menu {
   padding-bottom: 5px;
 }
 
-footer #footer-menu .menu li a {
+footer .footer-menu .menu li a {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 14px;
 }
 
 @media screen and (max-width: 750px) {
-  footer #footer-menu .menu ul {
+  footer .footer-menu .menu ul {
     flex-wrap: wrap;
   }
 
-  footer #footer-menu .menu ul li {
+  footer .footer-menu .menu ul li {
     display: inline-block !important;
     margin-left: 0;
     margin: 0 10px;
   }
 }
 
-footer #footer-menu .copyright {
+footer .footer-menu .copyright {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 14px;
   color: var(--fill-color);
 }
 
-footer #footer-menu .copyright ul {
+footer .footer-menu .copyright ul {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: flex-end;
 }
 
-footer #footer-menu .copyright ul li {
+footer .footer-menu .copyright ul li {
   margin: 0;
   padding: 0;
   margin-left: 20px;
   list-style: none;
 }
 
-footer #footer-menu .copyright ul a,
-footer #footer-menu .copyright ul a:visited {
+footer .footer-menu .copyright ul a,
+footer .footer-menu .copyright ul a:visited {
   text-decoration: none;
   color: var(--fill-color);
   transition: all 0.3s;
 }
 
-footer #footer-menu .copyright ul a:hover {
+footer .footer-menu .copyright ul a:hover {
   color: #00B8A6;
 }
 
 @media screen and (max-width: 950px) {
-  footer #footer-menu .copyright ul {
+  footer .footer-menu .copyright ul {
     justify-content: center;
     margin-bottom: 15px;
   }
