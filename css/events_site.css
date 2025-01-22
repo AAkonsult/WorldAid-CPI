@@ -159,9 +159,15 @@ a:hover {
   gap: 20px;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1600px) {
   .inner {
     padding: 0 100px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .inner {
+    padding: 0 200px;
   }
 }
 

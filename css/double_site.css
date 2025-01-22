@@ -159,9 +159,15 @@ a:hover {
   gap: 20px
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1600px) {
   .inner {
     padding: 0 100px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .inner {
+    padding: 0 200px;
   }
 }
 
@@ -205,7 +211,7 @@ header #header {
   z-index: 100;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   header #header .logo img {
     width: 100%;
     max-width: 200px;
@@ -229,14 +235,14 @@ header #banner img {
   object-fit: cover;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1440px) {
   header .flex-between {
     flex-wrap: wrap;
     justify-content: center;
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
 
 
 
@@ -286,7 +292,7 @@ header #banner img {
   color: #00B8A6;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
   .menu ul {
     justify-content: center;
   }
@@ -301,7 +307,7 @@ header #banner img {
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1024px) {
   .menu {
     width: 100%;
     text-align: center;
@@ -312,7 +318,7 @@ header #banner img {
   }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
   header .flex-between {
     flex-wrap: nowrap;
   }
@@ -388,7 +394,7 @@ header #banner img {
   text-align: right;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
   .hamburger {
     display: block;
 
@@ -555,7 +561,7 @@ a.button:hover {
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1280px) {
   .banner-info {
     flex-wrap: wrap;
   }
@@ -587,7 +593,7 @@ a.button:hover {
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 
   .banner-content p {
     font-size: 32px;
@@ -653,7 +659,7 @@ a.button:hover {
   justify-items: center;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 425px) {
   .countdown-timer {
     max-width: 430px;
     padding-left: 10px;
@@ -695,7 +701,7 @@ a.button:hover {
   flex-wrap: nowrap;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 1440px) {
   .main-body .flex-center {
     flex-wrap: wrap;
   }
@@ -733,7 +739,7 @@ a.button:hover {
 .main-body .content h1 {
   width: 100%;
   font-family: var(--base-font);
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 700;
   color: var(--base-color);
   margin-bottom: 0px;
@@ -744,11 +750,11 @@ a.button:hover {
 .main-body .content p {
   width: fit-content;
   font-family: var(--base-font);
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .main-body .content h1 {
     font-size: 36px;
   }
@@ -783,19 +789,19 @@ a.button:hover {
 
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .main-body #donate .form {
     padding: 20px;
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1024px) {
   .main-body #donate {
     padding-left: 0;
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1440px) {
   .main-body.flex-between {
     flex-wrap: wrap;
   }
@@ -834,7 +840,7 @@ a.button:hover {
   text-align: left;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .features h2 {
     text-align: center;
     font-size: 24px;
@@ -851,7 +857,7 @@ a.button:hover {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .features .columns {
     grid-template-columns: 1fr;
     gap: 30px 50px;
@@ -925,7 +931,7 @@ a.button:hover {
   text-align: left;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
   .features .statistics .impact-description p {
     text-align: center;
   }
@@ -942,7 +948,7 @@ a.button:hover {
   width: -webkit-fill-available;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .stat-block {
     flex-wrap: wrap;
   }
@@ -955,7 +961,7 @@ a.button:hover {
   min-height: 36px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .statistics .dot {
     min-width: 18px;
     min-height: 18px;
@@ -995,7 +1001,7 @@ a.button:hover {
   color: var(--base-color);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .statistics .percentage {
     font-size: 24px;
   }
@@ -1007,7 +1013,7 @@ a.button:hover {
   font-size: 20px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .features .column .description {
 
     font-size: 10px;
@@ -1027,7 +1033,7 @@ a.button:hover {
   justify-content: space-evenly;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1280px) {
   .last-info-card {
     flex-wrap: wrap;
   }
@@ -1055,7 +1061,7 @@ a.button:hover {
   ;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 
   .last-info-card p {
     font-size: 20px;
@@ -1121,7 +1127,7 @@ footer .cta p {
   text-align: left;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   footer .cta {
     padding-bottom: 80px;
     padding-left: 20px;
@@ -1148,7 +1154,7 @@ footer .cta .footer-about .footer-buttons {
   gap: 20px 10px;
 }
 
-@media screen and (max-width: 1750px) {
+@media screen and (max-width: 1980px) {
   footer .cta .footer-about .footer-buttons {
     grid-template-columns: 1fr;
   }
@@ -1189,7 +1195,7 @@ footer .cta .footer-links .link-column {
 
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1600px) {
   footer .cta .footer-links {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -1209,7 +1215,7 @@ footer .company-name {
   padding: 10px 0;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1024px) {
   footer .footer-bottom .flex-between {
     flex-wrap: wrap;
     justify-content: center;
@@ -1221,7 +1227,7 @@ footer .logo {
   z-index: 200;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   footer .logo {
     display: none;
   }
@@ -1238,7 +1244,7 @@ footer .footer-menu .wrapper {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1024px) {
   footer .footer-menu .wrapper {
     flex-wrap: wrap;
     justify-content: center;
@@ -1250,7 +1256,7 @@ footer .footer-menu .wrapper .right {
   padding-left: 30px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   footer .footer-menu .wrapper .right {
     padding-left: 10px;
   }
@@ -1266,7 +1272,7 @@ footer .footer-menu .menu li a {
   font-size: 14px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   footer .footer-menu .menu ul {
     flex-wrap: wrap;
   }
@@ -1310,7 +1316,7 @@ footer .footer-menu .copyright ul a:hover {
   color: #00B8A6;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1024px) {
   footer .footer-menu .copyright ul {
     justify-content: center;
     margin-bottom: 15px;
@@ -1348,7 +1354,7 @@ footer #footer-bg:after {
   bottom: 0;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   footer {
     padding-top: 30px;
   }
@@ -1368,7 +1374,7 @@ footer #footer-bg:after {
   /* Loading animation */
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .demo-wrapper {
     max-width: 100%;
   }
@@ -1503,7 +1509,7 @@ footer #footer-bg:after {
   top: 0%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .demo-wrapper #amount .impact-image {
     width: 75px;
     left: 75%;
@@ -1516,7 +1522,7 @@ footer #footer-bg:after {
   }
 }
 
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1600px) {
   .demo-wrapper #amount .impact-image {
     left: 70%
   }
@@ -1588,7 +1594,7 @@ footer #footer-bg:after {
   position: relative;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .demo-wrapper #amount .amount .choice {
     width: 50%;
   }
@@ -1850,7 +1856,7 @@ e .demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
   color: var(--fill-color);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .demo-wrapper #your-details .donor-options label {
     font-family: var(--base-font);
     font-weight: 800;
@@ -1917,7 +1923,7 @@ e .demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
   font-size: 12px;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
   .demo-wrapper #your-details .fields .field label span {
     display: block;
   }
@@ -1927,7 +1933,7 @@ e .demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
   width: 50%;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .demo-wrapper #your-details .fields .field.half {
     width: 100%;
   }
@@ -1937,7 +1943,7 @@ e .demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
   width: 25%;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .demo-wrapper #your-details .fields .field.quarter {
     width: 100%;
   }
@@ -1979,7 +1985,7 @@ e .demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
   border: 3px solid var(--button-color);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .demo-wrapper #your-details input {
     -webkit-appearance: none;
     appearance: none;
@@ -2061,7 +2067,7 @@ input:-webkit-autofill:focus {
   align-items: center;
   flex: 1;
 
-  @media (max-width: 328px) {
+  @media (max-width: 425px) {
     font-size: 12px;
   }
 }
@@ -2458,7 +2464,7 @@ input:-webkit-autofill:focus {
   margin-left: 66px !important;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .event-detail {
     width: 100%;
   }
@@ -2526,7 +2532,7 @@ input:-webkit-autofill:focus {
 
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .why-event-container {
     flex-direction: column;
     justify-content: center;
@@ -2754,7 +2760,7 @@ input:-webkit-autofill:focus {
   line-height: 140%;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
   .amount-price {
     font-size: 2.5rem;
   }
