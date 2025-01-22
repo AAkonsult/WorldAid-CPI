@@ -1,85 +1,4 @@
 /********************************************************
- * Reset and base styles
- ********************************************************/
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  min-width: 460px;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-}
-
-p,
-ol,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-a img {
-  border: none;
-}
-
-input,
-textarea {
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  border-radius: 0;
-}
-
-input[type=checkbox] {
-  -webkit-appearance: checkbox !important;
-  appearance: checkbox !important;
-}
-
-input[type=radio] {
-  -webkit-appearance: radio !important;
-  appearance: radio !important;
-}
-
-button {
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  padding: 0;
-}
-
-li {
-  margin-left: 18px;
-}
-
-ol {
-  list-style: decimal;
-}
-
-ul {
-  list-style: disc;
-}
-
-/********************************************************
-   * Default Variables
-   ********************************************************/
-/********************************************************
-   * Mixins
-   ********************************************************/
-/********************************************************
    * Colours
    ********************************************************/
 
@@ -94,112 +13,10 @@ ul {
   --bar-grey2: #F1F1F1;
 }
 
-
-
-/********************************************************
-   * Fonts
-   ********************************************************/
-:root {
-  --base-font: Rubik;
-}
-
-/********************************************************
-   * Site Styles
-   ********************************************************/
-html {
-  height: 100%;
-
-}
-
-body {
-  font-family: var(--base-font);
-  font-weight: 400;
-  font-size: 16px;
-  margin-top: 0;
-  height: 100%;
-}
-
-h1 {
-  font-family: var(--base-font);
-  font-weight: 800;
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-family: var(--base-font);
-  font-weight: 600;
-  font-size: 23px;
-  margin-bottom: 20px;
-}
-
-a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-a:visited {
-  color: var(--text-color);
-}
-
-a:hover {
-  color: var(--button-color);
-}
-
-.inner {
-  margin: 0 auto;
-  padding: 0 200px;
-  position: relative;
-  gap: 20px;
-}
-
-@media screen and (max-width: 1600px) {
-  .inner {
-    padding: 0 200px;
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .inner {
-    padding: 0 150px;
-  }
-}
-
-@media screen and (min-width: 1921px) {
-  .inner {
-    padding: 0 300px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .inner {
-    padding: 0 20px;
-  }
-}
-
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-}
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap-reverse;
-}
-
 /* Header block */
 header {
   position: relative;
   height: fit-content;
-}
-
-@media screen and (min-width: 1440px) {
-  header {
-    height: 657px;
-  }
 }
 
 header .flex-between {
@@ -213,25 +30,33 @@ header #header {
   z-index: 100;
 }
 
-@media screen and (max-width: 768px) {
-  header #header .logo img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1600px) {
   header .flex-between {
     flex-wrap: wrap;
     justify-content: center;
   }
 }
 
+
 @media screen and (max-width: 1024px) {
   header {
     background: var(--base-color);
   }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  header #header .logo img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  header .flex-between {
+    flex-wrap: nowrap;
+  }
+
 }
 
 /* Menu block */
@@ -270,21 +95,6 @@ header #header {
   color: var(--button-color);
 }
 
-@media screen and (max-width: 768px) {
-  .menu ul {
-    justify-content: center;
-  }
-
-  .menu ul li {
-    display: none;
-    margin-left: 0;
-  }
-
-  .menu ul li:last-child {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .menu {
     width: 100%;
@@ -297,14 +107,21 @@ header #header {
 }
 
 @media screen and (max-width: 768px) {
-  header .flex-between {
-    flex-wrap: nowrap;
-  }
-
   .menu ul {
     justify-content: end;
   }
+
+  .menu ul li {
+    display: none;
+    margin-left: 0;
+  }
+
+  .menu ul li:last-child {
+    display: none;
+  }
 }
+
+
 
 .hamburger {
   fill: var(--base-color3);
@@ -529,17 +346,6 @@ a.button:hover {
   text-align: center;
 }
 
-@media screen and (max-width: 1024px) {
-  .banner-info {
-    flex-wrap: wrap;
-  }
-
-  .banner-content {
-    text-align: center;
-  }
-
-}
-
 .banner-content p {
   font-size: 48px;
   font-weight: 400;
@@ -554,35 +360,43 @@ a.button:hover {
   color: var(--base-color3);
 }
 
-@media screen and (max-width: 1440px) {
-  .banner-content p {
-    font-size: 30px;
-  }
-
-  .banner-content h1 {
-    font-size: 30px;
-  }
-}
-
 .banner-img {
   position: absolute;
   width: 100%;
   height: 100%;
-  max-height: 657px;
   z-index: 1;
   object-fit: cover;
 
 }
 
-@media screen and (max-width: 768px) {
-
+@media screen and (max-width: 1600px) {
   .banner-content p {
-    font-size: 32px;
-    text-align: center;
+    font-size: 30px;
   }
 
   .banner-content h1 {
-    font-size: 32px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .banner-info {
+    flex-wrap: wrap;
+  }
+
+  .banner-content {
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .banner-content p {
+    font-size: 28px;
+  }
+
+  .banner-content h1 {
+    font-size: 28px;
   }
 }
 
@@ -1412,7 +1226,6 @@ footer .footer-bg:after {
 
 .demo-wrapper #amount .frequency-options {
   padding-top: 30px;
-  /* border-bottom: 1px solid #D1D1D1; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1573,7 +1386,6 @@ footer .footer-bg:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid #D1D1D1; */
   border-radius: 50px;
   background-color: var(--base-color3);
   cursor: pointer;
@@ -1611,7 +1423,6 @@ footer .footer-bg:after {
 
 .demo-wrapper #amount .amounts .choice.other {
   width: 100%;
-  /* max-width: 300px; */
   margin-top: 20px
 }
 

@@ -1,85 +1,4 @@
 /********************************************************
- * Reset and base styles
- ********************************************************/
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  min-width: 500px;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-}
-
-p,
-ol,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-a img {
-  border: none;
-}
-
-input,
-textarea {
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  border-radius: 0;
-}
-
-input[type=checkbox] {
-  -webkit-appearance: checkbox !important;
-  appearance: checkbox !important;
-}
-
-input[type=radio] {
-  -webkit-appearance: radio !important;
-  appearance: radio !important;
-}
-
-button {
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  padding: 0;
-}
-
-li {
-  margin-left: 18px;
-}
-
-ol {
-  list-style: decimal;
-}
-
-ul {
-  list-style: disc;
-}
-
-/********************************************************
-   * Default Variables
-   ********************************************************/
-/********************************************************
-   * Mixins
-   ********************************************************/
-/********************************************************
    * Colours
    ********************************************************/
 
@@ -89,109 +8,9 @@ ul {
   --base-color: #024586;
   --base-color2: #F3F9FF;
   --button-color: #00B8A6;
-  --button-hover: #00b8a6a4;
   --fill-color: #FFFFFF;
   --bar-grey: #C8C8C8;
   --bar-grey2: #F1F1F1;
-}
-
-
-
-/********************************************************
-   * Fonts
-   ********************************************************/
-:root {
-  --base-font: Rubik;
-}
-
-/********************************************************
-   * Site Styles
-   ********************************************************/
-html {
-  height: 100%;
-
-}
-
-body {
-  font-family: var(--base-font);
-  font-weight: 400;
-  font-size: 16px;
-  color: #575757;
-  margin-top: 0;
-  height: 100%;
-}
-
-h1 {
-  font-family: var(--base-font);
-  font-weight: 800;
-  font-size: 36px;
-  color: white;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-family: var(--base-font);
-  font-weight: 600;
-  font-size: 23px;
-  color: #004282;
-  margin-bottom: 20px;
-}
-
-a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-a:visited {
-  color: var(--text-color);
-}
-
-a:hover {
-  color: #00B8A6;
-}
-
-.inner {
-  margin: 0 auto;
-  padding: 0 200px;
-  position: relative;
-  gap: 20px;
-}
-
-@media screen and (max-width: 1600px) {
-  .inner {
-    padding: 0 100px;
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .inner {
-    padding: 0 200px;
-  }
-}
-
-@media screen and (min-width: 1921px) {
-  .inner {
-    padding: 0 300px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .inner {
-    padding: 0 20px;
-  }
-}
-
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-}
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap-reverse;
 }
 
 /* Header block */
@@ -527,7 +346,7 @@ a.button:visited {
 }
 
 a.button:hover {
-  background: var(--button-hover);
+  background: var(--button-color);
   color: var(--fill-color) !important;
 }
 
@@ -997,7 +816,7 @@ footer #footer-bg:after {
 }
 
 #demo-wrapper #amount button:hover {
-  background: var(--button-hover);
+  background: var(--button-color);
 }
 
 #demo-wrapper #amount .frequency-options {
@@ -1032,8 +851,8 @@ footer #footer-bg:after {
 }
 
 #demo-wrapper #amount .frequency-options label:hover {
-  background: var(--button-hover);
-  border: 1px solid var(--button-hover);
+  background: var(--button-color);
+  border: 1px solid var(--button-color);
   color: var(--fill-color);
 }
 
@@ -1147,7 +966,7 @@ footer #footer-bg:after {
 }
 
 .amount-rate .rate-card:hover {
-  background: var(--button-hover);
+  background: var(--button-color);
   color: var(--fill-color);
   border: none;
 }
@@ -1422,8 +1241,8 @@ e #demo-wrapper #amount .amounts .choice.other input[type="radio"]:checked::plac
 }
 
 #demo-wrapper #your-details .donor-options label:hover {
-  background: var(--button-hover);
-  border: 1px solid var(--button-hover);
+  background: var(--button-color);
+  border: 1px solid var(--button-color);
   color: var(--fill-color);
 }
 
@@ -1613,7 +1432,7 @@ input:-webkit-autofill:focus {
 }
 
 #demo-wrapper #your-details button:hover {
-  background: var(--button-hover);
+  background: var(--button-color);
 }
 
 

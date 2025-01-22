@@ -1,0 +1,188 @@
+/********************************************************
+ * Reset and base styles
+ ********************************************************/
+ * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    min-width: 425px;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  p,
+  ol,
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a img {
+    border: none;
+  }
+  
+  input,
+  textarea {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    border-radius: 0;
+  }
+  
+  input[type=checkbox] {
+    -webkit-appearance: checkbox !important;
+    appearance: checkbox !important;
+  }
+  
+  input[type=radio] {
+    -webkit-appearance: radio !important;
+    appearance: radio !important;
+  }
+  
+  button {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    padding: 0;
+  }
+  
+  li {
+    margin-left: 18px;
+  }
+  
+  ol {
+    list-style: decimal;
+  }
+  
+  ul {
+    list-style: disc;
+  }
+  
+  /********************************************************
+     * Default Variables
+     ********************************************************/
+  /********************************************************
+     * Mixins
+     ********************************************************/
+  
+  
+  /********************************************************
+     * Fonts
+     ********************************************************/
+  :root {
+    --base-font: Rubik;
+  }
+  
+  /********************************************************
+     * Site Styles
+     ********************************************************/
+  html {
+    height: 100%;
+  
+  }
+  
+  body {
+    font-family: var(--base-font);
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 0;
+    height: 100%;
+  }
+  
+  h1 {
+    font-family: var(--base-font);
+    font-weight: 800;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-family: var(--base-font);
+    font-weight: 600;
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  
+  a:visited {
+    color: var(--text-color);
+  }
+  
+  a:hover {
+    color: var(--button-color);
+  }
+  
+  .inner {
+    margin: 0 auto;
+    padding: 0 300px;
+    position: relative;
+    gap: 20px;
+  }
+  
+  @media screen and (min-width: 1921px) {
+    .inner {
+      padding: 0 400px;
+    }
+  }
+  
+  @media screen and (max-width: 1600px) {
+    .inner {
+      padding: 0 200px;
+    }
+  }
+  
+  @media screen and (max-width: 1440px) {
+    .inner {
+      padding: 0 150px;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .inner {
+      padding: 0 100px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .inner {
+      padding: 0 50px;
+    }
+  }
+  
+  @media screen and (max-width: 425px) {
+    .inner {
+      padding: 0 20px;
+    }
+  }
+  
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+  }
