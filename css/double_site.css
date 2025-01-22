@@ -643,6 +643,7 @@ a.button:hover {
   max-width: 609px;
   order: 2;
   width: 100%;
+  justify-content: center;
 }
 
 .countdown-timer ul {
@@ -726,7 +727,7 @@ a.button:hover {
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-  gap: 20px 20px;
+  gap: 40px 20px;
 }
 
 .main-body .content h1 {
@@ -800,7 +801,7 @@ a.button:hover {
   }
 
   .main-body .content {
-    width: 100%;
+    width: 80%;
     padding: 50px 20px;
     order: 1;
     padding-top: 50px;
@@ -821,8 +822,8 @@ a.button:hover {
 /*Features block */
 .features {
   background-color: var(--base-color2);
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 52px;
+  padding-bottom: 52px;
 }
 
 .features h2 {
@@ -843,8 +844,6 @@ a.button:hover {
 .features .columns {
 
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;

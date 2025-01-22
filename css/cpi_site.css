@@ -553,6 +553,7 @@ a.button:hover {
   width: 50%;
   padding: 50px;
   color: white;
+  max-width: 617px;
 }
 
 #main-body #content a.button,
@@ -596,6 +597,7 @@ a.button:visited {
   justify-items: center;
   align-items: center;
   width: 50%;
+  max-width: 800px;
 }
 
 

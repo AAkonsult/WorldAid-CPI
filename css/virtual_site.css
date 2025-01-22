@@ -185,7 +185,6 @@ a:hover {
 .flex-center {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap-reverse;
 }
 
 /* Header block */
@@ -710,9 +709,13 @@ a.button:hover {
 /* Main body block */
 #main-body {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   background-color: var(--base-color2);
+}
+
+@media  screen and (max-width: 1441px) { .flex-center{
+    flex-wrap: wrap;
+  }
+  
 }
 
 #main-body p {
