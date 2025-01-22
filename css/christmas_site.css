@@ -159,6 +159,7 @@ a:hover {
   margin: 0 auto;
   padding: 0 200px;
   position: relative;
+  gap: 20px;
 }
 
 @media screen and (max-width: 1439px) {
@@ -174,12 +175,6 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .inner {
-    padding: 0 20px;
-  }
-}
-
-@media screen and (max-width: 767px) {
   .inner {
     padding: 0 20px;
   }

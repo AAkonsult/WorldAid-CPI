@@ -30,7 +30,7 @@
     <header>
         <div id="header">
             <div class="inner flex-between">
-                <div id="logo">
+                <div class="logo">
                     <a href="index.html">
                         <img src="images/logo.png" alt="WordAid" width="261" height="60">
                     </a>
@@ -39,7 +39,7 @@
                     <ul>
                         <div class="hamburger-dropdown">
                             <button class="hamburger-dropbtn">
-                                <svg id="hamburger" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="hamburger" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7 9H25C25.2652 9 25.5196 8.89464 25.7071 8.70711C25.8946 8.51957 
                                     26 8.26522 26 8C26 7.73478 25.8946 7.48043 25.7071 7.29289C25.5196 7.10536 25.2652 7 
                                     25 7H7C6.73478 7 6.48043 7.10536 6.29289 7.29289C6.10536 7.48043 6 7.73478 6 8C6 8.26522 
@@ -95,36 +95,39 @@
             </div>
         </div>
     </header>
-    <div id="banner-info" class="inner flex-center">
-        <img id="banner-img" src="images/Hero Image.png">
-        <div id="banner-content">
+    <div class="banner-info inner flex-center">
+        <img class="banner-img" src="images/Hero Image.png">
+        <div class="banner-content">
             <h1>2x Your Impact!</h1>
             <p>This Giving Day, Let's Make a Difference for Disadvantaged Children.</p>
             <p>&nbsp;</p>
             <a href="#donate" class="button">Donate Now!</a>
         </div>
     </div>
-    <div id="countdown" class="inner flex-center">
-        <div id="countdown-info" class="inner flex-center">
-            <h2>DOUBLE your donation in November.</h2>
-            <h2>The countdown is on!</h2>
+    <div class="countdown">
+        <div class="inner flex-center">
+            <div class="countdown-info">
+                <h2>DOUBLE your donation in November.</h2>
+                <h2>The countdown is on!</h2>
+            </div>
+            <div class="countdown-timer">
+                <ul>
+                    <li class="num"><span id="days">0</span>Day</li>
+                    <li class="colon">:</li>
+                    <li class="num"><span id="hours">0</span>Hr</li>
+                    <li class="colon">:</li>
+                    <li class="num"><span id="minutes">0</span>Min</li>
+                    <li class="colon">:</li>
+                    <li class="num"><span id="seconds">0</span>Sec</li>
+                </ul>
+            </div>
+    
         </div>
-        <div id="countdown-timer">
-            <ul>
-                <li class="num"><span id="days">0</span>Day</li>
-                <li class="colon">:</li>
-                <li class="num"><span id="hours">0</span>Hr</li>
-                <li class="colon">:</li>
-                <li class="num"><span id="minutes">0</span>Min</li>
-                <li class="colon">:</li>
-                <li class="num"><span id="seconds">0</span>Sec</li>
-            </ul>
-        </div>
-
+        
     </div>
-    <div id="main-body"class="inner flex-between">
-        <div id="content">
-            <div id="content-inner">
+    <div class="main-body inner flex-between">
+        <div class="content">
+            <div class="content-inner">
                 <h1>2x Your Impact Today!</h1>
                 <p>This Giving Day, every dollar you donate will be matched by our generous partners. 
                     That means your contribution will go twice as far in providing food, education, 
@@ -134,8 +137,7 @@
         </div>
         <div id="donate">
             <div class="form">
-                <div id="demo-form-top"></div>
-                <div id="demo-wrapper" x-data="form">
+                <div class="demo-wrapper" x-data="form">
 
                     <!-- Progress bar block -->
                     <div class="stepper-wrapper">
@@ -882,8 +884,8 @@
             </div>
         </div>
     </div>
-    <div id="features" class="inner flex-center">
-        <div id="columns">
+    <div class="features inner flex-center">
+        <div class="columns">
             <div class="column">
                <img class="icon" src="images/Students Couple.png">
                <h1>500+</h1>
@@ -910,9 +912,9 @@
 
         </div>
     </div>
-    <div id="last-info-card" class="inner flex-center">
-        <img id="info-card-img" src="images/kids.png">
-        <div id="banner-content">
+    <div class="last-info-card inner flex-center">
+        <img class="info-card-img" src="images/kids.png">
+        <div class="banner-content">
             <h1>Every moment counts. Every child matters.</h1>
             <p>Your support on this Giving Day helps us bring hope 
                 to children facing unimaginable challenges. Together, we can ensure no child is left behind. 
@@ -924,7 +926,7 @@
     <footer>
         <div id="footer">
             <div class="inner flex-between">
-                <div id="cta">
+                <div class="cta">
 
                     <div class="footer-about">
                         <div class="footer-logo">
@@ -974,7 +976,7 @@
 
                 </div>
             </div>
-            <div id="footer-bottom">
+            <div class="footer-bottom">
                 <div class="inner flex-between">
                     <hr>
                 </div>
@@ -982,7 +984,7 @@
                     <div class="company-name">
                         <h4>© Aakonsult Pty Ltd. ABN 00 000 000 000</h4>
                     </div>
-                    <div id="footer-menu">
+                    <div class="footer-menu">
                         <div class="wrapper">
                             <div class="left">
                                 <h4>Powered By</h4>
