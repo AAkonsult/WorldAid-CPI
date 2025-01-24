@@ -31,7 +31,7 @@ header #header {
 }
 
 @media screen and (max-width: 500px) {
-  header #header #logo img {
+  header #header .logo img {
     width: 100%;
     max-width: 200px;
     height: auto;
@@ -145,7 +145,7 @@ header #banner img {
   }
 }
 
-#hamburger {
+.hamburger {
   fill: var(--fill-color);
   width: 38px;
   height: 38px;
@@ -155,7 +155,7 @@ header #banner img {
   justify-self: center;
 }
 
-#hamburger:hover {
+.hamburger:hover {
   fill: #00B8A6;
 }
 
@@ -212,7 +212,7 @@ header #banner img {
 }
 
 @media screen and (max-width: 780px) {
-  #hamburger {
+  .hamburger {
     display: block;
 
 
@@ -349,7 +349,7 @@ a.button:hover {
 }
 
 /* Banner info block */
-#banner-info {
+.banner-info {
   background-color: var(--base-color);
   display: flex;
   flex-wrap: nowrap;
@@ -358,7 +358,7 @@ a.button:hover {
   justify-content: space-evenly;
 }
 
-#banner-content {
+.banner-content {
   max-width: 600px;
   align-self: center;
 }
@@ -368,26 +368,26 @@ a.button:hover {
     flex-wrap: wrap;
   }
 
-  #banner-content {
+  .banner-content {
     text-align: center;
   }
 
 }
 
-#banner-content h1 {
+.banner-content h1 {
   font-size: 48px;
   font-weight: 700;
   font-family: var(--base-font);
   color: var(--fill-color);
 }
 
-#banner-content h1 .subtitle {
+.banner-content h1 .subtitle {
   font-size: 48px;
   font-weight: 400;
   display: inline;
 }
 
-#banner-img {
+.banner-img {
   width: 516px;
   height: 460px;
   margin: 20px;
@@ -395,22 +395,22 @@ a.button:hover {
 
 @media screen and (max-width: 600px) {
 
-  #banner-content h1 {
+  .banner-content h1 {
     font-size: 32px;
   }
 
-  #banner-content h1 .subtitle {
+  .banner-content h1 .subtitle {
     font-size: 32px;
   }
 
-  #banner-img {
+  .banner-img {
     width: 348.37px;
     height: 278px;
   }
 }
 
 /* Second banner info block */
-#second-banner-info {
+.second-banner-info {
   background-color: var(--fill-color);
   display: flex;
   flex-wrap: nowrap;
@@ -419,29 +419,29 @@ a.button:hover {
   justify-content: space-evenly;
 }
 
-#second-banner-content {
+.second-banner-content {
   max-width: 600px;
   align-self: center;
 }
 
 @media screen and (max-width: 1100px) {
-  #second-banner-info {
+  .second-banner-info {
     flex-wrap: wrap;
   }
 
-  #second-banner-content {
+  .second-banner-content {
     text-align: center;
   }
 }
 
-#second-banner-content h1 {
+.second-banner-content h1 {
   font-size: 48px;
   font-weight: 700;
   font-family: var(--base-font);
   color: var(--base-color);
 }
 
-#second-banner-content p {
+.second-banner-content p {
   font-size: 20px;
   font-weight: 400;
   font-family: var(--base-font);
@@ -449,7 +449,7 @@ a.button:hover {
   line-height: 140%;
 }
 
-#second-banner-img {
+.second-banner-img {
   width: 547px;
   height: 476px;
   margin: 20px;
@@ -457,24 +457,24 @@ a.button:hover {
 
 @media screen and (max-width: 600px) {
 
-  #second-banner-content h1 {
+  .second-banner-content h1 {
     font-size: 32px;
     text-align: left;
   }
 
-  #second-banner-content p {
+  .second-banner-content p {
     font-size: 20px;
     text-align: left;
   }
 
-  #second-banner-img {
+  .second-banner-img {
     width: 348.37px;
     height: 278px;
   }
 }
 
 /* Third banner info block */
-#third-banner-info {
+.third-banner-info {
   background-color: var(--fill-color);
   display: flex;
   flex-wrap: nowrap;
@@ -483,7 +483,7 @@ a.button:hover {
   justify-content: space-evenly;
 }
 
-#third-banner-wrapper {
+.third-banner-wrapper {
   width: 100%;
   max-width: max-content;
   align-self: center;
@@ -493,9 +493,9 @@ a.button:hover {
   justify-items: center;
 }
 
-#third-banner-wrapper .square {
-  width: 341px;
-  height: 344px;
+.third-banner-wrapper .square {
+  width: 100%;
+  height: 100%;
   background-color: var(--base-color2);
   display: flex;
   flex-direction: column;
@@ -505,14 +505,14 @@ a.button:hover {
   padding: 53px 29px;
 }
 
-#third-banner-wrapper .square h1 {
+.third-banner-wrapper .square h1 {
   font-size: 48px;
   font-weight: 700;
   font-family: var(--base-font);
   color: var(--button-color);
 }
 
-#third-banner-wrapper .square p {
+.third-banner-wrapper .square p {
   font-size: 20px;
   font-weight: 400;
   font-family: var(--base-font);
@@ -520,20 +520,20 @@ a.button:hover {
 }
 
 @media screen and (max-width: 1300px) {
-  #third-banner-wrapper {
+  .third-banner-wrapper {
     grid-template-columns: 1fr;
     justify-items: center;
   }
 }
 
 @media screen and (min-width: 1441px) {
-  #third-banner-wrapper {
+  .third-banner-wrapper {
     gap: 30px 100px;
   }
 }
 
 /* Main body block */
-#main-body {
+.main-body {
   display: flex;
   background-color: var(--base-color2);
 }
@@ -545,16 +545,16 @@ a.button:hover {
 
 }
 
-#main-body p {
+.main-body p {
   margin-bottom: 20px;
   line-height: 1.5em;
 }
 
-#main-body p:last-of-type {
+.main-body p:last-of-type {
   margin-bottom: 0;
 }
 
-#main-body #content {
+.main-body .content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -564,7 +564,7 @@ a.button:hover {
   color: var(--base-color);
 }
 
-#main-body #content #content-inner {
+.main-body .content .content-inner {
   max-width: 100%;
   justify-content: space-between;
   padding: 20px;
@@ -572,7 +572,7 @@ a.button:hover {
   box-sizing: border-box;
 }
 
-#main-body #content h1 {
+.main-body .content h1 {
   width: 100%;
   font-family: var(--base-font);
   font-size: 64px;
@@ -580,7 +580,7 @@ a.button:hover {
   color: var(--base-color);
 }
 
-#main-body #content #content-image {
+.main-body .content .content-image {
   max-width: 100%;
   height: auto;
   display: block;
@@ -588,7 +588,7 @@ a.button:hover {
   margin: 0 auto;
 }
 
-#main-body #content p {
+.main-body .content p {
   width: 600px;
   height: 100%;
   font-family: var(--base-font);
@@ -597,7 +597,7 @@ a.button:hover {
   line-height: 1.2;
 }
 
-#main-body #donate {
+.main-body #donate {
   display: flex;
   width: 50%;
   position: relative;
@@ -607,7 +607,7 @@ a.button:hover {
   justify-content: center;
 }
 
-#main-body #donate .form {
+.main-body #donate .form {
   background: var(--base-color);
   position: relative;
   max-width: 600px;
@@ -617,32 +617,32 @@ a.button:hover {
 }
 
 @media screen and (max-width: 767px) {
-  #main-body #donate .form {
+  .main-body #donate .form {
     padding: 20px;
   }
 }
 
 
 @media screen and (max-width: 1000px) {
-  #main-body.flex-between {
+  .main-body.flex-between {
     flex-wrap: wrap;
   }
 
-  #main-body #content {
+  .main-body .content {
     width: 100%;
     padding: 50px 20px;
     padding-top: 50px;
     margin: 0 auto;
   }
 
-  #main-body #donate {
+  .main-body #donate {
     width: 100%;
     margin-top: 0px;
     display: flex;
     justify-content: center;
   }
 
-  #main-body #content p {
+  .main-body .content p {
     width: 100%;
     padding-bottom: 50px;
     font-size: 36px;
@@ -650,7 +650,7 @@ a.button:hover {
 }
 
 /* Last banner info block */
-#last-banner-info {
+.last-banner-info {
   background-color: var(--fill-color);
   display: flex;
   flex-wrap: nowrap;
@@ -660,7 +660,7 @@ a.button:hover {
   flex-direction: column;
 }
 
-#last-banner-info #testimonials-title {
+.last-banner-info .testimonials-title {
   font-size: 48px;
   font-weight: 700;
   font-family: var(--base-font);
@@ -670,7 +670,7 @@ a.button:hover {
   padding-bottom: 50px;
 }
 
-#last-banner-wrapper {
+.last-banner-wrapper {
   width: 100%;
   max-width: max-content;
   align-self: center;
@@ -680,9 +680,9 @@ a.button:hover {
   justify-items: center;
 }
 
-#last-banner-wrapper .square {
-  width: 341px;
-  height: 344px;
+.last-banner-wrapper .square {
+  width: 100%;
+  height: 100%;
   background-color: var(--base-color2);
   display: flex;
   flex-direction: column;
@@ -692,75 +692,79 @@ a.button:hover {
   padding: 53px 29px;
 }
 
-#last-banner-wrapper .square .img-container {
+.last-banner-wrapper .square .img-container {
   width: 88px;
   height: 88px;
   border-radius: 50%;
   overflow: hidden;
 }
 
-#last-banner-wrapper .square .img-container .square-img {
+.last-banner-wrapper .square .img-container .square-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
 }
 
-#last-banner-wrapper .square .img-container #image-1 {
+.last-banner-wrapper .square .img-container #image-1 {
   transform: scale(1.3);
   object-position: 0% 0%;
 }
 
-#last-banner-wrapper .square #image-2 {
+.last-banner-wrapper .square #image-2 {
   transform: scale(1.1);
   object-position: 0% 0%;
 }
 
-#last-banner-wrapper .square #image-3 {
+.last-banner-wrapper .square #image-3 {
   transform: scale(1.3);
   object-position: 95% 0%;
 }
 
-#last-banner-wrapper .square h3 {
+.last-banner-wrapper .square h3 {
   font-size: 24px;
   font-weight: 700;
   font-family: var(--base-font);
   color: var(--base-color);
 }
 
-#last-banner-wrapper .square p {
+.last-banner-wrapper .square p {
   font-size: 20px;
   font-weight: 400;
   font-family: var(--base-font);
   color: var(--base-color);
 }
 
-#last-banner-wrapper .square p.description {
+.last-banner-wrapper .square p.description {
   font-style: italic;
 }
 
-#last-banner-info .button {
+.last-banner-info .button {
   display: inline-block;
   width: auto;
   margin: 50px auto;
 }
 
+.last-banner-info .flex-center {
+  flex-wrap: wrap;
+}
+
 
 @media screen and (max-width: 1300px) {
-  #last-banner-wrapper {
+  .last-banner-wrapper {
     grid-template-columns: 1fr;
     justify-items: center;
   }
 }
 
 @media screen and (min-width: 1441px) {
-  #last-banner-wrapper {
+  .last-banner-wrapper {
     gap: 30px 100px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  #last-banner-info .button {
+  .last-banner-info .button {
     display: none;
   }
 }
@@ -979,7 +983,7 @@ footer button {
   font-size: 12px;
 }
 
-footer #cta {
+footer .cta {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: left;
@@ -993,11 +997,11 @@ footer #cta {
 
 }
 
-footer #cta .cta-spacer {
+footer .cta .cta-spacer {
   padding: 0 100px 0 0;
 }
 
-footer #cta p {
+footer .cta p {
   width: 75%;
   margin: 20px 0;
   font-size: 16px;
@@ -1005,7 +1009,7 @@ footer #cta p {
 }
 
 @media screen and (max-width: 700px) {
-  footer #cta {
+  footer .cta {
     padding-bottom: 80px;
     padding-left: 20px;
     padding-right: 20px;
@@ -1016,14 +1020,14 @@ footer #cta p {
   }
 }
 
-footer #cta .footer-about {
+footer .cta .footer-about {
   padding-right: 50px;
   display: flex;
   flex-direction: column;
   align-content: center;
 }
 
-footer #cta .footer-about .footer-buttons {
+footer .cta .footer-about .footer-buttons {
   width: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1032,12 +1036,12 @@ footer #cta .footer-about .footer-buttons {
 }
 
 @media screen and (max-width: 1750px) {
-  footer #cta .footer-about .footer-buttons {
+  footer .cta .footer-about .footer-buttons {
     grid-template-columns: 1fr;
   }
 }
 
-footer #cta .footer-about .footer-buttons .footer-btn-right {
+footer .cta .footer-about .footer-buttons .footer-btn-right {
   position: relative;
   align-content: center;
 }
@@ -1052,7 +1056,7 @@ footer #cta .footer-about .footer-buttons .footer-btn-right {
 }
 
 
-footer #cta .footer-links {
+footer .cta .footer-links {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -1062,7 +1066,7 @@ footer #cta .footer-links {
   width: max-content;
 }
 
-footer #cta .footer-links .link-column {
+footer .cta .footer-links .link-column {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -1073,7 +1077,7 @@ footer #cta .footer-links .link-column {
 }
 
 @media screen and (max-width: 1300px) {
-  footer #cta .footer-links {
+  footer .cta .footer-links {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     font-size: 12px;
@@ -1082,7 +1086,7 @@ footer #cta .footer-links .link-column {
 
 
 
-footer #footer-bottom {
+footer .footer-bottom {
   flex-direction: column;
   position: relative;
   z-index: 200;
@@ -1093,7 +1097,7 @@ footer .company-name {
 }
 
 @media screen and (max-width: 950px) {
-  footer #footer-bottom .flex-between {
+  footer .footer-bottom .flex-between {
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -1110,91 +1114,91 @@ footer .logo {
   }
 }
 
-footer #footer-menu {
+footer .footer-menu {
   position: relative;
   z-index: 200;
 }
 
-footer #footer-menu .wrapper {
+footer .footer-menu .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 @media screen and (max-width: 950px) {
-  footer #footer-menu .wrapper {
+  footer .footer-menu .wrapper {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
   }
 }
 
-footer #footer-menu .wrapper .right {
+footer .footer-menu .wrapper .right {
   padding-left: 30px;
 }
 
 @media screen and (max-width: 500px) {
-  footer #footer-menu .wrapper .right {
+  footer .footer-menu .wrapper .right {
     padding-left: 10px;
   }
 }
 
-footer #footer-menu .menu {
+footer .footer-menu .menu {
   padding-bottom: 5px;
 }
 
-footer #footer-menu .menu li a {
+footer .footer-menu .menu li a {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 14px;
 }
 
 @media screen and (max-width: 750px) {
-  footer #footer-menu .menu ul {
+  footer .footer-menu .menu ul {
     flex-wrap: wrap;
   }
 
-  footer #footer-menu .menu ul li {
+  footer .footer-menu .menu ul li {
     display: inline-block !important;
     margin-left: 0;
     margin: 0 10px;
   }
 }
 
-footer #footer-menu .copyright {
+footer .footer-menu .copyright {
   font-family: var(--base-font);
   font-weight: 400;
   font-size: 14px;
   color: var(--fill-color);
 }
 
-footer #footer-menu .copyright ul {
+footer .footer-menu .copyright ul {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: flex-end;
 }
 
-footer #footer-menu .copyright ul li {
+footer .footer-menu .copyright ul li {
   margin: 0;
   padding: 0;
   margin-left: 20px;
   list-style: none;
 }
 
-footer #footer-menu .copyright ul a,
-footer #footer-menu .copyright ul a:visited {
+footer .footer-menu .copyright ul a,
+footer .footer-menu .copyright ul a:visited {
   text-decoration: none;
   color: var(--fill-color);
   transition: all 0.3s;
 }
 
-footer #footer-menu .copyright ul a:hover {
+footer .footer-menu .copyright ul a:hover {
   color: #00B8A6;
 }
 
 @media screen and (max-width: 950px) {
-  footer #footer-menu .copyright ul {
+  footer .footer-menu .copyright ul {
     justify-content: center;
     margin-bottom: 15px;
   }
@@ -1202,7 +1206,7 @@ footer #footer-menu .copyright ul a:hover {
 
 
 
-footer #footer-bg {
+footer .footer-bg {
   position: absolute;
   top: 0;
   z-index: 100;
@@ -1210,14 +1214,14 @@ footer #footer-bg {
   height: 100%;
 }
 
-footer #footer-bg img {
+footer .footer-bg img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
 }
 
-footer #footer-bg:after {
+footer .footer-bg:after {
   background: rgba(0, 66, 130, 0.75);
   width: 100%;
   height: 100%;
