@@ -25,9 +25,6 @@ header .flex-between {
 
 header #header {
   background: transparent;
-  position: relative;
-  padding-top: 30px;
-  z-index: 100;
 }
 
 @media screen and (max-width: 1600px) {

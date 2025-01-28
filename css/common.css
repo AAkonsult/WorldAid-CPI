@@ -1,4 +1,20 @@
 /********************************************************
+   * Colours
+   ********************************************************/
+
+   :root {
+    --text-color: #FFFFFF;
+    --text-color2: #118ACB;
+    --base-color: #024586;
+    --base-color2: #F3F9FF;
+    --base-color3: #FFFFFF;
+    --button-color: #00B8A6;
+    --bar-grey: #C8C8C8;
+    --bar-grey2: #F1F1F1;
+  }
+
+
+/********************************************************
  * Reset and base styles
  ********************************************************/
  * {
@@ -192,3 +208,12 @@
     justify-content: center;
     flex-wrap: wrap-reverse;
   }
+
+  
+header #header {
+  background: var(--base-color);
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  z-index: 100;
+}

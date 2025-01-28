@@ -1,17 +1,3 @@
-/********************************************************
-   * Colours
-   ********************************************************/
-
-:root {
-  --text-color: #FFFFFF;
-  --base-color: #024586;
-  --base-color2: #F3F9FF;
-  --button-color: #00B8A6;
-  --fill-color: #FFFFFF;
-  --bar-grey: #C8C8C8;
-  --bar-grey2: #F1F1F1;
-}
-
 /* Header block */
 header {
   position: relative;
@@ -20,14 +6,6 @@ header {
 
 header .flex-between {
   align-items: center;
-}
-
-header #header {
-  background: var(--base-color);
-  position: relative;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  z-index: 100;
 }
 
 @media screen and (max-width: 500px) {
