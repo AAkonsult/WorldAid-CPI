@@ -189,6 +189,7 @@ a:hover {
   flex-wrap: wrap-reverse;
 }
 
+/* header custom attributes */
 header #header {
   background: var(--base-color);
 }
